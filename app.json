@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/manage/manage",
+    "pages/mine/mine",
+    "pages/mine-info/mine-info",
+    "pages/company-mien/company-mien",
+    "pages/welfare/welfare",
+    "pages/my-asset/my-asset"
+  ],
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-field": "@vant/weapp/field/index"
+  },
+  "tabBar": {
+    "selectedColor": "#FD8952",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "人才快招",
+        "iconPath": "/assets/images/home.png",
+        "selectedIconPath": "/assets/images/home-active.png"
+      },
+      {
+        "pagePath": "pages/manage/manage",
+        "text": "职位管理",
+        "iconPath": "/assets/images/manage.png",
+        "selectedIconPath": "/assets/images/manage-active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "职位管理",
+        "iconPath": "/assets/images/mine.png",
+        "selectedIconPath": "/assets/images/mine-active.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

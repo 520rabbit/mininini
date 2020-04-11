@@ -1,0 +1,80 @@
+
+<view class="upload"> 
+  <view class="title">头像</view>
+  <view class="line"></view>
+  <view class="language">
+    <image class="userinfo-avatar" src="/assets/images/avatar.png" ></image> 
+  </view>
+  <van-icon name="arrow" />
+</view>
+<van-cell-group class="person-info">
+  <van-field
+    value="{{ username }}"
+    label="昵称"
+    placeholder="请输入用户名"
+    input-align="right"
+  />
+  <van-field
+    value="{{ password }}"
+    label="职位"
+    placeholder="请输入用户名"
+    input-align="right"
+  />
+  <van-field
+    value="{{ password }}"
+    label="公司名称"
+    placeholder="请输入用户名"
+    input-align="right"
+  />
+  <van-field
+    value="{{ password }}"
+    label="联系电话"
+    input-align="right"
+  />
+  <van-field
+    value="{{ password }}"
+    label="联系微信"
+    input-align="right"
+  />
+  <van-field
+    value="{{ password }}"
+    label="电子邮箱"
+    input-align="right"
+  />
+</van-cell-group>
+<view class="hint">
+  <view>以上是您的个人名片</view>
+  <view>信息越完善，您在求职者心目中的专业形象越高哦！</view>
+</view>
+
+<view class="password-update">
+  密码修改
+</view>
+
+<van-cell-group>
+  <van-field
+    value="{{ password }}"
+    type="password"
+    label="旧密码"
+    icon="/asstes/images/isShow.png"
+    placeholder="请输入用户名"
+  />
+
+  <van-field
+    value="{{ password }}"
+    type="password"
+    label="新 密 码"
+    placeholder="请输入密码"
+    icon="/asstes/images/isShow.png"
+    border="{{ false }}"
+  />
+
+  <van-field
+    value="{{ password }}"
+    type="password"
+    label="确认密码"
+    placeholder="请输入密码"
+    icon="question-o"
+    border="{{ false }}"
+  />
+</van-cell-group>

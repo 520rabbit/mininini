@@ -1,0 +1,30 @@
+<view class="my-record">
+  <view class="deal">交易记录</view>
+  <view class="have-count">500</view>
+  <view class="count-title">快招币剩余个数</view>
+
+  <view class="money-take">  
+    <view class="all-coin">
+      <view>800</view>
+      <view>累计币数（个）</view>
+    </view>
+    <view class="use-coin">
+      <view>800</view>
+      <view>已使用币数（个）</view>
+    </view>
+  </view>
+</view>
+
+<view class="money">
+  <view class="title">充值金额</view>
+  <view>
+    <van-button plain>
+      <view>50个快招币</view>
+      <view>￥20.00</view>
+    </van-button>
+    <van-button plain>
+      <view>50个快招币</view>
+      <view>￥20.00</view>
+    </van-button>
+  </view>
+</view>

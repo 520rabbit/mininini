@@ -1,0 +1,68 @@
+.company {
+  display: flex;
+  justify-content: left;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.company > .logo {
+  width: 128rpx;
+  border: 3rpx solid #F2F2F2;
+  border-radius: 10rpx;
+  padding: 17rpx 12rpx;
+  box-sizing: border-box;
+  margin-right: 20rpx;
+}
+
+.logo > image {
+  width: 100%;
+  height: 42rpx;
+}
+
+.company > .info {
+  flex: 1;
+}
+
+.info > .name {
+  font-size: 30rpx;
+  color: #434343;
+}
+
+.info > .address {
+  font-size: 24rpx;
+  color: #7A7A7A;
+  line-height: 48rpx;
+}
+.address > text {
+  margin-right: 5rpx;
+}
+
+.swiper-wrap {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.swiper-wrap .my-img {
+  width: 100%;
+  height: 300rpx;
+}
+
+.before {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.mien-wrap {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+
+
+.mien-desc {
+  font-size: 30rpx;
+  line-height: 48rpx;
+  color: #757575;
+  text-align:justify;
+}

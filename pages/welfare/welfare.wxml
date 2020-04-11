@@ -1,0 +1,28 @@
+<!--pages/welfare/welfare.wxml-->
+<view  class="company-wel">
+  <view class="before-title">
+    <image class="before" src="/assets/images/before.png" mode="widthFix"></image>
+    公司待遇
+  </view>
+  <view>
+    <van-button type="default">五险一金</van-button>
+    <van-button type="default">五险一金</van-button>
+    <van-button type="default">五险一金</van-button>
+    <van-button type="default">五险一金</van-button>
+    <van-button type="default">五险一金</van-button>
+  </view>
+</view>
+
+<view  class="company-wel">
+  <view class="before-title">
+    <image class="before" src="/assets/images/before.png" mode="widthFix"></image>
+    福利标签
+  </view>
+  <view>
+    <van-button type="default">五险一金</van-button>
+    <van-button type="default">五险一金</van-button>
+    <van-button type="default">五险一金</van-button>
+    <van-button type="default">五险一金</van-button>
+    <van-button type="default">五险一金</van-button>
+  </view>
+</view>

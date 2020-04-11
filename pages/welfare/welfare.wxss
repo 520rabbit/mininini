@@ -1,0 +1,21 @@
+
+.company-wel {
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.before-title {
+  line-height: 80rpx;
+}
+
+.before {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.company-wel button{
+  width: 210rpx;
+  height: 80rpx;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+}
