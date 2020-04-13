@@ -1,8 +1,7 @@
 <view class="my-record">
-  <view class="deal">交易记录</view>
+  <view class="deal" bindtap="goDealRecord">交易记录</view>
   <view class="have-count">500</view>
   <view class="count-title">快招币剩余个数</view>
-
   <view class="money-take">  
     <view class="all-coin">
       <view>800</view>
@@ -14,17 +13,57 @@
     </view>
   </view>
 </view>
-
 <view class="money">
   <view class="title">充值金额</view>
   <view>
-    <van-button plain>
+    <van-button plain custom-class="money-item">
       <view>50个快招币</view>
       <view>￥20.00</view>
     </van-button>
-    <van-button plain>
+    <van-button plain custom-class="money-item">
+      <view>50个快招币</view>
+      <view>￥20.00</view>
+    </van-button>
+        <van-button plain custom-class="money-item">
+      <view>50个快招币</view>
+      <view>￥20.00</view>
+    </van-button>
+    <van-button plain custom-class="money-item">
       <view>50个快招币</view>
       <view>￥20.00</view>
     </van-button>
   </view>
 </view>
+
+<!-- footer按钮 -->
+<view class="footer">
+  <view class="back" bindtap="backPrev">返回</view>
+  <view class="save" bindtap="handlerupdate"><image class="btn" src="/assets/images/btn.png"></image>立即充值</view>
+</view>
+
+
+
+<!-- 弹层 -->
+
+<view class="mask" hidden="{{popover}}">
+<!-- 成功 -->
+  <block wx:if="{{upstate}}" >
+    <view class="success">
+      <view class="top-popover"><image class="state" src="/assets/images/true.png"></image></view>
+      <view class="update-success">充值成功</view>
+      <view class="toast">您已充值100元，共获快招币100个 若有疑问请拨打020-81747580</view>
+      <view class="kown" bindtap="handlerKown">知道了</view>
+    </view>
+  </block>
+
+  <!-- 失败 -->
+  <block wx:else>
+    <view class="success">
+      <view class="top-popover"><image class="state" src="/assets/images/error.png"></image></view>
+      <view class="update-success">充值失败</view>
+      <view class="toast">若有疑问请拨打020-81747580</view>
+      <view class="kown" bindtap="handlerKown">知道了</view>
+    </view>
+  </block>
+</view>
+

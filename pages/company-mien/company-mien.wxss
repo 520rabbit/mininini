@@ -57,6 +57,7 @@
   padding: 0 30rpx;
   box-sizing: border-box;
   margin-top: 20rpx;
+  margin-bottom: 100rpx;
 }
 
 
@@ -65,4 +66,18 @@
   line-height: 48rpx;
   color: #757575;
   text-align:justify;
+}
+
+
+/*底部返回*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  border-top: 2rpx solid#f2f2f2;
+  line-height: 100rpx;
+  text-align: center;
+  width: 100vw;
+  color: #959595;
 }

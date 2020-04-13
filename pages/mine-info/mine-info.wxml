@@ -46,35 +46,43 @@
   <view>以上是您的个人名片</view>
   <view>信息越完善，您在求职者心目中的专业形象越高哦！</view>
 </view>
-
 <view class="password-update">
   密码修改
 </view>
 
-<van-cell-group>
-  <van-field
-    value="{{ password }}"
-    type="password"
-    label="旧密码"
-    icon="/asstes/images/isShow.png"
-    placeholder="请输入用户名"
-  />
 
-  <van-field
-    value="{{ password }}"
-    type="password"
-    label="新 密 码"
-    placeholder="请输入密码"
-    icon="/asstes/images/isShow.png"
-    border="{{ false }}"
-  />
+<view class="password-options">
+  <van-cell-group>
+    <van-field
+      value="{{ password }}"
+      type="password"
+      label="旧密码"
+      icon="/asstes/images/isShow.png"
+      placeholder="请输入用户名"
+    />
 
-  <van-field
-    value="{{ password }}"
-    type="password"
-    label="确认密码"
-    placeholder="请输入密码"
-    icon="question-o"
-    border="{{ false }}"
-  />
-</van-cell-group>
+    <van-field
+      value="{{ password }}"
+      type="password"
+      label="新 密 码"
+      placeholder="请输入密码"
+      icon="/asstes/images/isShow.png"
+      border="{{ false }}"
+    />
+
+    <van-field
+      value="{{ password }}"
+      type="password"
+      label="确认密码"
+      placeholder="请输入密码"
+      border="{{ false }}"
+    />
+  </van-cell-group>
+</view>
+
+
+
+<view class="footer">
+  <view class="back" bindtap="backPrev">返回</view>
+  <view class="save" bindtap="goMine"><image class="btn" src="/assets/images/btn.png"></image> 立即保存</view>
+</view>

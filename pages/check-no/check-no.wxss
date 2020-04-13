@@ -1,0 +1,157 @@
+.check-no {
+  width: 100vw;
+  height: 100vh;
+  background: #F2F2F2;
+  position: relative;
+}
+
+.check-no > .check-icon {
+  position: absolute;
+  top: 100rpx;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 80rpx;
+  height: 80rpx;
+  background: #FF8A52;
+  border: 10rpx solid #fff;
+  border-radius: 50%;
+  z-index: 9;
+}
+
+.check-icon::before {
+  content:"";
+  display: block;
+  width: 55rpx;
+  height: 10rpx;
+  background: #fff;
+  margin-top: 36rpx;
+  margin-left: 15rpx;
+}
+
+.check-desc {
+  position: absolute;
+  top: 100rpx;
+  left: 30rpx;
+  width: 690rpx;
+  background: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.check-desc > .no-pass-title {
+  margin-top: 70rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 38rpx;
+  color: #333;
+}
+
+.check-desc > .check-time {
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #959595;
+}
+
+.check-desc > .reason {
+  font-size: 38rpx;
+  color: #FF9465;
+  margin-top: 30rpx;
+  line-height: 60rpx;
+}
+
+.check-desc > .reason-deac {
+  font-size: 30rpx;
+  color: #707070;
+  line-height: 60rpx;
+  margin: 30rpx 0 60rpx 0;
+}
+
+.check-desc > .line {
+  position: relative;
+  height: 2rpx;
+  width: 100%;
+  background: #DAD7D7;
+}
+
+.check-desc > .line::before {
+  position: absolute;
+  left: -40rpx;
+  top: -20rpx;
+  content: "";
+  width: 42rpx;
+  height: 40rpx;
+  background: #f2f2f2;
+  border-radius: 50%;
+}
+.check-desc > .line::after {
+  position: absolute;
+  right: -40rpx;
+  top: -20rpx;
+  content: "";
+  display: block;
+  width: 42rpx;
+  height: 40rpx;
+  background: #f2f2f2;
+  border-radius: 50%;
+}
+
+.check-desc > .toast {
+  margin-top: 40rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+
+.check-desc > .request {
+  font-size: 28rpx;
+  color: #959595;
+  line-height: 60rpx;
+  margin-bottom: 30rpx;
+}
+
+.request text {
+  color: #FF8A52;
+}
+
+
+/* footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  width: 100vw;
+  border-top: 2rpx solid #F6F6F6; 
+  display: flex;
+  justify-content: left;
+  padding: 15rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.footer > .back {
+  width: 250rpx;
+  background: #fff;
+  border: 2rpx solid #DEDEDE;
+  line-height: 68rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #959595;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+  box-sizing: border-box;
+}
+
+.save {
+  flex: 1;
+  background: linear-gradient(to right, #FFC36F, #FF8853);
+  line-height: 68rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.btn {
+  width: 30rpx;
+  height: 30rpx;
+}

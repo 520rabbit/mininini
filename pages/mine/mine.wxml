@@ -1,7 +1,6 @@
 
 <view class="mine">
-
-  <view class="person">
+  <view class="person" bindtap="goMineInfo">
     <view class="person-avatar">
       <view class="avatar"><image src="/assets/images/avatar.png"  mode="aspectFit"/></view>
     </view>
@@ -13,22 +12,19 @@
       <van-icon name="arrow" />
     </view>
   </view>
-
   <view  class="list">
     <van-grid column-num="3" border="{{ false }}">
-      <van-grid-item icon="photo-o" text="企业风采" />
-      <van-grid-item icon="photo-o" text="福利标签" />
-      <van-grid-item icon="photo-o" text="我的资产" />
+      <van-grid-item icon="photo-o" text="企业风采" bindtap="goMien"/>
+      <van-grid-item icon="photo-o" text="福利标签" bindtap="goWelfare" />
+      <van-grid-item icon="photo-o" text="我的资产" bindtap="goMyAsset"/>
     </van-grid>
   </view>
   <view class="mine-banner"><image src="/assets/images/mine-banner.png" mode="aspectFit" /></view>  
-
   <view class="mine-list">
-    <van-cell title="资质认证" is-link value="审核拒绝" value-class="asd" />
-    <van-cell title="企业信息" is-link value="审核通过" value-class="asd" />
-    <van-cell title="我的客服" is-link value="020-81747580" value-class="asd" />
+    <van-cell title="资质认证" is-link value="审核拒绝" value-class="pass" bindtap="goCheck" />
+    <van-cell title="企业信息" is-link value="审核通过" value-class="pass" />
+    <van-cell title="我的客服" is-link value="020-81747580" />
   </view>
-
 </view>
 
 

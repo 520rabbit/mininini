@@ -1,0 +1,107 @@
+.record {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f5f5f5;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.record .record-time {
+  width: 300rpx;
+  margin-top: 10rpx;
+}
+
+.record-time > .title {
+  color: #333;
+  font-size: 30rpx;
+}
+
+.record-time > .time {
+  color: #959595;
+  font-size: 28rpx;
+}
+
+.select-time {
+  width: 200rpx;
+  text-align: right;
+}
+
+
+.task-type {
+  width: 690rpx;
+  margin: auto;
+  margin-top: 30rpx;
+}
+
+.task-type::after {
+  display: block;
+  content: "";
+  width: 690rpx;
+  height: 20rpx;
+  background:linear-gradient(#FFF8F5, #ffffff);
+}
+
+.task-money {
+  display: flex;
+  justify-content: left;
+  padding-left: 40rpx;
+  width: 690rpx;
+  margin: auto;
+  box-sizing: border-box;
+  background: #f5f5f5;
+  height: 88rpx;
+}
+
+.task-money > .type-img {
+  width: 50rpx;
+  box-sizing: border-box;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+
+.type-img > image {
+  width: 100%;
+}
+
+.task-money > .count {
+  line-height: 88rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+/* 冻结 */
+.freeze .count > text { 
+  font-size: 32rpx; 
+  color: #8AC7F1;
+}
+/* 消耗 */
+.took .count > text { 
+  font-size: 32rpx; 
+  color: #FFAF46;
+}
+/* 返还 */
+.back .count > text { 
+  font-size: 32rpx; 
+  color: #33CEB0;
+}
+
+
+
+.job-info {
+  width: 690rpx;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 20rpx 40rpx;
+}
+
+.job-info > .job-item {
+  color: #818181;
+  font-size: 30rpx;
+}
+
+.job-item > text {
+  color: #555555;
+  font-size: 30rpx;
+}

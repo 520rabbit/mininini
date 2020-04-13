@@ -54,6 +54,6 @@
   height: 130rpx;
 }
 
-.mine-list .asd {
-  color: #ff5777;
+.mine-list .pass {
+  color: #FFB08C;
 }

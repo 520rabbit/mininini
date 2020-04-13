@@ -1,0 +1,122 @@
+<view class="record">
+  <view class="record-time">
+    <view class="title">历史记录</view>
+    <view class="time">2020.08-2020.11</view>
+  </view>
+  <view class="select-time">
+    <van-dropdown-menu active-color="#F9A985" popup-style="width: 200rpx;">
+      <van-dropdown-item value="{{ monthValue }}" options="{{ selectMonth }}" />
+    </van-dropdown-menu>
+  </view>
+</view>
+
+
+
+<view class="recharge">
+  <view class="recharge-tiem">
+    <view class="title">充值成功</view>
+    <view class="icon">+50个币</view>
+  </view>
+
+  <view class="recharge-tiem down">
+    <view>2020.04.07 14:65:56</view>
+    <view>支付:￥20.00</view>
+  </view>
+</view>
+
+<view class="recharge">
+  <view class="recharge-tiem">
+    <view class="title">充值成功</view>
+    <view class="icon">+50个币</view>
+  </view>
+
+  <view class="recharge-tiem down">
+    <view>2020.04.07 14:65:56</view>
+    <view>支付:￥20.00</view>
+  </view>
+</view>
+
+<view class="recharge">
+  <view class="recharge-tiem">
+    <view class="title">充值成功</view>
+    <view class="icon">+50个币</view>
+  </view>
+
+  <view class="recharge-tiem down">
+    <view>2020.04.07 14:65:56</view>
+    <view>支付:￥20.00</view>
+  </view>
+</view>
+
+<view class="recharge">
+  <view class="recharge-tiem">
+    <view class="title">充值成功</view>
+    <view class="icon">+50个币</view>
+  </view>
+
+  <view class="recharge-tiem down">
+    <view>2020.04.07 14:65:56</view>
+    <view>支付:￥20.00</view>
+  </view>
+</view>
+
+<view class="recharge">
+  <view class="recharge-tiem">
+    <view class="title">充值成功</view>
+    <view class="icon">+50个币</view>
+  </view>
+
+  <view class="recharge-tiem down">
+    <view>2020.04.07 14:65:56</view>
+    <view>支付:￥20.00</view>
+  </view>
+</view>
+
+
+<view class="recharge">
+  <view class="recharge-tiem">
+    <view class="title">充值成功</view>
+    <view class="icon">+50个币</view>
+  </view>
+
+  <view class="recharge-tiem down">
+    <view>2020.04.07 14:65:56</view>
+    <view>支付:￥20.00</view>
+  </view>
+</view>
+
+<view class="recharge">
+  <view class="recharge-tiem">
+    <view class="title">充值成功</view>
+    <view class="icon">+50个币</view>
+  </view>
+
+  <view class="recharge-tiem down">
+    <view>2020.04.07 14:65:56</view>
+    <view>支付:￥20.00</view>
+  </view>
+</view>
+
+<view class="recharge">
+  <view class="recharge-tiem">
+    <view class="title">充值成功</view>
+    <view class="icon">+50个币</view>
+  </view>
+
+  <view class="recharge-tiem down">
+    <view>2020.04.07 14:65:56</view>
+    <view>支付:￥20.00</view>
+  </view>
+</view>
+
+<view class="recharge">
+  <view class="recharge-tiem">
+    <view class="title">充值成功</view>
+    <view class="icon">+50个币</view>
+  </view>
+
+  <view class="recharge-tiem down">
+    <view>2020.04.07 14:65:56</view>
+    <view>支付:￥20.00</view>
+  </view>
+</view>

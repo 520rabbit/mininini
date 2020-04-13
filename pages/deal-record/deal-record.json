@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "use-record": "./children/use-record/use-record",
+    "buy-record": "./children/buy-record/buy-record"
+  },
+  "navigationBarTitleText": "交易记录"
+}

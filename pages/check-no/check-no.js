@@ -1,4 +1,4 @@
-// pages/mine/mine.js
+// pages/check-no/check-no.js
 Page({
 
   /**
@@ -8,43 +8,11 @@ Page({
 
   },
 
-  // 跳转到个人信息页面
-  goMineInfo () {
-    console.log("98468")
-    wx.navigateTo({
-      url: '../mine-info/mine-info'
+  backPrev () {
+    wx.navigateBack({
+      delta: 1
     })
   },
-
-  // 跳到企业风采
-  goMien() {
-    wx.navigateTo({
-      url: '../company-mien/company-mien'
-    })
-  },
-
-  // 跳到福利标签页面
-  goWelfare () {
-    wx.navigateTo({
-      url: '../welfare/welfare'
-    })
-  },
-
-  // 跳到我的资产页面
-  goMyAsset () {
-    wx.navigateTo({
-      url: '../my-asset/my-asset'
-    })
-  },
-
-  // 跳到审核不通过
-  goCheck () {
-    wx.navigateTo({
-      url: "../check-no/check-no"
-    })
-  },
-
-
 
   /**
    * 生命周期函数--监听页面加载

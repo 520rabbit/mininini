@@ -1,0 +1,10 @@
+<van-tabs active="{{ active }}" style="margin-bottom: 100rpx;" swipeable color="#F9A985" title-active-color="#F9A985" skicky>
+  <van-tab title="使用记录" name="1">  
+    <use-record selectMonth="{{selectMonth}}" monthValue="{{monthValue}}"/>
+  </van-tab>
+  <van-tab title="购买记录" name="2">
+    <buy-record  selectMonth="{{selectMonth}}" monthValue="{{monthValue}}"/>
+  </van-tab>
+</van-tabs>
+
+<view class="footer" bindtap="backPrev">返回</view>

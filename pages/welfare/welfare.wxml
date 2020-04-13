@@ -26,3 +26,8 @@
     <van-button type="default">五险一金</van-button>
   </view>
 </view>
+
+<view class="footer">
+  <view class="back" bindtap="backPrev" bindtap="backPrev">返回</view>
+  <view class="save" bindtap="goMine" bindtap="goMine"><image class="btn" src="/assets/images/btn.png"></image> 立即保存</view>
+</view>

@@ -6,7 +6,9 @@
     "pages/mine-info/mine-info",
     "pages/company-mien/company-mien",
     "pages/welfare/welfare",
-    "pages/my-asset/my-asset"
+    "pages/my-asset/my-asset",
+    "pages/deal-record/deal-record",
+    "pages/check-no/check-no"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
@@ -15,7 +17,11 @@
     "van-grid-item": "@vant/weapp/grid-item/index",
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-field": "@vant/weapp/field/index"
+    "van-field": "@vant/weapp/field/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index"
   },
   "tabBar": {
     "selectedColor": "#FD8952",

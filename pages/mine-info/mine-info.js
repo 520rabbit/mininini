@@ -17,6 +17,19 @@ Page({
     ]
   },
 
+  // 跳到个人中心页面
+  goMine () {
+    wx.switchTab({
+      url: '../mine/mine'
+    })
+  },
+
+  // 返回个人中心页面
+  backPrev () {
+    wx.navigateBack({
+      delta: 1
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

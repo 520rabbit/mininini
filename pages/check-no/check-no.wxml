@@ -1,0 +1,23 @@
+<!--pages/check-no/check-no.wxml-->
+<view class="check-no">
+  <view class="check-icon"></view>
+  <view class="check-desc">
+    <view class="no-pass-title">审核不通过</view>
+    <view class="check-time">2020.04.06</view>
+    <view class="reason">拒绝原因</view>
+    <view class="reason-deac">
+      您尚未上传企业营业执照，前往上传企业营业执照有助于快速发布快招面试。
+    </view>
+
+    <view class="line"></view>
+    <view class="toast">温馨提示：</view>
+    <view class="request">如仍有问题，请咨询客服电话： <text>020-81747580</text></view>
+  </view>
+</view>
+
+
+<!-- footer按钮 -->
+<view class="footer">
+  <view class="back" bindtap="backPrev">返回</view>
+  <view class="save"><image class="btn" src="/assets/images/btn.png"></image>完善资质</view>
+</view>

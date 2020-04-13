@@ -1,50 +1,34 @@
-// pages/mine/mine.js
+// pages/deal-record/deal-record.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    active: '2',
+    selectMonth: [
+      { text: '1个月', value: 1 },
+      { text: '2个月', value: 2 },
+      { text: '3个月', value: 3 },
+      { text: '4个月', value: 4 },
+      { text: '5个月', value: 5 },
+      { text: '6个月', value: 6 }
+    ],
+    option2: [
+      { text: '默认排序', value: 'a' },
+      { text: '好评排序', value: 'b' },
+      { text: '销量排序', value: 'c' }
+    ],
+    monthValue: 1
   },
 
-  // 跳转到个人信息页面
-  goMineInfo () {
-    console.log("98468")
-    wx.navigateTo({
-      url: '../mine-info/mine-info'
+  // 返回个人中心页面
+  backPrev() {
+    wx.navigateBack({
+      delta: 1,
     })
   },
-
-  // 跳到企业风采
-  goMien() {
-    wx.navigateTo({
-      url: '../company-mien/company-mien'
-    })
-  },
-
-  // 跳到福利标签页面
-  goWelfare () {
-    wx.navigateTo({
-      url: '../welfare/welfare'
-    })
-  },
-
-  // 跳到我的资产页面
-  goMyAsset () {
-    wx.navigateTo({
-      url: '../my-asset/my-asset'
-    })
-  },
-
-  // 跳到审核不通过
-  goCheck () {
-    wx.navigateTo({
-      url: "../check-no/check-no"
-    })
-  },
-
-
+  
 
   /**
    * 生命周期函数--监听页面加载
