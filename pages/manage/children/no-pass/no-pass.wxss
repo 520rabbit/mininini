@@ -1,0 +1,33 @@
+.job {
+  padding: 20rpx 30rpx;
+  border-bottom: 10rpx solid #FFF9F6;
+  box-sizing: border-box;
+}
+
+.job:first-of-type{
+  border-top: 20rpx solid #F2F2F2;
+}
+
+.job > .job-item {
+  display: flex;
+  justify-content: space-between;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.job-item > .job-name {
+  color: #333;
+}
+
+.job-item > .job-price {
+  color: #FF3636;
+}
+
+.job-req {
+  font-size: 28rpx;
+  color: #959595;
+}
+.job-req > text {
+  margin-right: 8rpx;
+}

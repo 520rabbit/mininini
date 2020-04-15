@@ -28,6 +28,9 @@
   text-align: right;
 }
 
+.recharge:last-of-type {
+  margin-bottom: 120rpx;
+}
 
 .recharge {
   width: 690rpx;

@@ -1,0 +1,52 @@
+.job.job {
+  width: 690rpx;
+  margin: 10rpx auto;
+  padding: 0 30rpx;
+}
+
+.job > .job-top {
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+
+
+.job-top > .job-info {
+  display: flex;
+  justify-content: space-between;
+  line-height: 60rpx;
+}
+
+
+.job-info > .job-name {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 800;
+}
+
+.job-info > .job-price {
+  font-size: 32rpx;
+  color: #FF4F4F;
+}
+
+.job-top > .job-type {
+  color: #959595;
+  font-size: 28rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.icon-image {
+  width: 30rpx;
+  height: 30rpx;
+}

@@ -1,24 +1,11 @@
-// pages/manage/manage.js
+// pages/job-details/job-details.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    active: 0,
-    showIssu: false
-  },
 
-  onChange (e) {
-    if (e.detail.index == 0) {
-      this.setData({
-        showIssu: false
-      })
-    } else {
-      this.setData({
-        showIssu: true
-      })
-    }
   },
 
   /**

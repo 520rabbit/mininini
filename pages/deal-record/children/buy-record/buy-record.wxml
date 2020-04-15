@@ -109,7 +109,7 @@
   </view>
 </view>
 
-<view class="recharge">
+<view class="recharge"  >
   <view class="recharge-tiem">
     <view class="title">充值成功</view>
     <view class="icon">+50个币</view>

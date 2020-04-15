@@ -1,5 +1,10 @@
+
+
 .banner {
+  position: relative;
   width: 100vw;
+  height: 280rpx;
+  overflow: hidden;
 }
 .banner > image{
   width: 100%;
@@ -10,7 +15,8 @@
   display: flex;
   justify-content: space-between;
   padding: 0 30rpx;
-  line-height: 60rpx;
+  line-height: 80rpx;
+  background: #fff;
 }
 
 .title > .create-manage {
@@ -29,7 +35,9 @@
 }
 
 .title > .btn {
+  position: relative;
   width: 340rpx;
+  margin-top: 10rpx;
 }
 
 .btn > .issue-text {
@@ -47,6 +55,9 @@
 }
 
 .btn > .create-job {
+  position: absolute;
+  right: 0;
+  top: 10rpx;
   display: inline-block;
   width: 150rpx;
   border-radius: 30rpx;

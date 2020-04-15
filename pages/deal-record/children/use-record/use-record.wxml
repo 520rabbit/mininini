@@ -48,3 +48,42 @@
     <view class="job-item">创建时间: <text>2020.04.07 14:54:56 </text> </view>
   </view>
 </view>
+
+<view class="task-type">
+  <view class="task-money freeze">
+    <view class="type-img"><image src="/assets/images/111.png" mode="widthFix"></image> </view>
+    <view class="count">已冻结：<text>240个</text></view>
+  </view>
+  <view class="job-info">
+    <view class="job-item">职位名称: <text>高级UI</text> </view>
+    <view class="job-item">扣币标准: <text>面过（300个/人）</text> </view>
+    <view class="job-item">创建时间: <text>2020.04.07 14:54:56 </text> </view>
+  </view>
+
+</view>
+
+<view class="task-type">
+  <view class="task-money took">
+    <view class="type-img"><image src="/assets/images/111.png" mode="widthFix"></image> </view>
+    <view class="count">已消耗：<text>240个</text></view>
+  </view>
+  <view class="job-info">
+    <view class="job-item">职位名称: <text>高级UI</text> </view>
+    <view class="job-item">扣币标准: <text>面过（300个/人）</text> </view>
+    <view class="job-item">创建时间: <text>2020.04.07 14:54:56 </text> </view>
+  </view>
+
+</view>
+
+
+<view class="task-type">
+  <view class="task-money back">
+    <view class="type-img"><image src="/assets/images/111.png" mode="widthFix"></image> </view>
+    <view class="count">已返还：<text>240个</text></view>
+  </view>
+  <view class="job-info">
+    <view class="job-item">职位名称: <text>高级UI</text> </view>
+    <view class="job-item">扣币标准: <text>面过（300个/人）</text> </view>
+    <view class="job-item">创建时间: <text>2020.04.07 14:54:56 </text> </view>
+  </view>
+</view>

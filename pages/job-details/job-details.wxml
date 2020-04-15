@@ -1,0 +1,19 @@
+<view class="job">
+  <view class="job-top">
+    <view class="job-info">
+      <view class="job-name">Java开发工程师</view>
+      <view class="job-price">0.8-1万/月</view>
+    </view>
+    <view class="job-type">职能分类 <text>|</text> 所属部门</view>
+  </view>
+  <view>
+    <view>
+      <view> <image class="icon-image" src="/assets/images/type.png"></image> 全职</view>
+      <view> <image class="icon-image" src="/assets/images/time.png"></image>3-5年</view>
+      <view><image class="icon-image" src="/assets/images/education.png"></image>大专</view>
+    </view>
+
+    <view><image class="icon-image" src="/assets/images/address.png"></image>广州市海珠区蚝壳街17号“1号汇创”A座203a</view>
+  </view>
+
+</view>

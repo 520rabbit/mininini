@@ -9,4 +9,5 @@
   text-align: center;
   width: 100vw;
   color: #959595;
+  z-index: 99;
 }

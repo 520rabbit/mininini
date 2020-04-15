@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "wait-check": "./children/wait-check/wait-check",
+    "no-pass": "./children/no-pass/no-pass",
+    "drafts-job": "./children/drafts-job/drafts-job",
+    "using": "./children/using/using"
+  },
+  "navigationBarTitleText": "职位管理"
 }

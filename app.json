@@ -8,7 +8,8 @@
     "pages/welfare/welfare",
     "pages/my-asset/my-asset",
     "pages/deal-record/deal-record",
-    "pages/check-no/check-no"
+    "pages/check-no/check-no",
+    "pages/job-details/job-details"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
@@ -21,7 +22,10 @@
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
-    "van-dropdown-item": "@vant/weapp/dropdown-item/index"
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index"
   },
   "tabBar": {
     "selectedColor": "#FD8952",
