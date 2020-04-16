@@ -1,0 +1,121 @@
+<!--pages/home/children/list/list.wxml-->
+<view class="job">
+  <view class="job-state">
+    <view class="job-name">前端工程师 <text>【保过1月】</text></view>
+    <view class="state-step">报名中</view>
+  </view>
+  <view class="interview-count">拟面试人数：<text class="job-color">10人</text></view>
+  <view class="interview-count">竞聘报名截止时间：<text class="job-color"> 2020-3-22</text></view>
+  <view class="interview-count">面试时间：<text class="job-color"> 2020-3-23 11:00 - 16:00</text></view>
+
+  <view class="compete-wrap">
+    <view class="compete-count">
+      <view>
+        <image src="/assets/images/compete-count.png"></image>
+      </view>
+      已竞聘人数
+    </view>
+    <view class="person-count">10人 <van-icon name="arrow" /></view> 
+  </view>
+</view>
+
+<view class="job">
+  <view class="job-state">
+    <view class="job-name">前端工程师 <text>【保过1月】</text></view>
+    <view class="state-step">报名中</view>
+  </view>
+  <view class="interview-count">拟面试人数：<text class="job-color">10人</text></view>
+  <view class="interview-count">竞聘报名截止时间：<text class="job-color"> 2020-3-22</text></view>
+  <view class="interview-count">面试时间：<text class="job-color"> 2020-3-23 11:00 - 16:00</text></view>
+
+  <view class="compete-wrap">
+    <view class="compete-count">
+      <view>
+        <image src="/assets/images/compete-count.png"></image>
+      </view>
+      已竞聘人数
+    </view>
+    <view class="person-count">10人 <van-icon name="arrow" /></view> 
+  </view>
+</view>
+
+<view class="job">
+  <view class="job-state">
+    <view class="job-name">前端工程师 <text>【保过1月】</text></view>
+    <view class="state-step">报名中</view>
+  </view>
+  <view class="interview-count">拟面试人数：<text class="job-color">10人</text></view>
+  <view class="interview-count">竞聘报名截止时间：<text class="job-color"> 2020-3-22</text></view>
+  <view class="interview-count">面试时间：<text class="job-color"> 2020-3-23 11:00 - 16:00</text></view>
+
+  <view class="compete-wrap">
+    <view class="compete-count">
+      <view>
+        <image src="/assets/images/compete-count.png"></image>
+      </view>
+      已竞聘人数
+    </view>
+    <view class="person-count">10人 <van-icon name="arrow" /></view> 
+  </view>
+</view>
+
+<view class="job">
+  <view class="job-state">
+    <view class="job-name">前端工程师 <text>【保过1月】</text></view>
+    <view class="state-step">报名中</view>
+  </view>
+  <view class="interview-count">拟面试人数：<text class="job-color">10人</text></view>
+  <view class="interview-count">竞聘报名截止时间：<text class="job-color"> 2020-3-22</text></view>
+  <view class="interview-count">面试时间：<text class="job-color"> 2020-3-23 11:00 - 16:00</text></view>
+
+  <view class="compete-wrap">
+    <view class="compete-count">
+      <view>
+        <image src="/assets/images/compete-count.png"></image>
+      </view>
+      已竞聘人数
+    </view>
+    <view class="person-count">10人 <van-icon name="arrow" /></view> 
+  </view>
+</view>
+
+<view class="job">
+  <view class="job-state">
+    <view class="job-name">前端工程师 <text>【保过1月】</text></view>
+    <view class="state-step">报名中</view>
+  </view>
+  <view class="interview-count">拟面试人数：<text class="job-color">10人</text></view>
+  <view class="interview-count">竞聘报名截止时间：<text class="job-color"> 2020-3-22</text></view>
+  <view class="interview-count">面试时间：<text class="job-color"> 2020-3-23 11:00 - 16:00</text></view>
+
+  <view class="compete-wrap">
+    <view class="compete-count">
+      <view>
+        <image src="/assets/images/compete-count.png"></image>
+      </view>
+      已竞聘人数
+    </view>
+    <view class="person-count">10人 <van-icon name="arrow" /></view> 
+  </view>
+</view>
+
+<view class="job">
+  <view class="job-state">
+    <view class="job-name">前端工程师 <text>【保过1月】</text></view>
+    <view class="state-step">报名中</view>
+  </view>
+  <view class="interview-count">拟面试人数：<text class="job-color">10人</text></view>
+  <view class="interview-count">竞聘报名截止时间：<text class="job-color"> 2020-3-22</text></view>
+  <view class="interview-count">面试时间：<text class="job-color"> 2020-3-23 11:00 - 16:00</text></view>
+
+  <view class="compete-wrap">
+    <view class="compete-count">
+      <view>
+        <image src="/assets/images/compete-count.png"></image>
+      </view>
+      已竞聘人数
+    </view>
+    <view class="person-count">10人 <van-icon name="arrow" /></view> 
+  </view>
+</view>
+

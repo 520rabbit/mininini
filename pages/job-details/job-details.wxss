@@ -1,11 +1,13 @@
-.job.job {
+.job {
   width: 690rpx;
   margin: 10rpx auto;
   padding: 0 30rpx;
+  box-sizing: border-box;
+  box-shadow: 0 10rpx 10rpx 5rpx #f2f2f2;
 }
 
 .job > .job-top {
-  padding: 20rpx 30rpx;
+  padding: 20rpx 10rpx;
   box-sizing: border-box;
 }
 
@@ -33,20 +35,61 @@
   font-size: 28rpx;
 }
 
+.job-bottom {
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
 
+.job-bottom > .job-info {
+  display: flex;
+  justify-content: left;
+  font-size: 30rpx;
+  color: #959595;
+  border-top: 2rpx solid #f2f2f2;
+  line-height: 60rpx;
+}
 
-
-
-
-
-
-
-
-
-
-
+.job-bottom > .job-info > view {
+  margin-right: 30rpx;
+}
 
 .icon-image {
-  width: 30rpx;
-  height: 30rpx;
+  width: 24rpx;
+  margin-right: 6rpx;
+}
+
+.icon-image.address {
+    width: 20rpx;
+}
+
+.job-bottom > .address {
+  font-size: 30rpx;
+  color: #959595;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.title {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  color: #333;
+  width: 100vw;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.title > image {
+  width: 26rpx;
+  margin-right: 10rpx;
+}
+
+.job-desc {
+  font-size: 30rpx;
+  color: #959595;
+  padding: 0 30rpx;
+  width: 100vw;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 48rpx;
 }

@@ -1,8 +1,8 @@
-<van-checkbox-group value="{{ result }}" bind:change="selectItem" >
+<!-- <van-checkbox-group value="{{ result }}" bind:change="selectItem" > -->
   <view class="list-item" wx:for="{{list}}" wx:for-index="index" wx:key="index"> 
-    <view class="checkbox">
+    <!-- <view class="checkbox">
       <van-checkbox name="{{item}}" checked-color="#FF8652" />
-    </view>
+    </view> -->
     <view class="job-info">
       <view class="job-item">
         <view class="job-name">前端工程师</view>
@@ -23,9 +23,9 @@
       </view>
     </view>
   </view>
-</van-checkbox-group>
+<!-- </van-checkbox-group> -->
 
-<view class="all-select">
+<!-- <view class="all-select">
   <van-checkbox value="{{ checked }}" bind:change="isAll" checked-color="#FF8652" >
     <view class="count">
       <view>全选</view>
@@ -37,5 +37,5 @@
   <view class="create">
     <image src="/assets/images/create.png"></image>
     立即创建
-  </view>
-</view>
+  </view> -->
+<!-- </view> -->

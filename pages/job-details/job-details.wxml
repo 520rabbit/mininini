@@ -6,14 +6,24 @@
     </view>
     <view class="job-type">职能分类 <text>|</text> 所属部门</view>
   </view>
-  <view>
-    <view>
-      <view> <image class="icon-image" src="/assets/images/type.png"></image> 全职</view>
-      <view> <image class="icon-image" src="/assets/images/time.png"></image>3-5年</view>
-      <view><image class="icon-image" src="/assets/images/education.png"></image>大专</view>
+  <view class="job-bottom">
+    <view class="job-info">
+      <view> <image class="icon-image" src="/assets/images/type.png" mode="widthFix"></image> 全职</view>
+      <view> <image class="icon-image" src="/assets/images/time.png" mode="widthFix"></image>3-5年</view>
+      <view><image class="icon-image" src="/assets/images/education.png" mode="widthFix"></image>大专</view>
     </view>
+    <view class="address"><image class="icon-image address" src="/assets/images/address.png" mode="widthFix"></image>广州市海珠区蚝壳街17号“1号汇创”A座203a</view>
+  </view>
 
-    <view><image class="icon-image" src="/assets/images/address.png"></image>广州市海珠区蚝壳街17号“1号汇创”A座203a</view>
+</view>
+
+<view>
+  <view class="title">
+    <image src="/assets/images/before.png" mode="widthFix"></image>
+    职位描述
+  </view>
+  <view class="job-desc">
+  fsaqeragreqagreagregfweagrewwgeargqatfgrewgfvreagaertgtarehgrsythnbrythaaaaaaaaaafssasffffffffffffffffff
   </view>
 
 </view>

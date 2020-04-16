@@ -117,6 +117,26 @@
 					"pathName": "pages/job-details/job-details",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修改职位",
+					"pathName": "pages/update-job/update-job",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "人才快招",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布竞聘",
+					"pathName": "pages/issue-compete/issue-compete",
+					"scene": null
 				}
 			]
 		}

@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "list": "./children/list/list"
+  },
+  "navigationBarTitleText": "人才快招"
 }

@@ -1,0 +1,86 @@
+/* pages/issue-compete/issue-compete.wxss */  
+/* position: absolute;
+ content: "*";
+  left: 8px;
+  left: var(--padding-xs,8px);
+  font-size: 14px;
+  font-size: var(--cell-font-size,14px);
+  color: #ee0a24;
+  color: var(--cell-required-color,#ee0a24)  */
+
+.get-node {
+  padding: 0 30rpx;
+}
+
+.get-node > .title {
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+
+.select-way {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  padding: 0 20rpx;
+}
+.select-way > button{
+  color: #707070;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+  line-height: 50rpx;
+  background: #F9F9F9;
+  margin-right: 40rpx;
+  margin-left: 0;
+  margin-bottom: 30rpx;
+}
+
+.select-way > button:nth-of-type(3) {
+  margin-right: 0;
+}
+
+.select-way > .currentSelect {
+  background: #FF8853;
+  color: #fff;
+}
+
+
+.minus-class {
+  color:#333!important;
+  background: #fff!important;
+  border: 2rpx solid #ccc!important;
+  margin: 0!important;
+}
+
+.plus-class	 {
+  color:#333!important;
+  background: #fff!important;
+  border: 2rpx solid #ccc!important;
+  margin: 0!important;
+}
+
+.input-class {
+  color:#FF8853!important;
+  background: #fff!important;
+  border-top: 2rpx solid #ccc!important;
+  border-bottom: 2rpx solid #ccc!important;
+  margin: 0!important;
+}
+
+
+.time-dot {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  top: 20rpx;
+  right: 60rpx;
+}
+
+.time-dot > .start {
+  width: 100rpx;
+  border: 1rpx solid #ccc;
+  text-align: center;
+}
+
+.time-dot > .interval {
+  margin: 0 15rpx;
+}

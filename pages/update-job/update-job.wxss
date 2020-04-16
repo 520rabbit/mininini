@@ -1,0 +1,70 @@
+.module {
+  border-top: 16rpx solid #f2f2f2;
+}
+
+.my-optatice {
+  color: #fff;
+}
+
+.my-address {
+  color: #ff5777;          
+}
+
+.picker-box {
+  margin-top: 0rpx;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.work-item {
+  line-height: 80rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #f2f2f2;
+  font-size: 28rpx;
+}
+
+.work-confirm {
+  line-height: 80rpx;
+  border-top: 10rpx solid #f2f2f2;
+  text-align: center;
+  color: #ff5777;
+}
+
+
+
+/* 级联样式 */
+.select {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  line-height: 80rpx;
+  padding: 0 30rpx;
+}
+
+.select > .cancle-picker {
+  color: #707070;
+  font-size: 32rpx;
+  
+}
+
+.select > .confirm-picker {
+  color: #51A736;
+  font-size: 32rpx;
+}
+
+
+.update {
+  display: flex;
+  padding: 0 30rpx;
+  font-size: 26rpx;
+  font-family:'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+}
+
+
+
+/* 级联样式 */
+.aaa {
+  position: relative;
+}

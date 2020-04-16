@@ -1,0 +1,72 @@
+.job {
+  padding: 15rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.job  > .job-state {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-state > .job-name {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 60rpx;
+}
+
+.job-state > .state-step {
+  color: #FF3636;
+  font-size: 30rpx;
+} 
+
+.job > .interview-count  {
+  font-size: 28rpx;
+  color: #959595;
+}
+
+.interview-count  > .job-color {
+  font-size: 30rpx;
+  color: #FFC15E
+}
+
+.compete-wrap {
+  display: flex;
+  justify-content: space-between;
+  background: #FAFAFA;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin-top: 10rpx;
+  overflow: hidden;
+  height: 60rpx;
+}
+
+.compete-wrap > .compete-count {
+  color: #707070;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: left;
+  line-height: 70rpx;
+}
+
+.compete-count > view {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+} 
+
+.compete-count > view > image  {
+ width: 46rpx;
+  height: 46rpx;
+  margin-right: 10rpx;
+} 
+
+.person-count {
+  color: #FE9567;
+  font-size: 30rpx;
+  line-height: 70rpx;
+}
+
+.person-count > van-icon {
+  color: #707070;
+}
