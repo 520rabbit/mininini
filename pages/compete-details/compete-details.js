@@ -1,19 +1,13 @@
-// pages/home/home.js
+// pages/compete-details/compete-details.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    active: '0'
+
   },
 
-  // 跑去发布竞聘
-  goIssue () {
-    wx.navigateTo({
-      url: '../issue-compete/issue-compete',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */

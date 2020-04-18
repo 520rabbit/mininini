@@ -1,0 +1,143 @@
+<view class="details-banner">
+  <view>交付类型：面试通过</view>
+  <view>所需快招币：300个/人</view>
+  <view>冻结快招币总额：1200币</view>
+</view>
+
+<view class="wrap">
+  <view class="compete-info">
+    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+    <view class="person-info">
+      <view class="name">ui小姐姐</view>
+      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
+   </view>
+  </view>
+
+  <view class="interview-info">
+    <view class="interview-delay" hidden="true">面试延迟</view>
+    <view class="interview-sign">允许面试</view>
+  </view>
+</view>
+
+<view class="wrap">
+  <view class="compete-info">
+    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+    <view class="person-info">
+      <view class="name">ui小姐姐</view>
+      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
+   </view>
+  </view>
+
+  <view class="interview-info">
+    <view class="interview-delay" hidden="true">面试延迟</view>
+    <view class="interview-sign already">允许面试</view>
+  </view>
+</view>
+
+<view class="wrap">
+  <view class="compete-info">
+    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+    <view class="person-info">
+      <view class="name">ui小姐姐</view>
+      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
+   </view>
+  </view>
+
+  <view class="interview-info">
+    <view class="interview-delay">面试延迟</view>
+    <view class="interview-sign">面试签到</view>
+  </view>
+</view>
+
+<view class="wrap">
+  <view class="compete-info">
+    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+    <view class="person-info">
+      <view class="name">ui小姐姐</view>
+      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
+   </view>
+  </view>
+
+  <view class="interview-info">
+    <view class="interview-delay" hidden="true">面试延迟</view>
+    <view class="interview-sign">面试通过</view>
+  </view>
+</view>
+
+<view class="wrap">
+  <view class="compete-info">
+    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+    <view class="person-info">
+      <view class="name">ui小姐姐</view>
+      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
+   </view>
+  </view>
+
+  <view class="interview-info">
+    <view class="interview-delay" hidden="true">面试延迟</view>
+    <view class="interview-sign already">面试通过</view>
+  </view>
+</view>
+
+
+<view class="wrap">
+  <view class="compete-info">
+    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+    <view class="person-info">
+      <view class="name">ui小姐姐</view>
+      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
+   </view>
+  </view>
+
+  <view class="interview-info">
+    <view class="interview-delay" hidden="true">面试延迟</view>
+    <view class="interview-sign">成功入职</view>
+  </view>
+
+  
+</view>
+
+<view class="wrap">
+  <view class="compete-info">
+    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+    <view class="person-info">
+      <view class="name">ui小姐姐</view>
+      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
+   </view>
+  </view>
+
+  <view class="interview-info">
+    <view class="interview-delay" hidden="true">面试延迟</view>
+    <view class="interview-sign already">成功入职</view>
+  </view>
+</view>
+
+<view class="wrap">
+  <view class="compete-info">
+    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+    <view class="person-info">
+      <view class="name">ui小姐姐</view>
+      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
+   </view>
+  </view>
+
+  <view class="interview-info">
+    <view class="interview-delay" hidden="true">面试延迟</view>
+    <view class="interview-sign">通过保过</view>
+  </view>
+</view>
+
+<view class="wrap">
+  <view class="compete-info">
+    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+    <view class="person-info">
+      <view class="name">ui小姐姐</view>
+      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
+   </view>
+  </view>
+
+  <view class="interview-info">
+    <view class="interview-delay" hidden="true">面试延迟</view>
+    <view class="interview-sign already">通过保过</view>
+  </view>
+</view>

@@ -4,11 +4,11 @@
   <van-cell-group>
     <van-field
       value="{{ username }}"
+      input-align="right"
       required
       clearable
       label="职位选择"
       icon="arrow"
-      placeholder="请输入用户名"
       bind:click-icon="onClickIcon"
     />
     <van-cell required >
@@ -34,34 +34,68 @@
     </van-cell>
 
     <van-cell required is-link >
-
-    <view class="time-dot">
-      <view class="start" bindtap="showStart">{{startTime}}</view>
-      <view class="interval">至</view>
-      <view class="start">{{endTIme}}</view>
-    </view>
-      
+      <view class="time-dot">
+        <view class="start" bindtap="showStart">{{startTime}}</view>
+        <view class="interval">至</view>
+        <view class="start">{{endTIme}}</view>
+      </view>
       <view slot="title">
         <view class="van-cell-text">面试时间段</view>
       </view>
     </van-cell>
-
-    
-
-    
   </van-cell-group>
 </view>
- <!-- :class="{{currentSelect == }}"  -->
- <view class="get-node">
-    <view class="title">交付节点</view>
-    <view class="select-way">
-      <block wx:for="{{jobWay}}" wx:key="index" >
-        <button data-id="{{index}}" class="{{currentSelect == index ? 'currentSelect' : ' '}}" bindtap="as" >{{item}}</button>
-      </block>
+<view class="get-node">
+  <view class="title">交付节点</view>
+  <image class="hint" bindtap="showNode" src="/assets/images/hint.png"></image>
+  <view class="select-way">
+    <block wx:for="{{jobWay}}" wx:key="index" >
+      <button data-index="{{item.id}}" class="{{item.id == jobId ? 'currentSelect' : ' '}}" bindtap="selectItem" >{{item.value}}</button>
+    </block>
+  </view>
+</view>
+
+<view class="get-node">
+  <view class="title">发布渠道</view>
+  <view class="select-way">
+    <block wx:for="{{issue}}" wx:key="index" >
+      <button data-index="{{item.issue_id}}" class="{{ item.issue_id == issueSelect ? 'currentSelect' : ' '}}" bindtap="selectIssue">{{item.issue_name}}</button>
+    </block>
+  </view>
+</view>
+<view class="must-need">
+  <van-cell required >
+    <view>10个 </view>
+    <view slot="title">
+      <view class="van-cell-text">需冻结快招币</view>
     </view>
- </view>
+  </van-cell>
 
+  <van-cell required >
+    <van-switch checked="{{ checked }}" bind:change="isTrue" size="14px" active-color="#FF8853" inactive-color="#ccc" />
+    <view slot="title">
+      <view class="van-cell-text">是否简历预审</view>
+    </view>
+  </van-cell>
+</view>
 
+<van-popup show="{{ showNode }}" custom-style="border-radius: 10rpx;">
+  <view class="node-popover">
+    <view class="popover-img"><image src="/assets/images/issue-popover.png" mode="widthFix"></image></view>
+    <view class="title">交付标准操作时长</view>
+    <view class="node-item">[到场面试]<text>T+3  (T为到场面试当天）</text></view>
+    <view class="node-item">[面试通过]<text>T+3  (T为面试通过当天）</text></view>
+    <view class="node-item">[成功入职]<text>T+15 (T为成功入职当天）</text></view>
+    <view class="node-item">[保过一月]<text>T+35 (T为成功入职当天）</text></view>
+    <view class="node-item">[保过三月]<text>T+95 (T为成功入职当天）</text></view>
+  </view>
+  <view class="close-popover" bindtap="nodeClose">知道了</view>
+</van-popup>
+
+<view class="footer">
+  <view class="back" bindtap="backPrev">返回</view>
+  <view class="save" bindtap="goMine"><image class="btn" src="/assets/images/issue.png"></image> 立即发布</view>
+</view>
 
 
 <!-- 报名截止时间时间选择 -->
@@ -77,7 +111,7 @@
 </van-popup>
 
 <!-- 面试日期时间选择 -->
-<van-popup show="{{ showInterview }}"  position="bottom" >
+<van-popup show="{{ showInterview }}" position="bottom" >
   <van-datetime-picker
     type="date"
     value="{{ currentDate }}"
@@ -100,7 +134,6 @@
   />
 </van-popup>
 
-
 <!-- 面试介绍时间 -->
 <van-popup show="{{ showEnd }}"  position="bottom" >
   <van-datetime-picker
@@ -112,3 +145,7 @@
     bind:cancel="onClose"
   />
 </van-popup>
+
+
+
+ 

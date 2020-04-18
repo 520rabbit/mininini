@@ -136,6 +136,21 @@
 					"id": -1,
 					"name": "发布竞聘",
 					"pathName": "pages/issue-compete/issue-compete",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "竞聘详情",
+					"pathName": "pages/compete-details/compete-details",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "面试邀约",
+					"pathName": "pages/interview-invite/interview-invite",
+					"query": "",
 					"scene": null
 				}
 			]

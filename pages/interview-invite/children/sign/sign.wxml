@@ -1,0 +1,33 @@
+<!--pages/home/children/list/list.wxml-->
+<view class="job">
+  <view class="job-state">
+    <view class="job-name">前端工程师</view>
+    <view class="state-step">应约数：5人</view>
+  </view>
+    <view class="interview-count">广东省广州市<text>|</text>3-5年<text>|</text>大专</view>
+    <view class="interview-count">面试时间：<text class="job-color">2020-3-23 11:00 - 16:00</text></view>
+</view>
+
+<view class="job">
+  <view class="job-state">
+    <view class="job-name">前端工程师</view>
+    <view class="state-step">应约数：5人</view>
+  </view>
+    <view class="interview-count">广东省广州市<text>|</text>3-5年<text>|</text>大专</view>
+    <view class="interview-count">面试时间：<text class="job-color">2020-3-23 11:00 - 16:00</text></view>
+</view>
+
+<view class="job">
+  <view class="job-state">
+    <view class="job-name">前端工程师</view>
+    <view class="state-step">应约数：5人</view>
+  </view>
+    <view class="interview-count">广东省广州市<text>|</text>3-5年<text>|</text>大专</view>
+    <view class="interview-count">面试时间：<text class="job-color">2020-3-23 11:00 - 16:00</text></view>
+</view>
+
+
+
+
+
+

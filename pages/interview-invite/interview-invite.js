@@ -1,18 +1,17 @@
-// pages/home/home.js
+// pages/interview-invite/interview-invite.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    active: '0'
+    active: 0
   },
-
-  // 跑去发布竞聘
-  goIssue () {
-    wx.navigateTo({
-      url: '../issue-compete/issue-compete',
-    })
+  onChange(event) {
+    wx.showToast({
+      title: `切换到标签 ${event.detail.name}`,
+      icon: 'none'
+    });
   },
   /**
    * 生命周期函数--监听页面加载

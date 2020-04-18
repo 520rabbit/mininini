@@ -11,7 +11,9 @@
     "pages/check-no/check-no",
     "pages/job-details/job-details",
     "pages/update-job/update-job",
-    "pages/issue-compete/issue-compete"
+    "pages/issue-compete/issue-compete",
+    "pages/compete-details/compete-details",
+    "pages/interview-invite/interview-invite"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
@@ -33,7 +35,9 @@
     "van-picker": "@vant/weapp/picker/index",
     "van-stepper": "@vant/weapp/stepper/index",
     "van-datetime-picker": "@vant/weapp/datetime-picker/index",
-    "van-popup": "@vant/weapp/popup/index"
+    "van-popup": "@vant/weapp/popup/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "van-search": "@vant/weapp/search/index"
   },
   "tabBar": {
     "selectedColor": "#FD8952",

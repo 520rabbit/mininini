@@ -1,0 +1,16 @@
+<!--pages/interview-invite/interview-invite.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange" swipeable sticky nav-class="nav-class" color="#FF8853">
+  <van-tab title="预约中">
+    <inviting />
+  </van-tab>
+  <van-tab title="面试签到">
+    <sign />
+  </van-tab>
+  <van-tab title="面试结束">
+    <sign />
+  </van-tab>
+</van-tabs>
+
+<view class="create">创建预约</view>
+
+          

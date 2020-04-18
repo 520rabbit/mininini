@@ -26,8 +26,46 @@ Page({
     showStart: false, // 开始时间
     endTIme: '11:00', // 结束时间
     showEnd: false, // 结束时间
-    jobWay: ['到场面试', '面试通过', '成功入职', '保过一个月', '保过三个月'],
-    currentSelect: 0
+    jobId: '', // 交付节点单选
+    jobWay: [
+      {
+        value: '到场面试',
+        id: '1'
+      },
+      {
+        value: '面试通过',
+        id: '2'
+      },
+      {
+        value: '成功入职',
+        id: '3'
+      },
+      {
+        value: '保过一个月',
+        id: '4'
+      },
+      {
+        value: '保过三个月',
+        id: '5'
+      }
+    ],
+    issueSelect: '',
+    issue: [{
+      issue_id: '10',
+      issue_name:'公开竞聘',
+      isSelect: false
+      },
+      {
+        issue_id: '11',
+        issue_name: 'ssc推荐',
+        isSelect: false
+      }],
+    showNode: false // 交付节点
+  },
+
+  isTrue({ detail }) {
+    // 需要手动对 checked 状态进行更新
+    this.setData({ checked: detail });
   },
 
   // 展示报名截止时间
@@ -71,25 +109,48 @@ Page({
       showStart: true
     })
   },
-
+  // 确定开始时间
   confirmStart (e) {
-    console.log(e.detail)
     this.setData({
       startTime: e.detail,
       showStart: false
     })
   },
-
-  as (e) {
-    console.log(e.currentTarget.dataset.id)
-    const currentIndex = e.currentTarget.dataset.id
+  // 交付节点data-
+  selectItem (e) {
+    console.log(e.currentTarget.dataset)
+    const index = e.currentTarget.dataset.index
+    console.log(index)
     this.setData({
-      currentSelect: currentIndex
+      jobId: index
     })
-    console.log(this.data.currentSelect)
+  },
+
+  // 发布渠道
+  selectIssue (e) {
+    var issueSelect = e.currentTarget.dataset.index;
+    // var item = this.data.issue[index]
+    // item.isSelect = !item.isSelect
+    this.setData({
+      issueSelect: issueSelect
+      // issue: this.data.issue
+    })
+    console.log()
   },
 
 
+  // 节点
+  showNode () {
+    this.setData({
+      showNode: true
+    })
+  },
+
+  nodeClose () {
+    this.setData({
+      showNode: false
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
