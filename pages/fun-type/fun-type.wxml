@@ -1,0 +1,28 @@
+<!--pages/fun-type/fun-type.wxml-->
+
+  <van-cell is-link bind:click="showSecond" wx:for="{{parent}}"  data-index="{{firstIndex}}"  wx:for-item="first" wx:for-index="firstIndex" wx:key="{{firstIndex}}">
+    <view slot="title">
+      <view class="van-cell-text">{{first.name}}</view>
+    </view>
+  </van-cell>
+
+
+<van-popup show="{{ popoverSecond }}" bind:close="onClose" custom-style="height: 80%" position="bottom">
+  <view class="list">
+    <view class="list-left"  wx:for="{{second}}" wx:for-item="list" wx:for-index="tmp" hidden="{{tmp != currentIndex }}"  wx:key="{{tmp}}">
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view bindtap="selectOne"  data-title="{{item}}" class="{{ index == currentIndex ? 'current' : ''}}">{{item.value}}</view>
+      </block>
+    </view>
+    <!-- <view class="list-right">
+      <view wx:for="{{second}}" wx:for-item="list" wx:for-index="tmp" hidden="{{tmp != currentIndex }}"  wx:key="{{tmp}}"> 
+        <block>
+          <view wx:for="{{list}}" wx:for-item="item" wx:for-index="index"  wx:key="index">{{item.value}}</view>
+        </block>
+      </view>
+    </view> -->
+  </view>
+
+
+</van-popup>
+

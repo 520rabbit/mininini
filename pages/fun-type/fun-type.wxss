@@ -1,0 +1,21 @@
+/* pages/fun-type/fun-type.wxss */
+.list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list > .list-left {
+  width: 50%;
+  text-align: center;
+  background: pink;
+  line-height: 60rpx;
+}
+
+.list > .list-right {
+  flex: 1;
+  text-align: center;
+}
+
+.list-left .current {
+  color: #ff5777;
+}

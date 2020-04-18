@@ -8,8 +8,17 @@
       icon="arrow"
       right-icon-class="my-optatice"
     />
+
+    <van-cell required is-link bind:click="showSalary">
+      <view>213333333</view>
+      <view slot="title">
+        <view class="van-cell-text">职能分类</view>
+      </view>
+    </van-cell>
+
+
     <van-field
-      value="{{ jobname }}"
+      value="{{ detailsAddress }}"
       label="详细地址"
       required
       input-align="right"
@@ -23,7 +32,7 @@
 <view class="module">
   <van-cell-group>
     <van-field
-      value="{{ jobname }}"
+      value="{{ branch }}"
       label=" 所属部门"
       required
       input-align="right"
@@ -40,69 +49,59 @@
       icon="arrow"
       bind:focus="showSelectWork"
     />
+    <van-cell required is-link bind:click="showSalary">
+      <view data-id="{{salaryId}}">{{jobSalary}}</view>
+      <view slot="title">
+        <view class="van-cell-text">月薪</view>
+      </view>
+    </van-cell>
 
     <van-field
-      value="{{ salary }}"
-      label=" 职位月薪"
+      value="{{ education }}"
+      label=" 学历要求"
       required
       input-align="right"
       icon="arrow"
-      bind:focus="showSelectWork"
+      bind:focus="showSelectEducation"
     />
 
+
+<van-cell-group>
+  <van-cell title="职位描述" required border="{{false}}" />
+    <van-field
+      value="{{ message }}"
+      type="textarea"
+      autosize
+      border="{{false}}"
+      input-class="job-desc"
+    />
+</van-cell-group>
+
+
   </van-cell-group>
-<!-- <view class="update">
-  <view class="item">工作性质</view>
-  <view hidden="{{myData}}">
-    <view class="select">
-      <view class="cancle-picker"  bindtap="cancleSelect">取消</view>
-      <view class="confirm-picker" bindtap="confirmSelect">确定</view>
-    </view>
-    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}"  
-    bindcolumnchange="asd"  bindchange="bindChange" range>
-      <picker-view-column data-id="1" >
-        <view wx:for="{{years}}" style="line-height: 50px" wx:key="index">{{item}}年</view>
-      </picker-view-column>
-      <picker-view-column>
-        <view wx:for="{{months}}" style="line-height: 50px" wx:key="index">{{item}}月</view>
-      </picker-view-column>
-      <picker-view-column>
-        <view wx:for="{{days}}" style="line-height: 50px" wx:key="index">{{item}}日</view>
-      </picker-view-column>
-    </picker-view>
-  </view>
-</view> -->
+
 </view>
 
 <!-- 工作性质 -->
-<van-action-sheet show="{{ show }}" title="工作性质">
+<van-action-sheet show="{{ showWork }}" title="工作性质">
   <view class="work-item" data-index="{{index}}" bindtap="selectWork" wx:for="{{workData}}" wx:key="index">{{item.name}}</view>
   <view class="work-confirm" bindtap="cancleShow">取消</view>
 </van-action-sheet>
 
-<!-- 职位月薪 -->
-<!-- <van-picker columns="{{ columns }}" bind:change="onChange" />
- -->
+<!-- 学历要求 -->
+<van-action-sheet show="{{ showEducation }}" title="学历要求">
+  <view class="work-item" data-index="{{index}}" bindtap="selectEducation" wx:for="{{educationData}}" wx:key="index">{{item.name}}</view>
+  <view class="work-confirm" bindtap="cancleShow">取消</view>
+</van-action-sheet>
 
 
-<!-- <view class="my-picker">
-  <view bindtap="showData" >{{year}}年{{month}}月{{day}}日</view>
-  <view hidden="{{myData}}">
-    <view class="select">
-      <view class="cancle-picker"  bindtap="cancleSelect">取消</view>
-      <view class="confirm-picker" bindtap="confirmSelect">确定</view>
-    </view>
-    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}"  
-    bindcolumnchange="asd"  bindchange="bindChange" range>
-      <picker-view-column data-id="1" >
-        <view wx:for="{{years}}" style="line-height: 50px" wx:key="index">{{item}}年</view>
-      </picker-view-column>
-      <picker-view-column>
-        <view wx:for="{{months}}" style="line-height: 50px" wx:key="index">{{item}}月</view>
-      </picker-view-column>
-      <picker-view-column>
-        <view wx:for="{{days}}" style="line-height: 50px" wx:key="index">{{item}}日</view>
-      </picker-view-column>
-    </picker-view>
-  </view>
-</view> -->
+<!-- 月薪 -->
+<van-popup show="{{ showSalary }}"  position="bottom" >
+  <van-picker columns="{{ salary }}" 
+    bind:change="selectSsalary" 
+    show-toolbar 
+    title="请选择月薪"
+    bind:confirm="confirmSalary"
+    bind:cancel="closeShow"
+    />
+</van-popup>

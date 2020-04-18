@@ -1,0 +1,84 @@
+<!--pages/result/result.wxml-->
+<van-search
+  value="{{ value }}"
+  placeholder="输入姓名/职位名称"
+  left-icon="none"
+  bind:change="onChange"
+  bind:search="onSearch"
+  placeholder-style="text-align: center"
+  custom-class="custom-class"
+>
+</van-search>
+<view class="wrap">
+  <view class="compete-info">
+    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+    <view class="person-info">
+      <view class="name">ui小姐姐</view>
+      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
+   </view>
+  </view>
+
+  <view class="result-info">
+    <view class="info-item">  
+      <view>类型</view>
+      <view class="state">到场面试</view>
+    </view>
+    <view class="info-item">  
+      <view>职位</view>
+      <view>高级营养师</view>
+    </view>
+    <view class="info-item">  
+      <view>通过日期</view>
+      <view>2019-05-25</view>
+    </view>
+  </view>
+</view>
+
+<view class="wrap">
+  <view class="compete-info">
+    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+    <view class="person-info">
+      <view class="name">ui小姐姐</view>
+      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
+   </view>
+  </view>
+
+  <view class="result-info">
+    <view class="info-item">  
+      <view>类型</view>
+      <view class="state">到场面试</view>
+    </view>
+    <view class="info-item">  
+      <view>职位</view>
+      <view>高级营养师</view>
+    </view>
+    <view class="info-item">  
+      <view>通过日期</view>
+      <view>2019-05-25</view>
+    </view>
+  </view>
+</view>
+<view class="wrap">
+  <view class="compete-info">
+    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+    <view class="person-info">
+      <view class="name">ui小姐姐</view>
+      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
+   </view>
+  </view>
+
+  <view class="result-info">
+    <view class="info-item">  
+      <view>类型</view>
+      <view class="state">到场面试</view>
+    </view>
+    <view class="info-item">  
+      <view>职位</view>
+      <view>高级营养师</view>
+    </view>
+    <view class="info-item">  
+      <view>通过日期</view>
+      <view>2019-05-25</view>
+    </view>
+  </view>
+</view>

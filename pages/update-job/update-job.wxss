@@ -62,9 +62,14 @@
   color: #333;
 }
 
+.van-icon-close:before{
+  content: ""!important;
+}
 
-
-/* 级联样式 */
-.aaa {
-  position: relative;
+.job-desc {
+  border: 2rpx solid #cfcfcf!important;
+  padding: 10rpx 30rpx!important;
+  border-radius: 10rpx!important;
+  line-height: 48rpx!important;
+  min-height: 300rpx!important;
 }

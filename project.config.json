@@ -152,6 +152,20 @@
 					"pathName": "pages/interview-invite/interview-invite",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "交付结果",
+					"pathName": "pages/result/result",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "职能分类",
+					"pathName": "pages/fun-type/fun-type",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

@@ -5,9 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    jobname: '',
-    workNat: '',
-    show: false,
+    jobname: '', // 职位名称
+    detailsAddress: '', // 详细地址
+    branch: '', //所属部门
+    workNat: '', // 工作性质
+    jobSalary: '', // 月薪
+    education: '', // 学历要求
+    showWork: false, // 工作性质显示隐藏
+    showEducation: false, // 学历要求显示隐藏
     workData: [
       {  // 工作性质
         name: '不限',
@@ -23,52 +28,112 @@ Page({
       },
       {
         name: '实习',
-        state: '0'
+        state: '0',
+        subname: '副文本',
+        openType: 'share'
       }
     ],
-    salary: '',
-    columns: [
-      // 第一列
-      {
-        values: ['周一', '周二', '周三', '周四', '周五'],
-        defaultIndex: 2
+    educationData: [
+      {  // 工作性质
+        name: '不限',
+        state: '0'
       },
-      // 第二列
       {
-        values: ['上午', '下午', '晚上'],
-        defaultIndex: 1
+        name: '1-3年',
+        state: '0'
+      },
+      {
+        name: '3-5年',
+        state: '0'
+      },
+      {
+        name: '5年以上',
+        state: '0',
+        subname: '副文本',
+        openType: 'share'
       }
-    ]
+    ],
+    showSalary: false,
+    salaryId: '',
+    salary: [
+      {
+        text: '3k',
+        id: 2
+      }, 
+      {
+        text: '4k',
+        id: 4
+      }
+    ],
   },
 
-  good () {
-    
+  selectSsalary (e) {
+    console.log(e.detail.value.text)
   },
 
+  showSalary () {
+    this.setData({
+      showSalary: true
+    })
+  },
 
+  // 确定选择月薪
+  confirmSalary (e) {
+    console.log(e.detail.value.text)
+    this.setData({
+      jobSalary: e.detail.value.text,
+      salaryId: e.detail.value.id,
+      showSalary: false
+    })
+  },
+   // 取消选择月薪
+  closeShow () {
+    this.setData({
+      showSalary: false
+    })
+  },
 
-
-
-
+  // 工作性质
   showSelectWork () {
     this.setData({
-      show: true
+      showWork: true
     })
   },
   // 取消工作性质选择
   cancleShow () {
     this.setData({
-      show: false
+      showWork: false
     })
   },
-
   // 选择工作性质 
   selectWork (e) {
     console.log(this.data.workData[e.currentTarget.dataset.index].name)
     const workNat = this.data.workData[e.currentTarget.dataset.index].name
     this.setData({
       workNat: workNat,
-      show: false
+      showWork: false
+    })
+  },
+
+  // 学历要求
+  showSelectEducation () {
+    this.setData({
+      showEducation: true
+    })
+  },
+  // 取消学历要求选择
+  cancleShow() {
+    this.setData({
+      showEducation: false
+    })
+  },
+  // 选择学历要求
+  selectEducation(e) {
+    console.log(this.data.educationData[e.currentTarget.dataset.index].name)
+    const education = this.data.educationData[e.currentTarget.dataset.index].name
+    this.setData({
+      education: education,
+      showEducation: false
     })
   },
 

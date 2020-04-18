@@ -1,0 +1,88 @@
+.custom-class {
+  border-bottom: 2rpx solid #F5F5F5;
+}
+
+.wrap {
+  width: 690rpx;
+  margin: auto;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 10rpx 5rpx #FFFAF7;
+  }
+
+.compete-info {
+  display: flex;
+  justify-content: left;
+  margin-top: 42rpx;
+  padding-bottom: 10rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.compete-info > .avatar {
+  width: 80rpx;
+  margin-right: 15rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.compete-info > .avatar > image {
+  width: 100%;
+}
+
+.compete-info > .person-info {
+  flex: 1;
+}
+
+.person-info > .name {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.person-info > .sex {
+  font-size: 28rpx;
+  color: #777;
+  line-height: 60rpx;
+}
+
+.person-info > .sex > text {
+    margin: 0 10rpx;
+}
+
+.result-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.result-info > .info-item {
+  width: 33%;
+  text-align: center;
+  position: relative;
+  font-size: 26rpx;
+  line-height: 42rpx;
+  color: #707070;
+}
+
+.result-info > .info-item::after {
+  position: absolute;
+  top: 20rpx;
+  right: 0;
+  display: block;
+  content: '';
+  height: 50rpx;
+  width: 2rpx;
+  background: #f2f2f2;
+}
+
+.result-info > .info-item:last-of-type::after {
+  width: 0;
+}
+
+.info-item > .state {
+  color: #FF8853;
+  letter-spacing: 2rpx;
+}
