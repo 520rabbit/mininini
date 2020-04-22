@@ -4,9 +4,9 @@
 </view>
 <van-grid border="{{ false }}" >
   <van-grid-item icon="/assets/images/nav-issu.png" text="发布竞聘" bind:click="goIssue" />
-  <van-grid-item icon="/assets/images/nav-create.png" text="创建职位" />
-  <van-grid-item icon="/assets/images/nav-interview.png" text="面试预约" />
-  <van-grid-item icon="/assets/images/nav-result.png" text="交付成果" />
+  <van-grid-item icon="/assets/images/nav-create.png" text="创建职位" bind:click="goUpadte"  />
+  <van-grid-item icon="/assets/images/nav-interview.png" text="面试预约" bind:click="goInvite" />
+  <van-grid-item icon="/assets/images/nav-result.png" text="交付成果"  bind:click="goResult" />
 </van-grid>
 
 <view>
@@ -17,11 +17,10 @@
           <list />
         </van-tab>
         <van-tab title="简历预审">
-                    <list />
+          <list />
         </van-tab>
         <van-tab title="面试签到">
-                  <list />
-        
+          <list />
         </van-tab>
         <van-tab title="面试审核"></van-tab>
         <van-tab title="入职审核"></van-tab>
@@ -29,10 +28,10 @@
       </van-tabs>
     </van-tab>
     <van-tab name="1" title="审核不通过">
-                <list />
+      <list />
     </van-tab>
     <van-tab name="2" title="已完成">
-                <list />
+      <list />
     </van-tab>
   </van-tabs>
 </view>

@@ -4,6 +4,10 @@
   border-bottom: 2rpx solid #f2f2f2;
 }
 
+.job:last-of-type {
+  margin-bottom: 150rpx;
+}
+
 .job  > .job-state {
   display: flex;
   justify-content: space-between;

@@ -7,11 +7,31 @@ Page({
   data: {
     active: '0'
   },
+  // 跑去交付成功
+  goResult (){
+    wx.navigateTo({
+      url: '../result/result',
+    })
+  },
+
+  //跑去面试邀约
+  goInvite() {
+    wx.navigateTo({
+      url: '../interview-invite/interview-invite'
+    })
+  },
+
+  //跑去创建职位
+  goUpadte (){
+    wx.navigateTo({
+      url: '../update-job/update-job'
+    })
+  },
 
   // 跑去发布竞聘
   goIssue () {
     wx.navigateTo({
-      url: '../issue-compete/issue-compete',
+      url: '../issue-compete/issue-compete'
     })
   },
   /**
@@ -25,14 +45,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    console.log(wx.getStorageSync('myCode'))
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**

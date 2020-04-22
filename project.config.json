@@ -4,12 +4,13 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
@@ -18,8 +19,7 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		},
-		"nodeModules": true
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.4",
@@ -164,6 +164,27 @@
 					"id": -1,
 					"name": "职能分类",
 					"pathName": "pages/fun-type/fun-type",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "企业信息",
+					"pathName": "pages/company-info/company-info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "资质认证",
+					"pathName": "pages/aptitude/aptitude",
 					"query": "",
 					"scene": null
 				}

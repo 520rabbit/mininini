@@ -9,10 +9,24 @@
       right-icon-class="my-optatice"
     />
 
-    <van-cell required is-link bind:click="showSalary">
-      <view>213333333</view>
+    <van-cell required is-link bindtap="slelctJob">
+      <view class="salary">{{jobType}}</view>
+      <view slot="title">
+        <view class="van-cell-text">选择行业</view>
+      </view>
+    </van-cell>
+
+    <van-cell required is-link bindtap="slelctJob">
+      <view class="salary">{{jobType}}</view>
       <view slot="title">
         <view class="van-cell-text">职能分类</view>
+      </view>
+    </van-cell>
+
+    <van-cell required is-link bindtap="slelctJob">
+      <view class="salary">{{jobType}}</view>
+      <view slot="title">
+        <view class="van-cell-text">城市区域</view>
       </view>
     </van-cell>
 
@@ -40,7 +54,6 @@
       right-icon-class="my-optatice"
     >
     </van-field>
-
     <van-field
       value="{{ workNat }}"
       label=" 工作性质"
@@ -50,11 +63,21 @@
       bind:focus="showSelectWork"
     />
     <van-cell required is-link bind:click="showSalary">
-      <view data-id="{{salaryId}}">{{jobSalary}}</view>
+      <view class="salary" data-id="{{salaryId}}">{{jobSalary}}</view>
       <view slot="title">
-        <view class="van-cell-text">月薪</view>
+        <view class="van-cell-text">职位月薪</view>
       </view>
     </van-cell>
+
+    <van-field
+      value="{{ education }}"
+      label="工作年限"
+      required
+      input-align="right"
+      icon="arrow"
+      bind:focus="showSelectEducation"
+    />
+
 
     <van-field
       value="{{ education }}"
@@ -66,7 +89,7 @@
     />
 
 
-<van-cell-group>
+<van-cell-group class="last-one" >
   <van-cell title="职位描述" required border="{{false}}" />
     <van-field
       value="{{ message }}"
@@ -105,3 +128,14 @@
     bind:cancel="closeShow"
     />
 </van-popup>
+
+<view class="job-list" hidden="{{isShowJob}}">
+  <fun-type bind:getJob="getMyJob" parent="{{parent}}" />
+</view>
+
+
+<!-- 底部按钮 -->
+<view class="footer">
+  <view class="back" bindtap="backPrev">返回</view>
+  <view class="save" bindtap="goMine"><image class="btn" src="/assets/images/editor.png"></image>立即保存</view>
+</view>

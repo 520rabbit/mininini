@@ -13,6 +13,14 @@ Page({
       icon: 'none'
     });
   },
+
+
+  // 跑回上一步
+  backPrv () {
+    wx.navigateBack({
+      data: 1
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

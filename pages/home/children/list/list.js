@@ -18,6 +18,17 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    // 查看竞聘人数详情
+    goDetails () {
+      wx.navigateTo({
+        url: '../../../../compete-details/compete-details'
+      })
+    },
+    // 查看职位详情
+    goJobDetails () {
+      wx.navigateTo({
+        url: '../../../../job-details/job-details'
+      })
+    }
   }
 })

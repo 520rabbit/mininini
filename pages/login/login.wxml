@@ -1,0 +1,26 @@
+<view class="login-banner">
+  <view>即招平台</view>
+  <view>专注企业人才快招管理</view>
+</view>
+
+<view class="title">注册/登录</view>
+
+
+<view class="login">
+  <view class="phone">
+    <input value="{{form.loginuser}}" bindinput="inputPhone" type="number" maxlength="11"  auto-focus placeholder="请输入企业注册时手机号码"/>
+  </view>
+  <view class="code-wrap">
+    <view class="code">
+      <input bindinput="codePhone"  auto-focus placeholder="请输入手机验证码"/>
+    </view>
+    <view class="get-code" bindtap="phoneCode"> <button disabled="{{disabled}}">{{currentTime}}</button> </view>
+  </view>
+</view>
+
+<view class="save" bindtap="handlerLogin">注册/登录</view>
+<!-- footer按钮 -->
+<!-- <view class="footer">
+  <view class="back" bindtap="backPrev">返回</view>
+  <view class="save" bindtap="handlerupdate">注册/登录</view>
+</view> -->

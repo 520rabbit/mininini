@@ -21,6 +21,14 @@ Page({
     }
   },
 
+
+  // 跑去创建职位
+  goUpdate () {
+    wx.navigateTo({
+      url: '../update-job/update-job',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

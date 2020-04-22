@@ -1,0 +1,103 @@
+<view class="info-title">企业信息</view>
+<view>
+
+  <van-cell-group>
+    <van-field
+      value="{{ username }}"
+      input-align="right"
+      required
+      clearable
+      label="执照名称"
+      placeholder="请输入用户名"
+      input-class="input-class"
+    />
+
+    <van-field
+      value="{{province}}{{city}}{{county}}"
+      data-title="{{province}}{{city}}{{county}}"
+      input-align="right"
+      required
+      is-link
+      label="所在地区"
+      placeholder="请选择所在地"
+      bindfocus="selectCity" 
+    />
+
+
+    <van-field
+      value="{{ nature }}"
+      input-align="right"
+      required
+      is-link
+      label="企业性质"
+      placeholder="请选择企业性质"
+      bind:focus="natureChange"
+    />
+
+    <van-field
+      value="{{ username }}"
+      input-align="right"
+      required
+      is-link
+      label="企业规模"
+      placeholder="请选择企业规模"
+    />
+      <van-cell required bindtap="slelctJob">
+      <view class="salary">查看示例</view>
+      <view slot="title">
+        <view class="van-cell-text">企业logo</view>
+      </view>
+    </van-cell>
+
+
+  </van-cell-group>
+</view>
+
+
+<view class="upload">
+
+  <view class="help-img">
+    <image src="/assets/images/upload.png" node="widthFix" />
+  </view>
+
+  <van-uploader class="upload-img"
+      file-list="{{ fileList }}"
+      use-before-read
+      bind:before-read="beforeRead"
+      bind:after-read="afterRead"
+    />
+</view>
+
+    
+<!-- footer按钮 -->
+<view class="footer">
+  <view class="back" bindtap="backPrev">返回</view>
+  <view class="save" bindtap="handlerupdate">下一步</view>
+</view>
+
+<!-- 所在地区 -->
+<van-overlay show="{{ condition }}" />
+<view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="slideCity" class="citybody">
+    <view class="cityheader">
+      <view bindtap="selectCity" class="city-cancel">取消</view>
+      <view bindtap="selectCity" class="city-true">确定</view>
+    </view>
+
+    <picker-view-column>
+      <view wx:for="{{provinces}}" class="item" wx:key="item" >{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" class="item" wx:key="item" >{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" class="item" wx:key="item" >{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+<!-- 企业性质 -->
+<van-action-sheet show="{{ showNature }}" title="企业性质">
+  <view class="work-item" bindtap="selectNature" data-index="{{index}}" wx:for="{{natureList}}" wx:key="{{index}}">{{item.name}}</view>
+  <view class="work-confirm" bindtap="cancleShow">取消</view>
+</van-action-sheet>

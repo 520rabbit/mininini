@@ -27,3 +27,9 @@
   </view>
 
 </view>
+
+
+<view class="footer">
+  <view class="back" bindtap="backPrev">返回</view>
+  <view class="save" bindtap="goMine"><image class="btn" src="/assets/images/editor.png"></image>立即修改</view>
+</view>

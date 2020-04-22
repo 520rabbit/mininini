@@ -15,7 +15,10 @@
     "pages/compete-details/compete-details",
     "pages/interview-invite/interview-invite",
     "pages/result/result",
-    "pages/fun-type/fun-type"
+    "pages/fun-type/fun-type",
+    "pages/login/login",
+    "pages/company-info/company-info",
+    "pages/aptitude/aptitude"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
@@ -41,7 +44,9 @@
     "van-switch": "@vant/weapp/switch/index",
     "van-search": "@vant/weapp/search/index",
     "van-sidebar": "@vant/weapp/sidebar/index",
-    "van-sidebar-item": "@vant/weapp/sidebar-item/index"
+    "van-sidebar-item": "@vant/weapp/sidebar-item/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-overlay": "@vant/weapp/overlay/index"
   },
   "tabBar": {
     "selectedColor": "#FD8952",

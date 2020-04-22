@@ -9,7 +9,11 @@
   box-sizing: border-box;
   overflow: hidden;
   box-shadow: 0 10rpx 5rpx #FFFAF7;
-  }
+}
+
+.wrap:last-of-type {
+  margin-bottom: 150rpx;
+}
 
 .compete-info {
   display: flex;
@@ -85,4 +89,25 @@
 .info-item > .state {
   color: #FF8853;
   letter-spacing: 2rpx;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100rpx;
+  border-top: 2rpx solid #c9c9c9;
+  width: 100vw;
+  background: #fff;
+  overflow: hidden;
+}
+
+.footer > view {
+  width: 690rpx;
+  line-height: 80rpx;
+  margin: 10rpx auto;
+  border: 2rpx solid #c9c9c9;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #959595;
 }

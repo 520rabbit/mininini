@@ -7,7 +7,7 @@
     <view class="create-manage">创建管理</view>
     <view class="btn">
       <button class="issue-text" hidden="{{showIssu}}">发布简章</button>
-      <button class="create-job">创建职位</button>
+      <button class="create-job" bindtap="goUpdate">创建职位</button>
     </view>
   </view>
 </van-sticky>

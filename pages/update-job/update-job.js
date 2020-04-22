@@ -6,6 +6,7 @@ Page({
    */
   data: {
     jobname: '', // 职位名称
+    jobType: '', // 职能分类
     detailsAddress: '', // 详细地址
     branch: '', //所属部门
     workNat: '', // 工作性质
@@ -65,6 +66,143 @@ Page({
         id: 4
       }
     ],
+
+    // 职能分类
+    isShowJob: true, //是否隐藏职能分类
+    parent: [
+      {
+        name: '后端开发',
+        id: "01",
+        children: [
+          {
+            value: 'PHP',
+            id: '101',
+            grandson: [
+              {
+                value: 'PHP-11',
+                id: '1001'
+              },
+              {
+                value: 'PHP-2',
+                id: '1002'
+              },
+              {
+                value: 'PHP-3',
+                id: '1003'
+              }
+            ]
+          },
+          {
+            value: 'Java',
+            id: '102',
+            grandson: [
+              {
+                value: 'Java-11',
+                id: '1101'
+              },
+              {
+                value: 'Java-2',
+                id: '1102'
+              },
+              {
+                value: 'Java-3',
+                id: '1103'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        name: '前端开发',
+        id: "02",
+        children: [
+          {
+            value: 'JS',
+            id: '201',
+            grandson: [
+              {
+                value: 'JS-11',
+                id: '2001'
+              },
+              {
+                value: 'JS-2',
+                id: '2002'
+              },
+              {
+                value: 'JS-3',
+                id: '2003'
+              }
+            ]
+          },
+          {
+            value: 'VUE',
+            id: '202',
+            grandson: [
+              {
+                value: 'VUE-11',
+                id: '2101'
+              },
+              {
+                value: 'VUE-2',
+                id: '2102'
+              },
+              {
+                value: 'VUE-3',
+                id: '2103'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        name: '人工职能',
+        id: "03",
+        children: [
+          {
+            value: 'Python',
+            id: '301',
+            grandson: [
+              {
+                value: 'Python-11',
+                id: '3001'
+              },
+              {
+                value: 'Python-2',
+                id: '3002'
+              },
+              {
+                value: 'Python-3',
+                id: '3003'
+              }
+            ]
+          },
+          {
+            value: 'C#',
+            id: '302',
+            grandson: [
+              {
+                value: 'C#-11',
+                id: '3101'
+              },
+              {
+                value: 'C#-2',
+                id: '3102'
+              },
+              {
+                value: 'C#-3',
+                id: '3103'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  slelctJob () {
+    this.setData({
+      isShowJob: false
+    })
   },
 
   selectSsalary (e) {
@@ -79,7 +217,6 @@ Page({
 
   // 确定选择月薪
   confirmSalary (e) {
-    console.log(e.detail.value.text)
     this.setData({
       jobSalary: e.detail.value.text,
       salaryId: e.detail.value.id,
@@ -107,7 +244,6 @@ Page({
   },
   // 选择工作性质 
   selectWork (e) {
-    console.log(this.data.workData[e.currentTarget.dataset.index].name)
     const workNat = this.data.workData[e.currentTarget.dataset.index].name
     this.setData({
       workNat: workNat,
@@ -129,7 +265,6 @@ Page({
   },
   // 选择学历要求
   selectEducation(e) {
-    console.log(this.data.educationData[e.currentTarget.dataset.index].name)
     const education = this.data.educationData[e.currentTarget.dataset.index].name
     this.setData({
       education: education,
@@ -138,13 +273,33 @@ Page({
   },
 
   onChange(event) {
-    // event.detail 为当前输入的值
-    console.log(event.detail);
+ 
+  },
+
+
+
+
+
+
+  /**职能分类 */
+  getMyJob (e) {
+    console.log(e)
+    this.setData({
+      jobType: e.detail.jobType,
+      isShowJob: true
+    })
+  },
+
+  backPrev () {
+    wx.navigateBack({
+      delta: 1
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
   },
 
   /**

@@ -62,6 +62,7 @@
   color: #333;
 }
 
+/* // 去掉xx */
 .van-icon-close:before{
   content: ""!important;
 }
@@ -72,4 +73,68 @@
   border-radius: 10rpx!important;
   line-height: 48rpx!important;
   min-height: 300rpx!important;
+  margin-bottom: 150rpx!important;
+}
+
+
+/*职能分类*/
+.job-list {
+  position: absolute;
+  top: 10rpx;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  background: #fff;
+}
+
+/*月薪*/
+.salary {
+  color: #333;
+  font-size: 30rpx;
+  font-family: UICTFontTextStyleBody;
+}
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  width: 100vw;
+  border-top: 2rpx solid #F6F6F6; 
+  display: flex;
+  justify-content: left;
+  padding: 15rpx 30rpx;
+  box-sizing: border-box;
+  z-index: 99;
+}
+
+.footer > .back {
+  width: 250rpx;
+  background: #fff;
+  border: 2rpx solid #DEDEDE;
+  line-height: 68rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #959595;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+  box-sizing: border-box;
+}
+
+.save {
+  flex: 1;
+  background: linear-gradient(to right, #FFC36F, #FF8853);
+  line-height: 68rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.btn {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
 }

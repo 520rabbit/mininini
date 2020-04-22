@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "fun-type":"./children/fun-type/fun-type"
+  },
   "navigationBarTitleText": "修改职位"
 }

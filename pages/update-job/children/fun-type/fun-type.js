@@ -1,8 +1,14 @@
-// pages/fun-type/fun-type.js
-Page({
+// pages/update-job/children/fun-type/fun-type.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    parent: Array
+  },
 
   /**
-   * 页面的初始数据
+   * 组件的初始数据
    */
   data: {
     parent: [
@@ -13,7 +19,7 @@ Page({
           {
             value: 'PHP',
             id: '101',
-            grandson:[
+            grandson: [
               {
                 value: 'PHP-11',
                 id: '1001'
@@ -139,115 +145,65 @@ Page({
     currentIndex: 0, // 当前第二 变色
     currentTmp: 0, // 当前第二  展示
   },
-  // 点击第一  展示第二  第三
-  showFirst (e) {
-    console.log(e)
-    this.setData({
-      popoverSecond: true,
-      currentTmp: e.target.dataset.index,
-      currentThird: 0,
-    })
-    this.dispose()
-  },
-
-  // 点击第二  展示第三
-  selectSecond (e) {
-    const second = this.data.second
-    const third = new Array()
-    second.forEach(i => {
-      third.push(i.grandson)
-    })
-    this.setData({
-      currentIndex: e.target.dataset.index,
-      third: third[e.target.dataset.index]
-    })
-  },
-
-  // 点击第三
-  selectThird (e) {
-    const jobType = e.target.dataset.title
-    console.log(e)
-    wx.navigateTo({
-      url: '../update-job/update-job?id=' + jobType
-    })
-    this.setData({
-      currentTmp: e.target.dataset.index
-    })
-  },
-
-  // 后端返回数据处理
-  dispose () {
-    const tmp = this.data.currentTmp
-    const first = this.data.parent
-    const second = new Array()
-    first.forEach(item => {
-      second.push(item.children)
-    })
-    this.setData({
-      second: second[tmp]
-    })
-    const Newsecond = this.data.second 
-    const third = new Array()
-    Newsecond.forEach(i => {
-      third.push(i.grandson)
-    })
-    this.setData({
-      third: third[0]
-    })
-  },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 组件的方法列表
    */
-  onLoad: function (options) {
+  methods: {
+    // 点击第一  展示第二  第三
+    showFirst(e) {
+      console.log(e)
+      this.setData({
+        popoverSecond: true,
+        currentTmp: e.target.dataset.index,
+        currentThird: 0,
+      })
+      this.dispose()
+    },
 
-  },
+    // 点击第二  展示第三
+    selectSecond(e) {
+      const second = this.data.second
+      const third = new Array()
+      second.forEach(i => {
+        third.push(i.grandson)
+      })
+      this.setData({
+        currentIndex: e.target.dataset.index,
+        third: third[e.target.dataset.index]
+      })
+    },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  },
+    // 点击第三
+    selectThird(e) {
+      const jobType = e.target.dataset.title
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+      this.triggerEvent("getJob", { jobType: jobType})
+      this.setData({
+        currentTmp: e.target.dataset.index,
+        popoverSecond: false
+      })
+    },
 
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    // 后端返回数据处理
+    dispose() {
+      const tmp = this.data.currentTmp
+      const first = this.data.parent
+      const second = new Array()
+      first.forEach(item => {
+        second.push(item.children)
+      })
+      this.setData({
+        second: second[tmp]
+      })
+      const Newsecond = this.data.second
+      const third = new Array()
+      Newsecond.forEach(i => {
+        third.push(i.grandson)
+      })
+      this.setData({
+        third: third[0]
+      })
+    },
   }
 })

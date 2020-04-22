@@ -1,0 +1,44 @@
+<view class="info-title">资质认证</view>
+<view>
+  <van-cell-group>
+    <van-field
+      value="{{ username }}"
+      input-align="right"
+      required
+      clearable
+      label="社会信用代码"
+      placeholder="请输入信用代码"
+      input-class="input-class"
+    />
+      <van-cell required bindtap="slelctJob">
+      <view class="salary">查看示例</view>
+      <view slot="title">
+        <view class="van-cell-text">企业logo</view>
+      </view>
+    </van-cell>
+
+
+  </van-cell-group>
+</view>
+
+
+<view class="upload">
+
+  <view class="help-img">
+    <image src="/assets/images/upload.png" node="widthFix" />
+  </view>
+
+  <van-uploader class="upload-img"
+      file-list="{{ fileList }}"
+      use-before-read
+      bind:before-read="beforeRead"
+      bind:after-read="afterRead"
+    />
+</view>
+
+    
+<!-- footer按钮 -->
+<view class="footer">
+  <view class="back" bindtap="backPrev">返回</view>
+  <view class="save" bindtap="handlerupdate">确认提交</view>
+</view>

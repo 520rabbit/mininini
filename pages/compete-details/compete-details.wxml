@@ -141,3 +141,8 @@
     <view class="interview-sign already">通过保过</view>
   </view>
 </view>
+
+
+<view class="footer" bindtap="backPrv">
+  <view>返回</view>
+</view>
