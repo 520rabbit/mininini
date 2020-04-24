@@ -1,0 +1,19 @@
+
+
+  <view class="list">
+    <view class="list-left">
+        <view wx:for="{{profeList}}" data-index="{{index}}"  wx:key="{{index}}" bindtap="selectOne"  data-title="{{item.name}}"  
+         class="{{ index == currentIndex ? 'currentIndex' : ''}}"
+        >{{item.name}}</view>
+    </view>
+    <view class="list-right">
+      <block wx:for="{{second}}" wx:for-item="page" wx:for-index="tmp" wx:key="{{tmp}}">
+        <view  class="{{ tmp == currentIndex ? 'currentIndex' : ''}}" 
+          bindtap="selectProfe" data-id="{{page.id}}" data-title="{{page.name}}"   data-index="{{tmp}}"  > 
+        {{page.name}}
+        </view>
+      </block>
+    </view>
+  </view>
+
+

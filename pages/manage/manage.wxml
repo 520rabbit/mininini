@@ -12,8 +12,8 @@
   </view>
 </van-sticky>
 
-<van-tabs active="{{ active }}" swipeable color="#fff" title-active-color="#F9A985" offset-top="182" bind:change="onChange" sticky> 
-  <van-tab title="使用中">
+<van-tabs active="{{ active }}" swipeable color="#fff" title-active-color="#F9A985" offset-top="182" bind:click="toggleTab"  sticky> 
+  <van-tab bindtap="aaa" data-id="8" title="使用中">
   <using />
   </van-tab>
   <van-tab title="待审核">

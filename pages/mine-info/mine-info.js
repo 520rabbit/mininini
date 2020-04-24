@@ -1,27 +1,147 @@
 // pages/mine-info/mine-info.js
+import { editorUserInfo } from "../../api/ajax.js"
+import { userInfoDetails } from "../../api/ajax.js"
+import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    fileList: [
-      { url: 'https://img.yzcdn.cn/vant/leaf.jpg', name: '图片1' },
-      // Uploader 根据文件后缀来判断是否为图片文件
-      // 如果图片 URL 中不包含类型信息，可以添加 isImage 标记来声明
-      {
-        url: 'http://iph.href.lu/60x60?text=default',
-        name: '图片2',
-        isImage: true
-      }
-    ]
+    updateForm: {
+      openIdKey: '',
+      sessionKey: '',
+      token: '',
+      imagename: '', //图片64位编码
+      imagepath: '',   // 图片后缀名
+      loginuser: '', // 昵称
+      jobename: '', // 职位名称
+      xtel: '', // 联系电话
+      email: '', // 电子邮箱
+      cname: '' // 公司名称
+    },
+    showImg: '/assets/images/avatar.png'  // 展示的图片
   },
+
+
+
+  // 昵称
+  updateName (e) {
+    let loginuser = 'updateForm.loginuser'
+    this.setData({
+      [loginuser]: e.detail
+    })
+  },
+  // 职位
+  updateJob(e) {
+    let jobename = 'updateForm.jobename'
+    this.setData({
+      [jobename]: e.detail
+    })
+  },
+  // 联系电话
+  updatePhone(e) {
+    let xtel = 'updateForm.xtel'
+    this.setData({
+      [xtel]: e.detail
+    })
+  },
+  // 电子邮箱
+  updateEmail(e) {
+    let email = 'updateForm.email'
+    this.setData({
+      [email]: e.detail
+    })
+  },
+  // 公司名称
+  updateCname(e) {
+    let cname = 'updateForm.cname'
+    this.setData({
+      [cname]: e.detail
+    })
+  },
+  // 上传图片
+  getBase64(url) {
+    wx.request({
+      url: url,
+      responseType: 'arraybuffer', //最关键的参数，设置返回的数据格式为arraybuffer
+      success: res => {
+        //把arraybuffer转成base64
+        let base64 = wx.arrayBufferToBase64(res.data);
+        //打印出base64字符串，可复制到网页校验一下是否是你选择的原图片呢
+        let imagename = 'updateForm.imagename'
+        this.setData({
+          [imagename]: base64
+        })
+      }
+    })
+  },
+  beforeRead(e) {
+    let imagename = e.detail.file.path
+    let imagepath = e.detail.file.path.substring(e.detail.file.path.lastIndexOf("."), e.detail.file.path.length)
+    this.getBase64(imagename)
+    let helpImagePath = 'updateForm.imagepath'
+    this.setData({
+      [helpImagePath]: imagepath
+    })
+    console.log(this.data.updateForm.imagepath)
+  },
+// 上传图片
 
   // 跳到个人中心页面
   goMine () {
-    wx.switchTab({
-      url: '../mine/mine'
-    })
+    const updateForm = this.data.updateForm
+    if (this.data.updateForm.loginuser == "") {
+      Dialog.alert({
+        title: '提示',
+        message: '昵称不能为空'
+      }).then(() => {
+        // on close
+      })
+    } else if (this.data.updateForm.jobename == "") {
+      Dialog.alert({
+        title: '提示',
+        message: '职位不能为空'
+      }).then(() => {
+        // on close
+      })
+    } else if (this.data.updateForm.xtel == "") {
+      Dialog.alert({
+        title: '提示',
+        message: '联系电话不能为空'
+      }).then(() => {
+        // on close
+      })
+    } else if (this.data.updateForm.email == "") {
+      Dialog.alert({
+        title: '提示',
+        message: '电子邮箱不能为空'
+      }).then(() => {
+        // on close
+      })
+    } else if (this.data.updateForm.cname == "") {
+      Dialog.alert({
+        title: '提示',
+        message: '公司名称不能为空'
+      }).then(() => {
+        // on close
+      })
+    } else if (this.data.showImg == "") {
+      Dialog.alert({
+        title: '提示',
+        message: '请上传图片'
+      }).then(() => {
+        // on close
+      })
+    } else {
+      editorUserInfo(updateForm).then(res => {
+        console.log(res)
+      })
+    }
+
+    // wx.switchTab({
+    //   url: '../mine/mine'
+    // })
   },
 
   // 返回个人中心页面
@@ -34,14 +154,58 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    let openIdKey = 'updateForm.openIdKey'
+    let sessionKey = 'updateForm.sessionKey'
+    let token = 'updateForm.token'
+    wx.getStorage({
+      key: 'openIdKey',
+      success: function (res) {
+        that.setData({
+          [openIdKey]: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'sessionKey',
+      success: function (res) {
+        that.setData({
+          [sessionKey]: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        that.setData({
+          [token]: res.data
+        })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    let openIdKey = this.data.updateForm.openIdKey
+    let sessionKey = this.data.updateForm.sessionKey
+    let token = this.data.updateForm.token
+    userInfoDetails({ openIdKey: openIdKey, sessionKey: sessionKey, token: token}).then( res =>{
+      let loginuser = 'updateForm.loginuser'
+      let jobename = 'updateForm.jobename'
+      let xtel = 'updateForm.xtel'
+      let email = 'updateForm.email'
+      let cname = 'updateForm.cname'
+      this.setData({
+        [loginuser]: res.data.data.loginUser,
+        [jobename]: res.data.data.jobename,
+        [xtel]: res.data.data.xtel,
+        [email]: res.data.data.email,
+        [cname]: res.data.data.cname,
+      })
+      console.log(res.data.data)
+    })
   },
 
   /**

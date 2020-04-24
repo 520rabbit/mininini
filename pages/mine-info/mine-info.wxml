@@ -2,54 +2,93 @@
 <view class="upload"> 
   <view class="title">头像</view>
   <view class="line"></view>
-  <view class="language">
-    <image class="userinfo-avatar" src="/assets/images/avatar.png" ></image> 
+  <view class="myupload">
+    <view class="help-img">
+      <!-- <image src="/assets/images/avatar.png" node="widthFix" /> -->
+    </view>
+    <view class="img-show">
+      <image src="{{showImg}}" node="widthFix" />
+    </view>
+    <van-uploader class="myupload-img"
+        file-list="{{ fileList }}"
+        use-before-read
+        bind:before-read="beforeRead"
+        bind:after-read="afterRead"
+      />
   </view>
+
   <van-icon name="arrow" />
 </view>
 <van-cell-group class="person-info">
   <van-field
-    value="{{ username }}"
+    value="{{ updateForm.loginuser }}"
     label="昵称"
     placeholder="请输入用户名"
     input-align="right"
+    input-class="input-class"
+    bind:change="updateName"
   />
   <van-field
-    value="{{ password }}"
+    value="{{ updateForm.jobename }}"
     label="职位"
-    placeholder="请输入用户名"
+    placeholder="请输入职位名称"
     input-align="right"
+    input-class="input-class"
+    bind:change="updateJob"
   />
   <van-field
-    value="{{ password }}"
+    value="{{ updateForm.cname }}"
     label="公司名称"
-    placeholder="请输入用户名"
+    placeholder="请输入公司名称"
     input-align="right"
+    input-class="input-class"
+    bind:change="updateCname"
   />
   <van-field
-    value="{{ password }}"
+    value="{{ updateForm.xtel }}"
     label="联系电话"
     input-align="right"
+    placeholder="请输入联系电话"
+    input-class="input-class"
+    bind:change="updatePhone"
   />
-  <van-field
-    value="{{ password }}"
-    label="联系微信"
-    input-align="right"
-  />
-  <van-field
-    value="{{ password }}"
-    label="电子邮箱"
-    input-align="right"
-  />
+
+<view class="upload we-img"> 
+  <view class="title">联系微信</view>
+  <view class="line"></view>
+  <view class="myupload">
+    <view class="img-show wx-show ">
+      <image src="/assets/images/avatar.png" node="widthFix" />
+    </view>
+    <van-uploader class="myupload-img"
+        file-list="{{ fileList }}"
+        use-before-read
+        bind:before-read="beforeRead"
+        bind:after-read="afterRead"
+        bind:delete ="deleteImg"
+      />
+  </view>
+
+  <van-icon name="arrow" />
+</view>
+
+<van-field
+  value="{{ updateForm.email }}"
+  label="电子邮箱"
+  input-align="right"
+  placeholder="请输入电子邮箱"
+  input-class="input-class"
+  bind:change="updateEmail"
+/>
 </van-cell-group>
 <view class="hint">
   <view>以上是您的个人名片</view>
   <view>信息越完善，您在求职者心目中的专业形象越高哦！</view>
 </view>
-<view class="password-update">
+
+<!-- <view class="password-update">
   密码修改
 </view>
-
 
 <view class="password-options">
   <van-cell-group>
@@ -57,7 +96,7 @@
       value="{{ password }}"
       type="password"
       label="旧密码"
-      icon="/asstes/images/isShow.png"
+      icon="eye-o"
       placeholder="请输入用户名"
     />
 
@@ -66,7 +105,7 @@
       type="password"
       label="新 密 码"
       placeholder="请输入密码"
-      icon="/asstes/images/isShow.png"
+      icon="eye-o"
       border="{{ false }}"
     />
 
@@ -78,10 +117,10 @@
       border="{{ false }}"
     />
   </van-cell-group>
-</view>
+</view> -->
 
 
-
+<van-dialog id="van-dialog" />
 <view class="footer">
   <view class="back" bindtap="backPrev">返回</view>
   <view class="save" bindtap="goMine"><image class="btn" src="/assets/images/btn.png"></image> 立即保存</view>

@@ -1,0 +1,27 @@
+var filter = {
+  checkInfo: function (value) {
+
+    if (value == 1) {
+      return '审核通过'
+    }
+
+    if (value == 2) {
+      return '审核拒绝'
+    }
+    // console.log(value)
+    // switch (value) {
+    //   case 1:
+    //     return '审核通过'
+    //     break;
+    //   case 2:
+    //     return '审核拒绝'
+    //     break;
+    //   default:
+    //     break;
+    // } 
+  },
+}
+
+module.exports = {
+  filter: filter.checkInfo
+}

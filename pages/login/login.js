@@ -9,11 +9,12 @@ Page({
    */
   data: {
     form:{
-      loginuser: '', // 企业手机号码
-      code: '', // 手机验证码
+      loginuser: '18977784437', // 企业手机号码
+      code: '11111', // 手机验证码
     },
     type: '3',
-    tel: wx.getStorageSync('myCode'),
+    wxcode: '', // 微信打开返回的code
+    tel:"",
     currentTime: '获取验证码',
     time: 60,
     disabled: false
@@ -85,7 +86,9 @@ Page({
   // 登录
   handlerLogin () {
     let form = this.data.form
-    let tel = this.data.tel
+    let tel = this.data.form.loginuser
+    let wxcode = wx.getStorageSync('myCode')
+    console.log(wx.getStorageSync('myCode'))
     login(form).then(res => {
       if (res.data.Message == '-3') {
         wx.showToast({
@@ -95,8 +98,18 @@ Page({
         })
       }
       if(res.data.Message == 'success') {
-        wxLogin({ tel: tel}).then( res => {
-          console.log(res)
+        wxLogin({ tel: tel, wxcode: wxcode}).then( res => {
+
+          // 保存必要参数
+          wx.setStorage({key: 'openIdKey',data: res.data.data.OpenIdKey})
+          wx.setStorage({key: 'sessionKey', data: res.data.data.SessionKey})
+          wx.setStorage({key: 'token', data: res.data.data.token})
+
+          
+          
+
+          // console.log(wx.getStorage('token'))
+          // console.log(wx.getStorage('sessionKey'))
           if (res.data.Message == 'success') {
             wx.reLaunch({
               url: '../home/home'
@@ -110,14 +123,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(this.data.tel)
+    
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**

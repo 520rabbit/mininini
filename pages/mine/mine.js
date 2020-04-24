@@ -1,11 +1,20 @@
 // pages/mine/mine.js
+import { getUserInfo } from "../../api/ajax.js"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    mustForm: {
+      openIdKey: '',
+      sessionKey: '',
+      token: '',
+    },
+    loginUser: '', // 名字
+    companyauthentication: '', //  资质认证
+    authentication: '', //   企业信息
+    jobename: ''
   },
 
   // 跳转到个人信息页面
@@ -49,17 +58,53 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function (options) {  
+    var that = this
+    let openIdKey = 'mustForm.openIdKey'
+    let sessionKey = 'mustForm.sessionKey'
+    let token = 'mustForm.token'
+    wx.getStorage({
+      key: 'openIdKey',
+      success: function(res) {
+        that.setData({
+          [openIdKey]: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'sessionKey',
+      success: function (res) {
+        that.setData({
+          [sessionKey]: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        that.setData({
+          [token]: res.data
+        })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var that = this
+    const mustForm = that.data.mustForm
+    getUserInfo(mustForm).then( res => {
+      // console.log(res.data.data)
+      that.setData({
+        loginUser: res.data.data.loginUser, // 名字
+        companyauthentication: res.data.data.Companyauthentication, //  资质认证
+        authentication: res.data.data.authentication, //   企业信息
+        jobename: res.data.data.jobename
+      })
+    })
   },
-
   /**
    * 生命周期函数--监听页面显示
    */

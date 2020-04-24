@@ -15,7 +15,6 @@
     "pages/compete-details/compete-details",
     "pages/interview-invite/interview-invite",
     "pages/result/result",
-    "pages/fun-type/fun-type",
     "pages/login/login",
     "pages/company-info/company-info",
     "pages/aptitude/aptitude"
@@ -46,7 +45,8 @@
     "van-sidebar": "@vant/weapp/sidebar/index",
     "van-sidebar-item": "@vant/weapp/sidebar-item/index",
     "van-uploader": "@vant/weapp/uploader/index",
-    "van-overlay": "@vant/weapp/overlay/index"
+    "van-overlay": "@vant/weapp/overlay/index",
+    "van-dialog": "@vant/weapp/dialog/index"
   },
   "tabBar": {
     "selectedColor": "#FD8952",
@@ -65,7 +65,7 @@
       },
       {
         "pagePath": "pages/mine/mine",
-        "text": "职位管理",
+        "text": "个人中心",
         "iconPath": "/assets/images/mine.png",
         "selectedIconPath": "/assets/images/mine-active.png"
       }

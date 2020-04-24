@@ -10,7 +10,7 @@
 }
 
 .upload > .title {
-  width: 100rpx;
+  width: 150rpx;
   font-size: 33rpx;
   color: #323233;
 }
@@ -38,7 +38,7 @@
   box-sizing: border-box;
 }
 
-.password-update {
+/* .password-update {
   width: 100%;
   line-height: 76rpx;
   padding-left: 40rpx;
@@ -47,11 +47,11 @@
   background: #F2F2F2;
   color: #5D5D5D;
   font-size: 34rpx;
-}
+} */
 
-.password-options {
+/* .password-options {
   margin-bottom: 100rpx;
-}
+} */
 
 /* footer */
 .footer {
@@ -94,4 +94,75 @@
 .btn {
   width: 30rpx;
   height: 30rpx;
+}
+
+
+/*头像*/
+.myupload {
+  position: relative;
+  width: 80rpx;
+  margin: auto;
+}
+
+.myupload > .help-img {
+  width: 80rpx;
+}
+
+.myupload > .help-img > image {
+  width: 100%;
+  height: 80rpx;
+  display: block;
+}
+
+.myupload > .img-show {
+  position: absolute;
+  display: block;
+  top: -40rpx;
+  left: 0;
+  height: 80rpx;
+  width: 80rpx;
+  z-index: 2;
+}
+
+.myupload > .img-show > image {
+  width: 100%;
+  height: 80rpx;
+}
+
+.myupload-img {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 80rpx;
+  line-height: 88rpx;
+  width: 80rpx;
+  z-index: 99;
+}
+
+.van-uploader__upload  {
+  background: transparent!important;
+}
+
+.van-uploader__upload-icon {
+  display: none!important;
+}
+
+.input-class {
+  padding-right: 30rpx!important;
+  box-sizing: border-box;
+}
+
+
+.we-img {
+  border-bottom: 2rpx solid #F5F6F7;
+}
+
+.upload > .myupload > .img-show.wx-show {
+  width: 60rpx
+}
+
+.upload > .myupload > .img-show.wx-show > img{
+  width: 100%;
+  height: 60rpx;
 }

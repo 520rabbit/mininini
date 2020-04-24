@@ -151,6 +151,21 @@ Page({
       showNode: false
     })
   },
+
+  // // 立即发布
+  // goMine () {
+  //   this.setData({
+
+  //   })
+  // },
+
+
+  // 返回上一步
+  backPrev () {
+    wx.navigateBack({
+      data: 1
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

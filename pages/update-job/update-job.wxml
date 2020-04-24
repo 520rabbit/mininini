@@ -8,22 +8,21 @@
       icon="arrow"
       right-icon-class="my-optatice"
     />
-
-    <van-cell required is-link bindtap="slelctJob">
-      <view class="salary">{{jobType}}</view>
+    <van-cell required is-link bindtap="slelctProfe">
+      <view class="salary">{{profe}}</view>
       <view slot="title">
         <view class="van-cell-text">选择行业</view>
       </view>
     </van-cell>
 
     <van-cell required is-link bindtap="slelctJob">
-      <view class="salary">{{jobType}}</view>
+      <view class="salary" data-id="{{jobId}}">{{jobType}}</view>
       <view slot="title">
         <view class="van-cell-text">职能分类</view>
       </view>
     </van-cell>
 
-    <van-cell required is-link bindtap="slelctJob">
+    <van-cell required is-link bindtap="slelctCity">
       <view class="salary">{{jobType}}</view>
       <view slot="title">
         <view class="van-cell-text">城市区域</view>
@@ -68,7 +67,6 @@
         <view class="van-cell-text">职位月薪</view>
       </view>
     </van-cell>
-
     <van-field
       value="{{ education }}"
       label="工作年限"
@@ -77,8 +75,6 @@
       icon="arrow"
       bind:focus="showSelectEducation"
     />
-
-
     <van-field
       value="{{ education }}"
       label=" 学历要求"
@@ -87,22 +83,17 @@
       icon="arrow"
       bind:focus="showSelectEducation"
     />
-
-
-<van-cell-group class="last-one" >
-  <van-cell title="职位描述" required border="{{false}}" />
-    <van-field
-      value="{{ message }}"
-      type="textarea"
-      autosize
-      border="{{false}}"
-      input-class="job-desc"
-    />
-</van-cell-group>
-
-
+    <van-cell-group class="last-one" >
+      <van-cell title="职位描述" required border="{{false}}" />
+        <van-field
+          value="{{ message }}"
+          type="textarea"
+          autosize
+          border="{{false}}"
+          input-class="job-desc"
+        />
+    </van-cell-group>
   </van-cell-group>
-
 </view>
 
 <!-- 工作性质 -->
@@ -129,13 +120,38 @@
     />
 </van-popup>
 
+<!-- 职能分类 -->
 <view class="job-list" hidden="{{isShowJob}}">
-  <fun-type bind:getJob="getMyJob" parent="{{parent}}" />
+  <fun-type bind:getJob="getMyJob"   />
 </view>
 
-
+<van-popup show="{{ showProfe }}" position="bottom" custom-style="height: 80%" bind:close="onClose">
+  <profe  bind:getProfe="getProfe"     />
+</van-popup>
+  
 <!-- 底部按钮 -->
 <view class="footer">
   <view class="back" bindtap="backPrev">返回</view>
   <view class="save" bindtap="goMine"><image class="btn" src="/assets/images/editor.png"></image>立即保存</view>
+</view>
+
+
+
+<van-overlay show="{{ condition }}" />
+<view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="slideCity" class="citybody">
+    <view class="cityheader">
+      <view bindtap="selectCity" class="city-cancel">取消</view>
+      <view bindtap="selectCity" class="city-true">确定</view>
+    </view>
+    <picker-view-column>
+      <view wx:for="{{cityData}}" class="item" wx:key="item" >{{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" class="item" wx:key="item" >{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" class="item" wx:key="item" >{{item}}</view>
+    </picker-view-column>
+  </picker-view>
 </view>

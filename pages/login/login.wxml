@@ -12,7 +12,7 @@
   </view>
   <view class="code-wrap">
     <view class="code">
-      <input bindinput="codePhone"  auto-focus placeholder="请输入手机验证码"/>
+      <input bindinput="codePhone" value="{{form.code}}"  auto-focus placeholder="请输入手机验证码"/>
     </view>
     <view class="get-code" bindtap="phoneCode"> <button disabled="{{disabled}}">{{currentTime}}</button> </view>
   </view>

@@ -1,4 +1,5 @@
 // pages/manage/manage.js
+import { jobList } from "../../api/ajax.js"
 Page({
 
   /**
@@ -6,19 +7,46 @@ Page({
    */
   data: {
     active: 0,
-    showIssu: false
+    showIssu: false,
+    listForm: {
+      openIdKey: '',
+      sessionKey: '',
+      token: '',
+      type: 2,
+      curr: 1, // 页数
+      limit: 15 // 行数
+    }
   },
 
-  onChange (e) {
+  toggleTab (e) {
+    let type = 'listForm.type'
     if (e.detail.index == 0) {
       this.setData({
-        showIssu: false
+        showIssu: false,
+        [type]:2
       })
-    } else {
+    }else if (e.detail.index == 1) {
       this.setData({
-        showIssu: true
+        showIssu: true,
+        [type]: e.detail.index
+      })
+    }  else {
+      this.setData({
+        showIssu: true,
+        [type]: e.detail.index + 1
       })
     }
+
+    // 切换请求数据
+    this.getJobList()
+  },
+
+
+  getJobList () {
+    let listForm = this.data.listForm
+    jobList(listForm).then(res => {
+      console.log(res)
+    })
   },
 
 
@@ -33,14 +61,42 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    let openIdKey = 'listForm.openIdKey'
+    let sessionKey = 'listForm.sessionKey'
+    let token = 'listForm.token'
+    wx.getStorage({
+      key: 'openIdKey',
+      success: function (res) {
+        that.setData({
+          [openIdKey]: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'sessionKey',
+      success: function (res) {
+        that.setData({
+          [sessionKey]: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'token',
+      success: function (res) {
+        that.setData({
+          [token]: res.data
+        })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var that = this
+    that.getJobList()
   },
 
   /**

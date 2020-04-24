@@ -1,6 +1,5 @@
 <view class="info-title">企业信息</view>
 <view>
-
   <van-cell-group>
     <van-field
       value="{{ username }}"
@@ -22,8 +21,6 @@
       placeholder="请选择所在地"
       bindfocus="selectCity" 
     />
-
-
     <van-field
       value="{{ nature }}"
       input-align="right"
@@ -48,26 +45,25 @@
         <view class="van-cell-text">企业logo</view>
       </view>
     </van-cell>
-
-
   </van-cell-group>
 </view>
 
 
 <view class="upload">
-
   <view class="help-img">
     <image src="/assets/images/upload.png" node="widthFix" />
   </view>
-
+  <view class="img-show">
+    <image src="{{showImg}}" node="widthFix" />
+  </view>
   <van-uploader class="upload-img"
-      file-list="{{ fileList }}"
-      use-before-read
-      bind:before-read="beforeRead"
-      bind:after-read="afterRead"
-    />
+    file-list="{{ fileList }}"
+    use-before-read
+    bind:before-read="beforeRead"
+    bind:after-read="afterRead"
+    bind:delete ="deleteImg"
+  />
 </view>
-
     
 <!-- footer按钮 -->
 <view class="footer">
@@ -83,18 +79,38 @@
       <view bindtap="selectCity" class="city-cancel">取消</view>
       <view bindtap="selectCity" class="city-true">确定</view>
     </view>
-
     <picker-view-column>
-      <view wx:for="{{provinces}}" class="item" wx:key="item" >{{item}}</view>
+      <view wx:for="{{cityData}}" data-title="{{item.id}}" data-index="{{index}}"  class="item" wx:key="{{index}}" >{{item.name}}</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{citys}}" class="item" wx:key="item" >{{item}}</view>
+      <view wx:for="{{citys}}" class="item"  wx:key="{{index}}" >{{item.name}}</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{countys}}" class="item" wx:key="item" >{{item}}</view>
+      <view wx:for="{{countys}}" class="item" wx:key="item" >{{item.name}}</view>
     </picker-view-column>
   </picker-view>
 </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- 企业性质 -->
 <van-action-sheet show="{{ showNature }}" title="企业性质">

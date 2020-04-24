@@ -13,7 +13,7 @@
       <van-cell required bindtap="slelctJob">
       <view class="salary">查看示例</view>
       <view slot="title">
-        <view class="van-cell-text">企业logo</view>
+        <view class="van-cell-text">营业执照</view>
       </view>
     </van-cell>
 
@@ -28,11 +28,16 @@
     <image src="/assets/images/upload.png" node="widthFix" />
   </view>
 
+  <view class="img-show">
+    <image src="{{showImg}}" node="widthFix" />
+  </view>
+
   <van-uploader class="upload-img"
       file-list="{{ fileList }}"
       use-before-read
       bind:before-read="beforeRead"
       bind:after-read="afterRead"
+      bind:delete ="deleteImg"
     />
 </view>
 

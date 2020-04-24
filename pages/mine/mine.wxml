@@ -1,3 +1,4 @@
+<wxs module="getItem" src="../../utils/filter.wxs"></wxs>
 
 <view class="mine">
   <view class="person" bindtap="goMineInfo">
@@ -5,8 +6,8 @@
       <view class="avatar"><image src="/assets/images/avatar.png"  mode="aspectFit"/></view>
     </view>
     <view class="person-info">
-      <view class="name">陈小姐姐</view>
-      <view class="job">职位：认识经理</view>
+      <view class="name">{{loginUser}}</view>
+      <view class="job">职位：{{jobename}}</view>
     </view>
     <view class="person-go">
       <van-icon name="arrow" />
@@ -21,10 +22,9 @@
   </view>
   <view class="mine-banner"><image src="/assets/images/mine-banner.png" mode="aspectFit" /></view>  
   <view class="mine-list">
-    <van-cell title="资质认证" is-link value="审核拒绝" value-class="pass" bindtap="goCheck" />
-    <van-cell title="企业信息" is-link value="审核通过" value-class="pass" />
+    <van-cell title="资质认证" is-link value="{{companyauthentication}}" value-class="pass" bindtap="goCheck" />
+    <van-cell title="企业信息" is-link value="{{authentication}} " value-class="pass" />
     <van-cell title="我的客服" is-link value="020-81747580" />
   </view>
 </view>
-
 

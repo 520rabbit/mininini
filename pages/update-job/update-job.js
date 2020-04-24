@@ -1,12 +1,28 @@
-// pages/update-job/update-job.js
-
+import { getAddress } from "../../api/ajax.js"
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    openIdKey: '',
+    sessionKey: '',
+    token: '',
     jobname: '', // 职位名称
     jobType: '', // 职能分类
+    jobId: '',  // 职能id
+    isShowJob: true, //是否隐藏职能分类
+
+    profe: '', // 选择行业
+    profeId: '', //选择行业id
+    showProfe: false, // 展示行业
+
+    condition: false, // 是否城市联动
+    cityData: '',// 城市联动
+    province: '', // 省份
+    provinceId: '', // 省份Id
+    condition: false,
+
+
     detailsAddress: '', // 详细地址
     branch: '', //所属部门
     workNat: '', // 工作性质
@@ -66,144 +82,154 @@ Page({
         id: 4
       }
     ],
-
     // 职能分类
-    isShowJob: true, //是否隐藏职能分类
-    parent: [
-      {
-        name: '后端开发',
-        id: "01",
-        children: [
-          {
-            value: 'PHP',
-            id: '101',
-            grandson: [
-              {
-                value: 'PHP-11',
-                id: '1001'
-              },
-              {
-                value: 'PHP-2',
-                id: '1002'
-              },
-              {
-                value: 'PHP-3',
-                id: '1003'
-              }
-            ]
-          },
-          {
-            value: 'Java',
-            id: '102',
-            grandson: [
-              {
-                value: 'Java-11',
-                id: '1101'
-              },
-              {
-                value: 'Java-2',
-                id: '1102'
-              },
-              {
-                value: 'Java-3',
-                id: '1103'
-              }
-            ]
-          }
-        ]
-      },
-      {
-        name: '前端开发',
-        id: "02",
-        children: [
-          {
-            value: 'JS',
-            id: '201',
-            grandson: [
-              {
-                value: 'JS-11',
-                id: '2001'
-              },
-              {
-                value: 'JS-2',
-                id: '2002'
-              },
-              {
-                value: 'JS-3',
-                id: '2003'
-              }
-            ]
-          },
-          {
-            value: 'VUE',
-            id: '202',
-            grandson: [
-              {
-                value: 'VUE-11',
-                id: '2101'
-              },
-              {
-                value: 'VUE-2',
-                id: '2102'
-              },
-              {
-                value: 'VUE-3',
-                id: '2103'
-              }
-            ]
-          }
-        ]
-      },
-      {
-        name: '人工职能',
-        id: "03",
-        children: [
-          {
-            value: 'Python',
-            id: '301',
-            grandson: [
-              {
-                value: 'Python-11',
-                id: '3001'
-              },
-              {
-                value: 'Python-2',
-                id: '3002'
-              },
-              {
-                value: 'Python-3',
-                id: '3003'
-              }
-            ]
-          },
-          {
-            value: 'C#',
-            id: '302',
-            grandson: [
-              {
-                value: 'C#-11',
-                id: '3101'
-              },
-              {
-                value: 'C#-2',
-                id: '3102'
-              },
-              {
-                value: 'C#-3',
-                id: '3103'
-              }
-            ]
-          }
-        ]
-      }
-    ]
+  },
+  // 展示行业
+  slelctProfe () {
+    this.setData({
+      showProfe: true
+    })  
+  },
+  // 行业选择
+  getProfe (e) {
+    console.log(e)
+    this.setData({
+      profe: e.detail.profe,
+      profeId: e.detail.profeId,
+      showProfe: false
+    })
   },
 
+  // 展示职能分类
   slelctJob () {
     this.setData({
       isShowJob: false
     })
   },
+  // 职能分类
+  getMyJob(e) {
+    console.log(e)
+    this.setData({
+      jobType: e.detail.jobType,
+      jobId: e.detail.jobId,
+      isShowJob: true
+    })
+  },
+  
+  // 展示城市联动
+  slelctCity () {
+    this.setData({
+      condition: true
+    })  
+
+    this.disposeCity()
+  },
+
+
+
+
+  disposeCity () {
+
+
+    this.setData({
+
+    })
+  },
+
+  // 城市数据处理
+
+  // //  所在地区
+  // slideCity(e) {
+  //   var val = e.detail.value
+  //   var t = this.data.values;
+  //   var cityData = this.data.cityData;
+  //   if (val[0] != t[0]) {
+  //     // 省份
+  //     const citys = [];
+  //     const countys = [];
+  //     for (let i = 0; i < cityData[val[0]].list.length; i++) {
+  //       citys.push(cityData[val[0]].list[i].name)
+  //     }
+  //     for (let i = 0; i < cityData[val[0]].list[0].list.length; i++) {
+  //       countys.push(cityData[val[0]].list[0].list[i].name)
+  //     }
+
+  //     this.setData({
+  //       province: this.data.provinces[val[0]],
+  //       city: cityData[val[0]].list[0].name,
+  //       citys: citys,
+  //       county: cityData[val[0]].list[0].list[0].name,
+  //       countys: countys,
+  //       values: val,
+  //       value: [val[0], 0, 0]
+  //     })
+  //     return;
+  //   }
+  //   if (val[1] != t[1]) {
+  //     // 城市
+  //     const countys = [];
+
+  //     for (let i = 0; i < cityData[val[0]].list[val[1]].list.length; i++) {
+  //       countys.push(cityData[val[0]].list[val[1]].list[i].name)
+  //     }
+
+  //     this.setData({
+  //       city: this.data.citys[val[1]],
+  //       county: cityData[val[0]].list[val[1]].list[0].name,
+  //       countys: countys,
+  //       values: val,
+  //       value: [val[0], val[1], 0]
+  //     })
+  //     return;
+  //   }
+  //   if (val[2] != t[2]) {
+  //     // 区域
+  //     this.setData({
+  //       county: this.data.countys[val[2]],
+  //       values: val
+  //     })
+  //     return;
+  //   }
+  // },
+  // //所在地区
+  // selectCity: function (e) {
+  //   console.log(e)
+  //   this.setData({
+  //     condition: !this.data.condition
+  //   })
+  // },
+  // slideCity(e) {
+  //   const city = this.data.cityData
+  //   console.log(city[e.detail.value[0]].name )
+  //   console.log(city[e.detail.value[0]].id)
+  //   this.setData({
+  //     province: city[e.detail.value[0]].name,
+  //     provinceId: city[e.detail.value[0]].id
+  //   })
+  // },
+
+    selectCity: function (e) {
+      console.log(e)
+      this.setData({
+        condition: !this.data.condition
+      })
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   selectSsalary (e) {
     console.log(e.detail.value.text)
@@ -272,23 +298,11 @@ Page({
     })
   },
 
-  onChange(event) {
- 
-  },
 
 
 
 
 
-
-  /**职能分类 */
-  getMyJob (e) {
-    console.log(e)
-    this.setData({
-      jobType: e.detail.jobType,
-      isShowJob: true
-    })
-  },
 
   backPrev () {
     wx.navigateBack({
@@ -299,14 +313,46 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.getStorage({
+      key: 'openIdKey',
+      success: (res) => {
+        this.setData({
+          openIdKey: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'sessionKey',
+      success: (res) => {
+        this.setData({
+          sessionKey: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'token',
+      success: (res) => {
+        this.setData({
+          token: res.data
+        })
+      }
+    })
+    let openIdKey = this.data.openIdKey
+    let sessionKey = this.data.sessionKey
+    let token = this.data.token
+    getAddress({ openIdKey: openIdKey, sessionKey: sessionKey, token: token }).then(res => {
+      console.log(res.data.data)
+      this.setData({
+        cityData: res.data.data
+      })
+    })
   },
 
   /**

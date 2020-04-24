@@ -10,113 +10,18 @@
   </view>
 </view>
 
-
-
-<view class="recharge">
+<view class="recharge" wx:for="{{buyRcord}}" wx:key="{{index}}">
   <view class="recharge-tiem">
     <view class="title">充值成功</view>
-    <view class="icon">+50个币</view>
+    <view class="icon">{{item.card}}</view>
   </view>
 
   <view class="recharge-tiem down">
-    <view>2020.04.07 14:65:56</view>
-    <view>支付:￥20.00</view>
-  </view>
-</view>
-
-<view class="recharge">
-  <view class="recharge-tiem">
-    <view class="title">充值成功</view>
-    <view class="icon">+50个币</view>
-  </view>
-
-  <view class="recharge-tiem down">
-    <view>2020.04.07 14:65:56</view>
-    <view>支付:￥20.00</view>
-  </view>
-</view>
-
-<view class="recharge">
-  <view class="recharge-tiem">
-    <view class="title">充值成功</view>
-    <view class="icon">+50个币</view>
-  </view>
-
-  <view class="recharge-tiem down">
-    <view>2020.04.07 14:65:56</view>
-    <view>支付:￥20.00</view>
-  </view>
-</view>
-
-<view class="recharge">
-  <view class="recharge-tiem">
-    <view class="title">充值成功</view>
-    <view class="icon">+50个币</view>
-  </view>
-
-  <view class="recharge-tiem down">
-    <view>2020.04.07 14:65:56</view>
-    <view>支付:￥20.00</view>
-  </view>
-</view>
-
-<view class="recharge">
-  <view class="recharge-tiem">
-    <view class="title">充值成功</view>
-    <view class="icon">+50个币</view>
-  </view>
-
-  <view class="recharge-tiem down">
-    <view>2020.04.07 14:65:56</view>
-    <view>支付:￥20.00</view>
+    <view>{{item.time}}</view>
+    <view>支付:￥{{item.money}}</view>
   </view>
 </view>
 
 
-<view class="recharge">
-  <view class="recharge-tiem">
-    <view class="title">充值成功</view>
-    <view class="icon">+50个币</view>
-  </view>
 
-  <view class="recharge-tiem down">
-    <view>2020.04.07 14:65:56</view>
-    <view>支付:￥20.00</view>
-  </view>
-</view>
 
-<view class="recharge">
-  <view class="recharge-tiem">
-    <view class="title">充值成功</view>
-    <view class="icon">+50个币</view>
-  </view>
-
-  <view class="recharge-tiem down">
-    <view>2020.04.07 14:65:56</view>
-    <view>支付:￥20.00</view>
-  </view>
-</view>
-
-<view class="recharge">
-  <view class="recharge-tiem">
-    <view class="title">充值成功</view>
-    <view class="icon">+50个币</view>
-  </view>
-
-  <view class="recharge-tiem down">
-    <view>2020.04.07 14:65:56</view>
-    <view>支付:￥20.00</view>
-  </view>
-</view>
-
-<view class="recharge"  >
-  <view class="recharge-tiem">
-    <view class="title">充值成功</view>
-    <view class="icon">+50个币</view>
-  </view>
-
-  <view class="recharge-tiem down">
-    <view>2020.04.07 14:65:56</view>
-    <view>支付:￥20.00</view>
-  </view>
-</view>

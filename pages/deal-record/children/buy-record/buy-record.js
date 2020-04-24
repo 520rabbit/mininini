@@ -1,4 +1,5 @@
 // pages/deal-record/children/use-record.js
+import { buyRecord } from "../../../../api/ajax.js"
 Component({
   /**
    * 组件的属性列表
@@ -18,11 +19,56 @@ Component({
    * 组件的初始数据
    */
   data: {
-    data: {
-
-    }
+    buyForm: {
+      openIdKey: '',
+      sessionKey: '',
+      token: '',
+      limit: '1', // 页数
+      curr: '10', // 行数
+      month: ''
+    },
+    buyRcord: []   // 购买记录
   },
 
+
+  attached() {
+    let openIdKey = 'buyForm.openIdKey'
+    let sessionKey = 'buyForm.sessionKey'
+    let token = 'buyForm.token'
+    wx.getStorage({
+      key: 'openIdKey',
+      success: (res) => {
+        this.setData({
+          [openIdKey]: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'sessionKey',
+      success: (res) => {
+        this.setData({
+          [sessionKey]: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'token',
+      success: (res) => {
+        this.setData({
+          [token]: res.data
+        })
+      }
+    })
+  },
+
+  ready () {
+    const buyForm = this.data.buyForm
+    buyRecord(buyForm).then( res => {
+      this.setData({
+        buyRcord: res.data.data
+      })
+    })
+  },
   /**
    * 组件的方法列表
    */

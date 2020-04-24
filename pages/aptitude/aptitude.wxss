@@ -94,3 +94,7 @@
   height: 30rpx;
   margin-right: 30rpx;
 }
+
+.van-uploader__preview {
+  display: none;
+}

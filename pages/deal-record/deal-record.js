@@ -1,4 +1,6 @@
 // pages/deal-record/deal-record.js
+import { useRecord } from "../../api/ajax.js"
+
 Page({
 
   /**

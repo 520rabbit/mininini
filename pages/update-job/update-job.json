@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "fun-type":"./children/fun-type/fun-type"
+    "fun-type":"./children/fun-type/fun-type",
+    "profe": "./children/profe/profe"
   },
   "navigationBarTitleText": "修改职位"
 }

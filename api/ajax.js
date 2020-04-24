@@ -19,6 +19,7 @@ export function getCode(parmas) {
   })
 }
 
+// 3、微信二次验证登录
 export function wxLogin(parmas) {
   return ajax({
     url: baseUrl + '/cas/GetWXLogin',
@@ -27,20 +28,16 @@ export function wxLogin(parmas) {
   })
 }
 
-
-
-
-
-// 2、获取用户信息
-export function getUserInfo() {
+// 4、获取用户信息
+export function getUserInfo(parmas) {
   return ajax({
     url: baseUrl + '/user/UserData',
-    method: 'post'
+    method: 'post',
+    data: parmas
   })
 }
 
-
-// 2、上传图片 logo
+// 5、上传图片 logo
 export function uploadLogo(data) {
   return ajax({
     url: baseUrl + '/user/PostUploadLogo',
@@ -49,8 +46,7 @@ export function uploadLogo(data) {
   })
 }
 
-
-// 3、上传图片 logo
+// 6、上传图片 营业执照
 export function uploadCompany(data) {
   return ajax({
     url: baseUrl + '/user/CompanyCert',
@@ -59,7 +55,7 @@ export function uploadCompany(data) {
   })
 }
 
-// 4、编辑个人信息
+// 7、编辑个人信息
 export function editorUserInfo(data) {
   return ajax({
     url: baseUrl + '/user/UpdateUserInfo',
@@ -68,14 +64,81 @@ export function editorUserInfo(data) {
   })
 }
 
-// 5、个人信息详情
-export function UserInfoDetails(data) {
+
+// 8、职位列表
+export function jobList(data) {
+  return ajax({
+    url: baseUrl + '/job/joblist',
+    method: 'post',
+    data
+  })
+}
+
+// 9、使用记录
+export function useRecord(data) {
+  return ajax({
+    url: baseUrl + '/user/CardRecord',
+    method: 'post',
+    data
+  })
+}
+
+// 10、购买记录
+export function buyRecord(data) {
+  return ajax({
+    url: baseUrl + '/user/PurchaseRecord',
+    method: 'post',
+    data
+  })
+}
+
+// 11、个人信息详情
+export function userInfoDetails(data) {
   return ajax({
     url: baseUrl + '/user/GetuserInfo',
     method: 'post',
     data
   })
 }
+
+// 12、读取职能
+export function getFun(data) {
+  return ajax({
+    url: baseUrl + '/user/GetJobe',
+    method: 'post',
+    data
+  })
+}
+
+// 13、读取行业
+export function getProfe(data) {
+  return ajax({
+    url: baseUrl + '/user/GetHy',
+    method: 'post',
+    data
+  })
+}
+
+// 14、读取地址
+export function getAddress(data) {
+  return ajax({
+    url: baseUrl + '/user/GetProvinces',
+    method: 'post',
+    data
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 6、企业信息详情
 export function companyInfo(data) {
@@ -86,23 +149,7 @@ export function companyInfo(data) {
   })
 }
 
-// 7、使用记录
-export function useRecord(data) {
-  return ajax({
-    url: baseUrl + '/user/CardRecord',
-    method: 'post',
-    data
-  })
-}
 
-// 8、购买记录
-export function buyRecord(data) {
-  return ajax({
-    url: baseUrl + '/user/PurchaseRecord',
-    method: 'post',
-    data
-  })
-}
 
 // 9、读取行业
 // export function buyRecord(data) {
@@ -113,32 +160,11 @@ export function buyRecord(data) {
 //   })
 // }
 
-// 10、读取职能
-export function getFun(data) {
-  return ajax({
-    url: baseUrl + '/user/GetJobe',
-    method: 'post',
-    data
-  })
-}
 
-// 11、读取地址
-export function getAddress(data) {
-  return ajax({
-    url: baseUrl + '/user/GetProvinces',
-    method: 'post',
-    data
-  })
-}
 
-// 12、职位列表
-export function jobList(data) {
-  return ajax({
-    url: baseUrl + '/job/joblist',
-    method: 'post',
-    data
-  })
-}
+
+
+
 
 // 13、职位详情
 export function jobDetail(data) {

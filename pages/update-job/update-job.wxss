@@ -79,13 +79,14 @@
 
 /*职能分类*/
 .job-list {
-  position: absolute;
-  top: 10rpx;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 99;
   background: #fff;
+  overflow: scroll;
 }
 
 /*月薪*/
@@ -107,7 +108,7 @@
   justify-content: left;
   padding: 15rpx 30rpx;
   box-sizing: border-box;
-  z-index: 99;
+  z-index: 90;
 }
 
 .footer > .back {
@@ -137,4 +138,53 @@
   width: 30rpx;
   height: 30rpx;
   margin-right: 10rpx;
+}
+
+
+/*小城市联动*/
+.citybody {
+  width: 100vw;
+  position: relative;
+}
+
+.item {
+  line-height: 50px;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.cityheader {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  opacity: 1;
+  color: #333;
+  z-index: 99;
+  line-height: 100rpx;
+}
+
+.city-true {
+  color: #ff5777;
+}
+
+.citypicker {
+  background: #fff;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200rpx;
 }
