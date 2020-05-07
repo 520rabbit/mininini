@@ -25,7 +25,7 @@
 <view class="upload">
 
   <view class="help-img">
-    <image src="/assets/images/upload.png" node="widthFix" />
+    <image src="/assets/images/upload-license.png" node="widthFix" />
   </view>
 
   <view class="img-show">

@@ -1,101 +1,18 @@
-<view class="job">
+
+<block wx:for="{{dataList}}" wx:key="index">
+  <view class="job">
   <view class="job-item">
-    <view class="job-name">前端工程师</view>
-    <view class="job-price">0.8-1.2万/月</view>
+    <view class="job-name">{{item.jobename}}</view>
+    <view class="job-price">{{item.jobpays}}</view>
   </view>
   <view class="job-req"> 
-    <text>广东省广州市</text>
+    <text>{{item.address}}</text>
     <text>|</text>
-    <text>3-5年</text>
+    <text>{{item.working}}</text>
     <text>|</text>
-    <text>大专</text>
+    <text>{{item.record}}</text>
   </view>
 </view>
-<view class="job">
-  <view class="job-item">
-    <view class="job-name">前端工程师</view>
-    <view class="job-price">0.8-1.2万/月</view>
-  </view>
-  <view class="job-req"> 
-    <text>广东省广州市</text>
-    <text>|</text>
-    <text>3-5年</text>
-    <text>|</text>
-    <text>大专</text>
-  </view>
-</view>
-
-<view class="job">
-  <view class="job-item">
-    <view class="job-name">前端工程师</view>
-    <view class="job-price">0.8-1.2万/月</view>
-  </view>
-  <view class="job-req"> 
-    <text>广东省广州市</text>
-    <text>|</text>
-    <text>3-5年</text>
-    <text>|</text>
-    <text>大专</text>
-  </view>
-</view>
-<view class="job">
-  <view class="job-item">
-    <view class="job-name">前端工程师</view>
-    <view class="job-price">0.8-1.2万/月</view>
-  </view>
-
-  <view class="job-req"> 
-    <text>广东省广州市</text>
-    <text>|</text>
-    <text>3-5年</text>
-    <text>|</text>
-    <text>大专</text>
-  </view>
-</view>
+</block>
 
 
-<view class="job">
-  <view class="job-item">
-    <view class="job-name">前端工程师</view>
-    <view class="job-price">0.8-1.2万/月</view>
-  </view>
-
-  <view class="job-req"> 
-    <text>广东省广州市</text>
-    <text>|</text>
-    <text>3-5年</text>
-    <text>|</text>
-    <text>大专</text>
-  </view>
-</view>
-
-
-<view class="job">
-  <view class="job-item">
-    <view class="job-name">前端工程师</view>
-    <view class="job-price">0.8-1.2万/月</view>
-  </view>
-
-  <view class="job-req"> 
-    <text>广东省广州市</text>
-    <text>|</text>
-    <text>3-5年</text>
-    <text>|</text>
-    <text>大专</text>
-  </view>
-</view>
-
-<view class="job">
-  <view class="job-item">
-    <view class="job-name">前端工程师</view>
-    <view class="job-price">0.8-1.2万/月</view>
-  </view>
-
-  <view class="job-req"> 
-    <text>广东省广州市</text>
-    <text>|</text>
-    <text>3-5年</text>
-    <text>|</text>
-    <text>大专</text>
-  </view>
-</view>

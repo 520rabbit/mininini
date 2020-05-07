@@ -27,7 +27,9 @@ Component({
       curr: '10', // 行数
       month: ''
     },
-    buyRcord: []   // 购买记录
+    buyRcord: [],   // 购买记录
+    startTime:'', // 历史记录
+    endTime:''  // 历史记录
   },
 
 
@@ -67,6 +69,13 @@ Component({
       this.setData({
         buyRcord: res.data.data
       })
+    })
+
+    let newData = new Date()
+
+    this.setData({
+      endTime: newData.getFullYear() + "." + (newData.getMonth() + 1),
+      startTime: newData.getFullYear() + "." + (newData.getMonth() + 1)
     })
   },
   /**

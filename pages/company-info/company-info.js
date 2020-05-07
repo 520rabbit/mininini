@@ -2074,10 +2074,13 @@ Page({
     ],
     provinces: [],
     province: "",// 省
+    provinceId: '',
     citys: [],
     city: "", // 市
+    cityId: '',
     countys: [],
     county: '', // 区
+    countyId: '', // 区
     value: [0, 0, 0],
     values: [0, 0, 0],
     condition: false,
@@ -2181,7 +2184,7 @@ Page({
   },
   slideCity(e) {
     console.log(e.detail)
-    let cityIndex = e.detail.value[0]
+    let citysIndex = e.detail.value[0]
     let countysIndex = e.detail.value[1]
     const provinces = this.data.cityData
     let citys = new Array()
@@ -2190,7 +2193,7 @@ Page({
       citys.push(i.list)
     })
     this.setData({
-      citys: citys[cityIndex],
+      citys: citys[citysIndex],
       countys: countys[countysIndex]
     })
 
@@ -2199,8 +2202,16 @@ Page({
     })
 
     this.setData({
-      countys: countys[countysIndex]
+      province: provinces[citysIndex].name,
+      provinceId: provinces[citysIndex].id,
+      city: citys[citysIndex][0].name,
+      cityId: citys[citysIndex][0].id,
+      countys: countys[countysIndex],
+      county: countys[countysIndex][0].name,
+      countyId: countys[countysIndex][0].id
     })
+
+    console.log(this.data.province)
   },
   // 自己的代码
   disc () {

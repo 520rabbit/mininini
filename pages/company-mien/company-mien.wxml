@@ -3,22 +3,19 @@
     <image src="/assets/images/logo.png"></image>
   </view>
   <view class="info">
-    <view class="name">广州市志在信息科技有限公司</view>
-    <view class="address"> <text>广州市海珠区</text> <text>|</text> <text>民营企业</text> <text>|</text> <text>少于50人</text>  <text>计算机软件</text></view>
+    <view class="name">{{cname}}</view>
+    <view class="address">{{address}}<text>|</text>民营企业<text>|</text>{{cscalename}}<text>|</text>{{cnaturename}}</view>
   </view> 
 </view>
 
 <swiper class="swiper-wrap">
-  <swiper-item>
-    <view>
-      <image class="my-img" src="/assets/images/swiper-img.png" mode="widthFix"></image>
-    </view>
-  </swiper-item>
+  <block wx:for="{{imageList}}" wx:key="{{index}}">
     <swiper-item>
-    <view>
-      <image class="my-img" src="/assets/images/swiper-img.png" mode="widthFix"></image>
-    </view>
-  </swiper-item>
+      <view>
+        <image class="my-img" src="http://pport.jobyes.com/upload/companylogo/{{item.newname}}" mode="widthFix"></image>
+      </view>
+    </swiper-item>
+  </block>
 </swiper>
 
 <view class="mien-wrap">
@@ -27,8 +24,7 @@
     公司介绍
   </view>
   <view class="mien-desc">
-    广州市志在信息科技有限公司主营业务包括人力资源招聘服务、人力资源服务外包、人力资源管理咨询服务、猎头服务，企业互联网化升级服务等，持有人力资源服务许可证，是一家具有互联网特色的人才服务企业。 志在科技了解企业对人才的迫切渴望，通过专业的服务、系统的解决方案，始终致力于为关注人才、珍惜人才的企业提供可行的解决方案，帮助企业实现人力资本获益最大化。通过人才招聘服务、人才派遣、岗位外包、猎头服务等形式为企业提高人力资源工作的效率，降低人力成本，为企业提高管理水平提供决策依据。 公司自2012成立至今，已在IT互联网、房地产、金融行业、新零售、制造等行业与多家知名企业进行了合作，也得到了每个合作企业的一致认可与支持；志在科技愿成为企业最可依赖的人力资源合作伙伴。
+    {{companybrief}}
   </view>
 </view>
-
 <view class="footer" bindtap="backPrev">返回</view>

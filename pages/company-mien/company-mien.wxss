@@ -34,13 +34,14 @@
   line-height: 48rpx;
 }
 .address > text {
-  margin-right: 5rpx;
+  margin: 0 5rpx;
 }
 
 .swiper-wrap {
   width: 100%;
   padding: 0 30rpx;
   box-sizing: border-box;
+  margin-top: 30rpx;
 }
 
 .swiper-wrap .my-img {

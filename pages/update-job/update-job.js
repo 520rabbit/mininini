@@ -1,4 +1,5 @@
 import { getAddress } from "../../api/ajax.js"
+import { jobDetail } from "../../api/ajax.js"
 Page({
   /**
    * 页面的初始数据
@@ -7,67 +8,92 @@ Page({
     openIdKey: '',
     sessionKey: '',
     token: '',
-    jobname: '', // 职位名称
+    jobename: '', // 职位名称
+    jobid: '', //  职位名称id
     jobType: '', // 职能分类
-    jobId: '',  // 职能id
+    jobe: '',  // 职能id
     isShowJob: true, //是否隐藏职能分类
-
     profe: '', // 选择行业
     profeId: '', //选择行业id
     showProfe: false, // 展示行业
-
     condition: false, // 是否城市联动
     cityData: '',// 城市联动
+    provinces: [],  // 省份list
     province: '', // 省份
-    provinceId: '', // 省份Id
+    provinceid: '', // 省份Id
+    citys: [], // 市list
+    city: "", // 市
+    cityid: '', // 市Id
+    countys: [],  // 区list
+    county: '', // 区
+    dictionaryid: '', // 区Id
     condition: false,
-
-
-    detailsAddress: '', // 详细地址
-    branch: '', //所属部门
+    deptname: '', //所属部门
     workNat: '', // 工作性质
-    jobSalary: '', // 月薪
+    jobpays: '', // 月薪
     education: '', // 学历要求
     showWork: false, // 工作性质显示隐藏
     showEducation: false, // 学历要求显示隐藏
+    showYear: false, // 工作年限
+    naturework: '', // 工作性质
+    working: '', // 工作年限
+    address: '', // 详细地址
     workData: [
       {  // 工作性质
-        name: '不限',
+        naturework: '不限',
         state: '0'     
       },
       {
-        name: '全职',
+        naturework: '全职',
         state: '0'
       },
       {
-        name: '兼职',
+        naturework: '兼职',
         state: '0'
       },
       {
-        name: '实习',
-        state: '0',
-        subname: '副文本',
-        openType: 'share'
+        naturework: '实习',
+        state: '0'
       }
     ],
     educationData: [
-      {  // 工作性质
-        name: '不限',
+      {  // 学历要求
+        record: '不限',
         state: '0'
       },
       {
-        name: '1-3年',
+        record: '大专及以上',
         state: '0'
       },
       {
-        name: '3-5年',
+        record: '本科及以上',
         state: '0'
       },
       {
-        name: '5年以上',
-        state: '0',
-        subname: '副文本',
-        openType: 'share'
+        record: '硕士及以上',
+        state: '0'
+      },
+      {
+        record: '博士及以上',
+        state: '0'
+      }
+    ],
+    workingYear: [
+      {  // 工作年限
+        working: '不限',
+        state: '0'
+      },
+      {
+        working: '1-3年',
+        state: '0'
+      },
+      {
+        working: '3-5年',
+        state: '0'
+      },
+      {
+        working: '5年以上',
+        state: '0'
       }
     ],
     showSalary: false,
@@ -92,7 +118,6 @@ Page({
   },
   // 行业选择
   getProfe (e) {
-    console.log(e)
     this.setData({
       profe: e.detail.profe,
       profeId: e.detail.profeId,
@@ -108,7 +133,6 @@ Page({
   },
   // 职能分类
   getMyJob(e) {
-    console.log(e)
     this.setData({
       jobType: e.detail.jobType,
       jobId: e.detail.jobId,
@@ -117,122 +141,88 @@ Page({
   },
   
   // 展示城市联动
-  slelctCity () {
+  slelctCity (e) {
+    console.log(e)
+    this.disc() 
     this.setData({
       condition: true
     })  
-
-    this.disposeCity()
+    this.disc()
   },
-
-
-
-
-  disposeCity () {
-
-
+  // 自己的三级联动
+  selectCity() {
     this.setData({
-
+      condition: true
     })
   },
+  slideCity(e) {
+    let provincesData = this.data.cityData
+    let citysIndex = e.detail.value[0]
+    let countysIndex = e.detail.value[1]
+    let lastIndex = e.detail.value[2]
+    let citys = new Array()
+    let countys = new Array()
+    provincesData.forEach(i => {
+      citys.push(i.list)
+    })
+    this.setData({
+      citys: citys[citysIndex],
+      countys: countys[countysIndex]
+    })
 
-  // 城市数据处理
+    this.data.citys.forEach(i => {
+      countys.push(i.list)
+    })
+    this.setData({
+      countys: countys[countysIndex]
+    })
 
-  // //  所在地区
-  // slideCity(e) {
-  //   var val = e.detail.value
-  //   var t = this.data.values;
-  //   var cityData = this.data.cityData;
-  //   if (val[0] != t[0]) {
-  //     // 省份
-  //     const citys = [];
-  //     const countys = [];
-  //     for (let i = 0; i < cityData[val[0]].list.length; i++) {
-  //       citys.push(cityData[val[0]].list[i].name)
-  //     }
-  //     for (let i = 0; i < cityData[val[0]].list[0].list.length; i++) {
-  //       countys.push(cityData[val[0]].list[0].list[i].name)
-  //     }
-
-  //     this.setData({
-  //       province: this.data.provinces[val[0]],
-  //       city: cityData[val[0]].list[0].name,
-  //       citys: citys,
-  //       county: cityData[val[0]].list[0].list[0].name,
-  //       countys: countys,
-  //       values: val,
-  //       value: [val[0], 0, 0]
-  //     })
-  //     return;
-  //   }
-  //   if (val[1] != t[1]) {
-  //     // 城市
-  //     const countys = [];
-
-  //     for (let i = 0; i < cityData[val[0]].list[val[1]].list.length; i++) {
-  //       countys.push(cityData[val[0]].list[val[1]].list[i].name)
-  //     }
-
-  //     this.setData({
-  //       city: this.data.citys[val[1]],
-  //       county: cityData[val[0]].list[val[1]].list[0].name,
-  //       countys: countys,
-  //       values: val,
-  //       value: [val[0], val[1], 0]
-  //     })
-  //     return;
-  //   }
-  //   if (val[2] != t[2]) {
-  //     // 区域
-  //     this.setData({
-  //       county: this.data.countys[val[2]],
-  //       values: val
-  //     })
-  //     return;
-  //   }
-  // },
-  // //所在地区
-  // selectCity: function (e) {
-  //   console.log(e)
-  //   this.setData({
-  //     condition: !this.data.condition
-  //   })
-  // },
-  // slideCity(e) {
-  //   const city = this.data.cityData
-  //   console.log(city[e.detail.value[0]].name )
-  //   console.log(city[e.detail.value[0]].id)
-  //   this.setData({
-  //     province: city[e.detail.value[0]].name,
-  //     provinceId: city[e.detail.value[0]].id
-  //   })
-  // },
-
-    selectCity: function (e) {
-      console.log(e)
+    if (citys[citysIndex][countysIndex].list.length == 0) {
       this.setData({
-        condition: !this.data.condition
+        province: provincesData[citysIndex].name,
+        provinceid: provincesData[citysIndex].id,
+        city: citys[citysIndex][countysIndex].name,
+        cityid: citys[citysIndex][countysIndex].id
       })
-    },
+    } 
+    if (citys[citysIndex][countysIndex].list.length > 0) {
+      this.setData({
+        province: provincesData[citysIndex].name,
+        provinceid: provincesData[citysIndex].id,
+        city: citys[citysIndex][countysIndex].name,
+        cityid: citys[citysIndex][countysIndex].id,
+        countys: countys[countysIndex],
+        county: countys[countysIndex][lastIndex].name,
+        dictionaryid: countys[countysIndex][lastIndex].id
+      })
+    }
+  },
+  // 城市数据处理
+  disc() {
+    let city = new Array()
+    let countys = new Array()
+    let provincesData = this.data.cityData
+    provincesData.forEach(a => {
+      city.push(a.list)
+    })
 
+    this.setData({
+      citys: city[0]
+    })
+    this.data.citys.forEach(i => {
+      countys.push(i.list)
+    })
+    this.setData({
+      countys: countys[0]
+    })
 
+    console.log(countys)
+  },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  selectSsalary (e) {
-    console.log(e.detail.value.text)
+  selectCity: function (e) {
+    this.setData({
+      condition: !this.data.condition
+    })
   },
 
   showSalary () {
@@ -270,9 +260,10 @@ Page({
   },
   // 选择工作性质 
   selectWork (e) {
-    const workNat = this.data.workData[e.currentTarget.dataset.index].name
+    console.log(e.currentTarget.dataset.index)
+    let naturework = this.data.workData[e.currentTarget.dataset.index].naturework
     this.setData({
-      workNat: workNat,
+      naturework: naturework,
       showWork: false
     })
   },
@@ -291,18 +282,28 @@ Page({
   },
   // 选择学历要求
   selectEducation(e) {
-    const education = this.data.educationData[e.currentTarget.dataset.index].name
+    const record = this.data.educationData[e.currentTarget.dataset.index].record
     this.setData({
-      education: education,
+      record: record,
       showEducation: false
     })
   },
 
+  // 工作年限
+  showYear () {
+    this.setData({
+      showYear: true
+    })
+  },
 
-
-
-
-
+  // 选择工作年限
+  selectYear (e) {
+    const working = this.data.workingYear[e.currentTarget.dataset.index].working
+    this.setData({
+      working: working,
+      showYear: false
+    })
+  },
 
   backPrev () {
     wx.navigateBack({
@@ -313,13 +314,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+    console.log(options)
+    this.setData({
+      jobid: options.id
+    })
     wx.getStorage({
       key: 'openIdKey',
       success: (res) => {
@@ -344,13 +342,39 @@ Page({
         })
       }
     })
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
     let openIdKey = this.data.openIdKey
     let sessionKey = this.data.sessionKey
     let token = this.data.token
+    let jobid = this.data.jobid
+    console.log(jobid)
+    // 获取地址
     getAddress({ openIdKey: openIdKey, sessionKey: sessionKey, token: token }).then(res => {
-      console.log(res.data.data)
+      console.log(res)
       this.setData({
         cityData: res.data.data
+      })
+    })
+
+    // 获取当前详情数据
+    jobDetail({ openIdKey: openIdKey, sessionKey: sessionKey, token: token, jobid: jobid }).then(res => {
+      console.log(res.data.data)
+      this.setData({
+        // jobename: res.data.data.jobename, // 职位名称
+        // jobpays: res.data.data.jobpays, // 月薪
+        // jobe: res.data.data.jobe, // 职能分类
+        // deptname: res.data.data.deptname, // 所属部门
+        // naturework: res.data.data.naturework, // 职位名称
+        // record: res.data.data.record, // 学历
+        // working: res.data.data.working, // 工作年限
+        // address: res.data.data.address, // 地址
+        // jobDescriptive: res.data.data.jobDescriptive  // 工作描述
       })
     })
   },
@@ -359,7 +383,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
@@ -373,27 +397,22 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
   },
-
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
   }
 })

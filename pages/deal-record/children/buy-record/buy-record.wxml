@@ -1,7 +1,7 @@
 <view class="record">
   <view class="record-time">
     <view class="title">历史记录</view>
-    <view class="time">2020.08-2020.11</view>
+    <view class="time">{{startTime}} - {{endTime}}</view>
   </view>
   <view class="select-time">
     <van-dropdown-menu active-color="#F9A985" popup-style="width: 200rpx;">

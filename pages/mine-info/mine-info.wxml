@@ -58,13 +58,13 @@
   <view class="line"></view>
   <view class="myupload">
     <view class="img-show wx-show ">
-      <image src="/assets/images/avatar.png" node="widthFix" />
+      <image src="{{codeImg}}" node="widthFix" />
     </view>
     <van-uploader class="myupload-img"
         file-list="{{ fileList }}"
         use-before-read
-        bind:before-read="beforeRead"
-        bind:after-read="afterRead"
+        bind:before-read="beforeReadWx"
+        bind:after-read="afterReadWx"
         bind:delete ="deleteImg"
       />
   </view>

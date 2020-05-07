@@ -4,14 +4,14 @@
     <inviting />
   </van-tab>
   <van-tab title="面试签到">
-    <sign />
+    <sign id="interviewing" />
   </van-tab>
   <van-tab title="面试结束">
-    <sign />
+    <finish id="finish" />
   </van-tab>
 </van-tabs>
 
-<view class="create">创建预约</view>
+<view class="create" bindtap="goInvite">创建预约</view>
 
 <view class="footer" bindtap="backPrv">
   <view>返回</view>

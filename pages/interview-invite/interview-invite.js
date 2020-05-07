@@ -1,4 +1,5 @@
 // pages/interview-invite/interview-invite.js
+import { inviteList } from '../../api/ajax'
 Page({
 
   /**
@@ -7,11 +8,20 @@ Page({
   data: {
     active: 0
   },
-  onChange(event) {
-    wx.showToast({
-      title: `切换到标签 ${event.detail.name}`,
-      icon: 'none'
-    });
+
+  // 跑去创建预约
+  goInvite () {
+    wx.navigateTo({
+      url: '../create-invite/create-invite'
+    })
+  },
+  onChange (e) {
+    if (e.detail.index == 1) {
+      this.sign.getData()
+    }
+    if (e.detail.index == 2) {
+      this.finish.getData()
+    }
   },
 
 
@@ -25,14 +35,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+ 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    // 获取组件
+    this.sign = this.selectComponent("#interviewing") 
+    this.finish = this.selectComponent("#finish") 
   },
 
   /**

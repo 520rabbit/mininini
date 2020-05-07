@@ -1,0 +1,42 @@
+.job {
+  padding: 15rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.job:last-of-type {
+  margin-bottom: 150rpx;
+}
+
+
+.job  > .job-state {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-state > .job-name {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 60rpx;
+}
+
+.job-state > .state-step {
+  color: #FF3636;
+  font-size: 30rpx;
+} 
+
+.interview-count {
+  font-size: 28rpx;
+  color: #959595;
+  line-height: 46rpx;
+}
+
+.interview-count > text {
+  margin: 10rpx;
+}
+
+.interview-count  > .job-color {
+  font-size: 30rpx;
+  color: #FFC15E;
+  margin: 0;
+}

@@ -3,17 +3,19 @@
     <view class="checkbox">
       <van-checkbox name="{{item}}" checked-color="#FF8652" />
     </view>
+
+    <block wx:for="{{dataList}}" wx:key="index"></block>
     <view class="job-info">
       <view class="job-item">
-        <view class="job-name">前端工程师</view>
-        <view class="job-price">0.8-1.2万/月</view>
+        <view class="job-name">{{item.jobename}}asd</view>
+        <view class="job-price">{{item.jobpays}}qew</view>
       </view>
       <view class="job-req"> 
-        <text>广东省广州市</text>
+        <text>{{item.address}}eq</text>
         <text>|</text>
-        <text>3-5年</text>
+        <text>{{item.working}}rwe</text>
         <text>|</text>
-        <text>大专</text>
+        <text>{{item.record}}qrwq</text>
       </view>
     </view>
   </view>
@@ -26,8 +28,6 @@
       <view> {{result.length}}/<text>{{list.length}}</text> </view>
     </view>
   </van-checkbox>
-      
-
   <view class="create">
     <image src="/assets/images/create.png"></image>
     立即创建

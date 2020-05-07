@@ -8,30 +8,36 @@
   <van-grid-item icon="/assets/images/nav-interview.png" text="面试预约" bind:click="goInvite" />
   <van-grid-item icon="/assets/images/nav-result.png" text="交付成果"  bind:click="goResult" />
 </van-grid>
-
 <view>
-  <van-tabs active="{{ active }}" sticky color="#FF8853" title-active-color="#F9A985" bind:change="onChange" border="{{ false }}">
+  <van-tabs active="{{ active }}" sticky color="#FF8853" title-active-color="#F9A985" bind:change="changeFirst" border="{{ false }}">
     <van-tab name="0" title="人才快招">
-      <van-tabs swipeable sticky offset-top="44">
-        <van-tab title="全部快招">
-          <list />
+      <van-tabs swipeable sticky offset-top="44" bind:change="changeSecond">
+        <van-tab title="全部快招" >
+          <all-list id="list" />
+          <view  hidden="{{isShow}}"><no-data /></view>
         </van-tab>
         <van-tab title="简历预审">
-          <list />
+          <wait-list id="wait-list" />
         </van-tab>
         <van-tab title="面试签到">
-          <list />
+          <interviewing-list id="interviewing-list" />
         </van-tab>
-        <van-tab title="面试审核"></van-tab>
-        <van-tab title="入职审核"></van-tab>
-        <van-tab title="保过审核"></van-tab>
+        <van-tab title="面试审核">
+          <interviewing-list id="second-list" />
+        </van-tab>
+        <van-tab title="入职审核">
+          <check-list id="check-list" /> 
+        </van-tab>
+        <van-tab title="保过审核">
+          <bless-list id="bless-list" />
+        </van-tab>
       </van-tabs>
     </van-tab>
     <van-tab name="1" title="审核不通过">
-      <list />
+      <psss-list id="psss-list" />
     </van-tab>
     <van-tab name="2" title="已完成">
-      <list />
+      <finish-list id="finish-list" />
     </van-tab>
   </van-tabs>
 </view>

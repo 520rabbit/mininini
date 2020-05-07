@@ -1,0 +1,20 @@
+/* component/no-data/no-data.wxss */
+.wrap {
+  width: 100vw;
+  text-align: center;
+}
+.no-data {
+  width: 500rpx;
+  margin: auto;
+}
+
+.no-data > image {
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  color: #757575;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}

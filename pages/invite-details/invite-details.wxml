@@ -1,0 +1,93 @@
+<wxs src="./filter.wxs" module="filter" />
+<view class="details-banner">
+  <view>交付类型：面试通过</view>
+  <view>所需快招币：300个/人</view>
+  <view>冻结快招币总额：1200币</view>
+</view>
+
+<block wx:for="{{dataList}}" wx:key="{{index}}">
+  <view class="wrap">
+    <view class="compete-info">
+      <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+      <view class="person-info">
+        <view class="name">{{item.name}}</view>
+        <view class="sex">{{item.usex}}<text>|</text>{{item.uage}}<text>|</text>{{item.record}}<text>|</text>{{item.working}}</view>
+    </view>
+    </view>
+    <view class="interview-info" hidden="{{filter.stateBtn(item.state)}}">
+      <view class="interview-delay">未能通过</view>
+      <view class="interview-sign">通过面试</view>
+    </view>
+    <view class="interview-info" hidden="{{!filter.stateBtn(item.state)}}">
+      <view class="interview-delay">通过面试</view>
+      <view class="interview-sign">未能通过</view>
+    </view>
+  </view>
+</block>
+
+
+
+
+
+<!-- 修改时间 -->
+<view class="updata" hidden="{{isShow}}">
+  <view>
+    <van-cell-group>
+      <van-cell required is-link bind:click="showInterview">
+        <view>{{filter.formatDate(interviewData)}}</view>
+        <view slot="title">
+          <view class="van-cell-text">面试日期</view>
+        </view>
+      </van-cell>
+
+      <van-cell required is-link >
+        <view class="time-dot">
+          <view class="start" bindtap="showStart">{{startTime}}</view>
+          <view class="interval">至</view>
+          <view class="start" bindtap="showEnd">{{endTIme}}</view>
+        </view>
+        <view slot="title">
+          <view class="van-cell-text">面试时间段</view>
+        </view>
+      </van-cell>
+    </van-cell-group>
+
+
+    <view class="confirm">确定</view>
+  </view>
+  <!-- 面试日期时间选择 -->
+  <van-popup show="{{ showInterview }}" position="bottom" >
+    <van-datetime-picker
+      type="date"
+      value="{{ currentDate }}"
+      min-date="{{ minDate }}"
+      formatter="{{ formatter }}"
+      bind:confirm="confirmInterview"
+      bind:cancel="onClose"
+    />
+  </van-popup>
+
+  <!-- 面试开始时间 -->
+  <van-popup show="{{ showStart }}"  position="bottom" >
+    <van-datetime-picker
+      type="time"
+      value="{{ startTime }}"
+      min-hour="{{ minHour }}"
+      max-hour="{{ maxHour }}"
+      bind:confirm="confirmStart"
+      bind:cancel="onClose"
+    />
+  </van-popup>
+
+  <!-- 面试结束时间 -->
+  <van-popup show="{{ showEnd }}"  position="bottom" >
+    <van-datetime-picker
+      type="time"
+      value="{{ endTime }}"
+      min-hour="{{ minHour2 }}"
+      max-hour="{{ maxHour2 }}"
+      bind:confirm="confirmEnd"
+      bind:cancel="onClose"
+    />
+  </van-popup>
+</view>

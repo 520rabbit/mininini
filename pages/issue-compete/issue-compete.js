@@ -60,7 +60,17 @@ Page({
         issue_name: 'ssc推荐',
         isSelect: false
       }],
-    showNode: false // 交付节点
+    showNode: false, // 交付节点
+
+    // 必须参数
+    OpenIdKey: '',
+    token: '',
+    SessionKey: '',
+    jobid: '', // 节点
+    msnumber: 0, // 拟面试人数
+    msbtime: '', // 面试日期
+    btime: '', //开始时间
+    Etime: '', // 结束时间
   },
 
   isTrue({ detail }) {
@@ -70,13 +80,11 @@ Page({
 
   // 展示报名截止时间
   showApply() {
-    console.log("63225")
     this.setData({ showApply: true });
   },
 
   // 展示面试时间
   showInterview() {
-    console.log("65")
     this.setData({ showInterview: true });
   },
 

@@ -17,7 +17,9 @@
     "pages/result/result",
     "pages/login/login",
     "pages/company-info/company-info",
-    "pages/aptitude/aptitude"
+    "pages/aptitude/aptitude",
+    "pages/create-invite/create-invite",
+    "pages/invite-details/invite-details"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
@@ -75,7 +77,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 100
   },
   "sitemapLocation": "sitemap.json"
 }

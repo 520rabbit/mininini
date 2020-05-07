@@ -1,0 +1,66 @@
+var formatDate = function (timestamp, option) {
+  var date = getDate(parseInt(timestamp))
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+  if (option == 'notime') {  //不需要时间
+    return year + '-' + month + '-' + day
+  }
+
+  if (timestamp == '') {
+    return 
+  }
+
+  return year + '-' + month + '-' + day 
+}
+
+var resData = function (timeData, option) {
+  var date = getDate(parseInt(timeData))
+  var hour = function () {
+    if (date.getHours() < 10) {  //补‘0’
+      return '0' + date.getHours()
+    }
+    return date.getHours()
+  }
+  var minute = function () {
+    if (date.getMinutes() < 10) {
+      return '0' + date.getMinutes()
+    }
+    return date.getMinutes()
+  }
+  var second = function () {
+    if (date.getSeconds() < 10) {
+      return '0' + date.getSeconds()
+    }
+    return date.getSeconds()
+    
+  }
+  if (option == 'notime') {  //不需要时间
+    return hour() + ':' + minute()
+  }
+
+  return hour() + ':' + minute()
+}
+
+var stateBtn = function (value) {
+  switch (value) {
+    case 1:
+      return false
+      break;
+    case 2:
+      return true
+      break;
+    case 3:
+      return true
+      break;
+    default:
+      break;
+  } 
+}
+
+
+module.exports = {
+  formatDate: formatDate,
+  resData: resData,
+  stateBtn: stateBtn
+}

@@ -12,7 +12,7 @@
       bind:click-icon="onClickIcon"
     />
     <van-cell required >
-      <van-stepper value="{{ 1 }}" bind:change="onChange" button-size="20"
+      <van-stepper value="{{ msnumber }}" bind:change="onChange" button-size="20"
         minus-class="minus-class" plus-class="plus-class	" input-class="input-class" />
       <view slot="title">
         <view class="van-cell-text">拟面试人数</view>
@@ -134,7 +134,7 @@
   />
 </van-popup>
 
-<!-- 面试介绍时间 -->
+<!-- 面试结束时间 -->
 <van-popup show="{{ showEnd }}"  position="bottom" >
   <van-datetime-picker
     type="time"

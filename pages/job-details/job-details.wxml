@@ -1,18 +1,18 @@
 <view class="job">
   <view class="job-top">
     <view class="job-info">
-      <view class="job-name">Java开发工程师</view>
-      <view class="job-price">0.8-1万/月</view>
+      <view class="job-name">{{jobename}}</view>
+      <view class="job-price">{{jobpays}}</view>
     </view>
-    <view class="job-type">职能分类 <text>|</text> 所属部门</view>
+    <view class="job-type">{{jobe}} <text>|</text> {{deptname}}</view>
   </view>
-  <view class="job-bottom">
+  <view class="job-bottom">  
     <view class="job-info">
-      <view> <image class="icon-image" src="/assets/images/type.png" mode="widthFix"></image> 全职</view>
-      <view> <image class="icon-image" src="/assets/images/time.png" mode="widthFix"></image>3-5年</view>
-      <view><image class="icon-image" src="/assets/images/education.png" mode="widthFix"></image>大专</view>
+      <view> <image class="icon-image" src="/assets/images/type.png" mode="widthFix"></image> {{naturework}}</view>
+      <view> <image class="icon-image" src="/assets/images/time.png" mode="widthFix"></image>{{working}}</view>
+      <view><image class="icon-image" src="/assets/images/education.png" mode="widthFix"></image>{{record}}</view>
     </view>
-    <view class="address"><image class="icon-image address" src="/assets/images/address.png" mode="widthFix"></image>广州市海珠区蚝壳街17号“1号汇创”A座203a</view>
+    <view class="address"><image class="icon-image address" src="/assets/images/address.png" mode="widthFix"></image>{{address}}</view>
   </view>
 
 </view>
@@ -23,13 +23,24 @@
     职位描述
   </view>
   <view class="job-desc">
-  fsaqeragreqagreagregfweagrewwgeargqatfgrewgfvreagaertgtarehgrsythnbrythaaaaaaaaaafssasffffffffffffffffff
+  {{jobDescriptive}}
   </view>
 
 </view>
 
 
+<van-overlay show="{{ showImg }}" bind:click="onClickHide"/>
+
+<view class="wrap" hidden="{{ !showImg }}" >
+  <view class="sea-img">
+    <image src="{{seaImg}}" mode="widthFix"></image>
+  </view>
+  <view class="next" bindtap="nextImg">下一张</view>
+</view>
+
+
 <view class="footer">
-  <view class="back" bindtap="backPrev">返回</view>
+  <view class="back" bindtap="backPrev"><image src="/assets/images/back.png" mode="widthFix"></image></view>
+  <view class="share" bindtap="createImg"><image src="/assets/images/share-img.png" mode="widthFix"></image></view>
   <view class="save" bindtap="goMine"><image class="btn" src="/assets/images/editor.png"></image>立即修改</view>
 </view>

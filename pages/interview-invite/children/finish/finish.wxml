@@ -1,0 +1,10 @@
+<block wx:for="{{ dataList }}" wx:key="{{index}}">
+  <view class="job" data-id="{{item.jobid}}">
+    <view class="job-state">
+      <view class="job-name">{{item.jobname}}</view>
+      <view class="state-step">应约数：{{item.msnumber}}人</view>
+    </view>
+      <view class="interview-count">{{item.address}}<text>|</text>{{item.working}}<text>|</text>{{item.record}}</view>
+      <view class="interview-count">面试时间：<text class="job-color">{{item.mstime}}</text></view>
+  </view>
+</block>

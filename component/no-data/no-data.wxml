@@ -1,0 +1,4 @@
+<view class="wrap">
+  <view class="no-data"><image src="/assets/images/no-data.png" mode="widthFix"></image></view>
+  <view class="title">暂无数据</view>
+</view>

@@ -1,0 +1,19 @@
+
+<block wx:for="{{dataList}}"  wx:key="index">
+  <view>
+    <view class="job" bindtap="goJobDetails" data-id="{{item.msid}}">
+      <view class="job-state">
+        <view class="job-name">{{item.jobname}} <text class="time">【{{item.jobnode}}】</text></view>
+        <view class="state-step">不通过</view>
+      </view>
+      <view class="interview-count">拟面试人数：<text class="job-color">{{item.msnumber}}人</text></view>
+      <view class="interview-count">竞聘报名截止时间：<text class="job-color">{{iteem.jptime}}</text></view>
+      <view class="interview-count">面试时间：<text class="job-color">{{item.msbtime}}</text></view>
+    </view>
+  </view>
+</block>
+
+
+
+
+

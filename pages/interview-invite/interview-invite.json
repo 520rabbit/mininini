@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "inviting":"./children/inviting/inviting",
-    "sign":"./children/sign/sign"
+    "sign":"./children/sign/sign",
+    "finish": "./children/finish/finish"
   },
   "navigationBarTitleText": "面试邀约"
 }

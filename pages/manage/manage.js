@@ -1,5 +1,5 @@
 // pages/manage/manage.js
-import { jobList } from "../../api/ajax.js"
+
 Page({
 
   /**
@@ -8,47 +8,42 @@ Page({
   data: {
     active: 0,
     showIssu: false,
-    listForm: {
-      openIdKey: '',
-      sessionKey: '',
-      token: '',
-      type: 2,
-      curr: 1, // 页数
-      limit: 15 // 行数
-    }
+    dataList: '' // 数据
   },
 
   toggleTab (e) {
-    let type = 'listForm.type'
-    if (e.detail.index == 0) {
-      this.setData({
-        showIssu: false,
-        [type]:2
-      })
-    }else if (e.detail.index == 1) {
-      this.setData({
-        showIssu: true,
-        [type]: e.detail.index
-      })
-    }  else {
-      this.setData({
-        showIssu: true,
-        [type]: e.detail.index + 1
-      })
+    // 待审核
+    if(e.detail.index == 1) {
+      this.waitList()
     }
-
-    // 切换请求数据
-    this.getJobList()
-  },
-
-
-  getJobList () {
-    let listForm = this.data.listForm
-    jobList(listForm).then(res => {
-      console.log(res)
+    //  审核不通过
+    if(e.detail.index == 2) {
+      this.passList()
+    }
+    //  草稿职位
+    if(e.detail.index == 3) {
+      this.draftsList()
+    }
+    this.setData ({
+      active: e.detail.index
     })
   },
-
+  // 使用中
+  usingList () {
+    this.selectComponent("#using").getData()
+  },
+  // 待审核
+  waitList () {
+    this.selectComponent("#wait").getData()
+  },
+  // 审核不通过
+  passList () {
+    this.selectComponent("#pass").getData()
+  },
+  // 审核不通过
+  draftsList () {
+    this.selectComponent("#drafts").getData()
+  },
 
   // 跑去创建职位
   goUpdate () {
@@ -61,49 +56,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    let openIdKey = 'listForm.openIdKey'
-    let sessionKey = 'listForm.sessionKey'
-    let token = 'listForm.token'
-    wx.getStorage({
-      key: 'openIdKey',
-      success: function (res) {
-        that.setData({
-          [openIdKey]: res.data
-        })
-      }
-    })
-    wx.getStorage({
-      key: 'sessionKey',
-      success: function (res) {
-        that.setData({
-          [sessionKey]: res.data
-        })
-      }
-    })
-    wx.getStorage({
-      key: 'token',
-      success: function (res) {
-        that.setData({
-          [token]: res.data
-        })
-      }
-    })
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    var that = this
-    that.getJobList()
+    // 使用中
+    this.usingList()
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**
@@ -131,7 +98,16 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    let currentIndex = this.data.active
+    if(currentIndex == 0) {
+      this.usingList()
+    }
+    if(currentIndex == 1) {
+      this.waitList()
+    }
+    if(currentIndex == 2) {
+      this.passList()
+    }
   },
 
   /**

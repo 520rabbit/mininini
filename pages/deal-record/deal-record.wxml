@@ -1,8 +1,6 @@
-
-
-  <van-tabs active="{{ active }}" swipeable color="#F9A985" title-active-color="#F9A985" sticky>
+  <van-tabs active="{{ active }}" swipeable color="#F9A985" title-active-color="#F9A985" bind:change="toggleTab" sticky>
     <van-tab title="使用记录" name="1" >  
-      <use-record selectMonth="{{selectMonth}}" monthValue="{{monthValue}}"/>
+      <use-record useData="{{useData}}" />
     </van-tab>
     <van-tab title="购买记录" name="2" nav-class="aaa">
       <buy-record selectMonth="{{selectMonth}}" monthValue="{{monthValue}}" />

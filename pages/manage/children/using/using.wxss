@@ -6,7 +6,7 @@
 .job-item {
   display: flex;
   justify-content: space-between;
-  width: 630rpx;
+  width: 690rpx;
   line-height: 60rpx;
   font-size: 28rpx;
   box-sizing: border-box;
@@ -31,6 +31,7 @@
 .job-info {
   padding: 10rpx 0;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .list-item {

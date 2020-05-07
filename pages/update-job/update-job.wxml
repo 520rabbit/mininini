@@ -1,7 +1,7 @@
 <view class="module">
   <van-cell-group>
     <van-field
-      value="{{ jobname }}"
+      value="{{ jobename }}"
       label="职位名称"
       required
       input-align="right"
@@ -23,7 +23,7 @@
     </van-cell>
 
     <van-cell required is-link bindtap="slelctCity">
-      <view class="salary">{{jobType}}</view>
+      <view class="salary">{{province}}{{city}}{{county}}</view>
       <view slot="title">
         <view class="van-cell-text">城市区域</view>
       </view>
@@ -31,7 +31,7 @@
 
 
     <van-field
-      value="{{ detailsAddress }}"
+      value="{{ address }}"
       label="详细地址"
       required
       input-align="right"
@@ -54,7 +54,7 @@
     >
     </van-field>
     <van-field
-      value="{{ workNat }}"
+      value="{{ naturework }}"
       label=" 工作性质"
       required
       input-align="right"
@@ -68,15 +68,15 @@
       </view>
     </van-cell>
     <van-field
-      value="{{ education }}"
+      value="{{ working }}"
       label="工作年限"
       required
       input-align="right"
       icon="arrow"
-      bind:focus="showSelectEducation"
+      bind:focus="showYear"
     />
     <van-field
-      value="{{ education }}"
+      value="{{ record }}"
       label=" 学历要求"
       required
       input-align="right"
@@ -96,15 +96,22 @@
   </van-cell-group>
 </view>
 
+
+<!-- 工作年限 -->
+<van-action-sheet show="{{ showYear }}" title="工作年限工作年限">
+  <view class="work-item" data-index="{{index}}" bindtap="selectYear" wx:for="{{workingYear}}" wx:key="index">{{item.working}}</view>
+  <view class="work-confirm" bindtap="cancleShow">取消</view>
+</van-action-sheet>
+
 <!-- 工作性质 -->
 <van-action-sheet show="{{ showWork }}" title="工作性质">
-  <view class="work-item" data-index="{{index}}" bindtap="selectWork" wx:for="{{workData}}" wx:key="index">{{item.name}}</view>
+  <view class="work-item" data-index="{{index}}" bindtap="selectWork" wx:for="{{workData}}" wx:key="index">{{item.naturework}}</view>
   <view class="work-confirm" bindtap="cancleShow">取消</view>
 </van-action-sheet>
 
 <!-- 学历要求 -->
 <van-action-sheet show="{{ showEducation }}" title="学历要求">
-  <view class="work-item" data-index="{{index}}" bindtap="selectEducation" wx:for="{{educationData}}" wx:key="index">{{item.name}}</view>
+  <view class="work-item" data-index="{{index}}" bindtap="selectEducation" wx:for="{{educationData}}" wx:key="index">{{item.record}}</view>
   <view class="work-confirm" bindtap="cancleShow">取消</view>
 </van-action-sheet>
 
@@ -145,13 +152,13 @@
       <view bindtap="selectCity" class="city-true">确定</view>
     </view>
     <picker-view-column>
-      <view wx:for="{{cityData}}" class="item" wx:key="item" >{{item.name}}</view>
+      <view wx:for="{{cityData}}" data-title="{{item.id}}" data-index="{{index}}"  class="item" wx:key="{{index}}" >{{item.name}}</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{citys}}" class="item" wx:key="item" >{{item}}</view>
+      <view wx:for="{{citys}}" class="item"  wx:key="{{index}}" >{{item.name}}</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{countys}}" class="item" wx:key="item" >{{item}}</view>
+      <view wx:for="{{countys}}" class="item" wx:key="item" >{{item.name}}</view>
     </picker-view-column>
   </picker-view>
 </view>

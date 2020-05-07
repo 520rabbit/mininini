@@ -1,0 +1,28 @@
+<!--pages/home/children/list/list.wxml-->
+
+<block wx:for="{{dataList}}"  wx:key="index">
+  <view>
+    <view class="job" bindtap="goJobDetails">
+      <view class="job-state">
+        <view class="job-name">{{item.jobname}} <text class="time">【{{item.jobnode}}】</text></view>
+        <view class="state-step">{{item.state}}</view>
+      </view>
+      <view class="interview-count">拟面试人数：<text class="job-color">{{item.msnumber}}人</text></view>
+      <view class="interview-count">竞聘报名截止时间：<text class="job-color"> {{item.jptime}}</text></view>
+      <view class="interview-count">面试时间：<text class="job-color">{{item.msbtime}}</text></view>
+    </view>
+    <view class="compete-wrap" bindtap="goDetails">
+      <view class="compete-count">
+        <view>
+          <image src="/assets/images/compete-count.png"></image>
+        </view>
+        已竞聘人数
+      </view>
+      <view class="person-count">{{item.nubmer}}人 <van-icon name="arrow" /></view> 
+    </view>
+  </view>
+</block>
+
+
+
+

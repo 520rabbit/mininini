@@ -90,8 +90,8 @@
   width: 100vw;
   box-sizing: border-box;
   word-wrap: break-word;
-  white-space: normal;
   line-height: 48rpx;
+  white-space: pre-line;
 }
 
 
@@ -108,13 +108,11 @@
   justify-content: left;
   padding: 15rpx 30rpx;
   box-sizing: border-box;
-  z-index: 99;
 }
 
 .footer > .back {
-  width: 250rpx;
+  width: 50rpx;
   background: #fff;
-  border: 2rpx solid #DEDEDE;
   line-height: 68rpx;
   text-align: center;
   font-size: 30rpx;
@@ -122,6 +120,21 @@
   border-radius: 10rpx;
   margin-right: 20rpx;
   box-sizing: border-box;
+}
+
+.back > image {
+  width: 100%;
+}
+
+.share {
+  width: 50rpx;
+  line-height: 68rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+.share > image {
+  width: 100%;
 }
 
 .save {
@@ -138,4 +151,36 @@
   width: 30rpx;
   height: 30rpx;
   margin-right: 10rpx;
+}
+
+
+.wrap{
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
+  width: 690rpx;
+  z-index: 99;
+  overflow: scroll;
+  margin-bottom: 50rpx;
+}
+
+.wrap > .sea-img  {
+  width: 100%;
+}
+
+.wrap > .sea-img > image {
+  width: 100%;
+}
+
+.wrap > .next {
+  line-height: 60rpx;
+  background: rgb(000, 000, 000, .6);
+  position: fixed;
+  top: 30%;
+  right: 30rpx;
+  width: 150rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  z-index: 999999;
+  color: #fff;
 }

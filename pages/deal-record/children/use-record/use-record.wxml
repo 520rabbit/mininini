@@ -10,7 +10,7 @@
   </view>
 </view>
 
-<view class="task-type" wx:for="{{useRcord}}" wx:key="index">
+<view class="task-type" wx:for="{{useData}}" wx:key="index">
   <view class="task-money freeze">
     <view class="type-img"><image src="/assets/images/111.png" mode="widthFix"></image> </view>
     <view class="count">已冻结：<text>240个</text></view>

@@ -64,7 +64,6 @@ export function editorUserInfo(data) {
   })
 }
 
-
 // 8、职位列表
 export function jobList(data) {
   return ajax({
@@ -101,6 +100,15 @@ export function userInfoDetails(data) {
   })
 }
 
+// 11、上传微信图片 
+export function userCode(data) {
+  return ajax({
+    url: baseUrl + '/user/PostUploadpersonalcode',
+    method: 'post',
+    data
+  })
+}
+
 // 12、读取职能
 export function getFun(data) {
   return ajax({
@@ -128,19 +136,16 @@ export function getAddress(data) {
   })
 }
 
+// 15、职位详情
+export function jobDetail(data) {
+  return ajax({
+    url: baseUrl + '/job/JobSelect',
+    method: 'post',
+    data
+  })
+}
 
-
-
-
-
-
-
-
-
-
-
-
-// 6、企业信息详情
+// 16、企业风采
 export function companyInfo(data) {
   return ajax({
     url: baseUrl + '/user/GetCompanyInfo',
@@ -149,31 +154,79 @@ export function companyInfo(data) {
   })
 }
 
-
-
-// 9、读取行业
-// export function buyRecord(data) {
-//   return ajax({
-//     url: baseUrl + '/user/GetHy',
-//     method: 'post',
-//     data
-//   })
-// }
-
-
-
-
-
-
-
-// 13、职位详情
-export function jobDetail(data) {
+// 17、首页数据
+export function homeList(data) {
   return ajax({
-    url: baseUrl + '/job/JobSelect',
+    url: baseUrl + '/interview/joblist',
     method: 'post',
     data
   })
 }
+
+// 18、发布快招
+export function issueJob(data) {
+  return ajax({
+    url: baseUrl + '/interview/JobAdd',
+    method: 'post',
+    data
+  })
+}
+
+// 19、交付成果
+export function getResult(data) {
+  return ajax({
+    url: baseUrl + '/interview/Deliverable',
+    method: 'post',
+    data
+  })
+}
+
+// 20、生成职位海报
+export function creatJobImg(data) {
+  return ajax({
+    url: baseUrl + '/deliveryposters/getPosters',
+    method: 'GET',
+    data
+  })
+}
+
+// 21、发布邀约
+export function issueInvite(data) {
+  return ajax({
+    url: baseUrl + '/make/MakeAdd',
+    method: 'post',
+    data
+  })
+}
+
+// 22、发布邀约
+export function inviteJob(data) {
+  return ajax({
+    url: baseUrl + 'make/joblist',
+    method: 'post',
+    data
+  })
+}
+
+// 23、邀约列表
+export function inviteList(data) {
+  return ajax({
+    url: baseUrl + '/make/MakeList',
+    method: 'post',
+    data
+  })
+}
+
+// 24、邀约职位详情
+export function inviteDetail(data) {
+  return ajax({
+    url: baseUrl + '/make/JobModelSelect',
+    method: 'post',
+    data
+  })
+}
+
+
 
 // 14、保存职位
 export function saveJob(data) {

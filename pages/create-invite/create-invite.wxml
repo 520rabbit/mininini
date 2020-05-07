@@ -1,0 +1,79 @@
+<wxs src="./filter.wxs" module="filter" />
+<view>
+  <van-cell-group>
+    <van-cell required is-link  bind:click="showJobList">
+      <view>{{jobName}}</view>
+      <view slot="title">
+        <view class="van-cell-text">职位选择</view>
+      </view>
+    </van-cell>
+    
+    <van-cell required is-link bind:click="showInterview">
+      <view>{{filter.formatDate(mstime)}}</view>
+      <view slot="title">
+        <view class="van-cell-text">面试日期</view>
+      </view>
+    </van-cell>
+
+    <van-cell required is-link >
+      <view class="time-dot">
+        <view class="start" bindtap="showStart">{{btime}}</view>
+        <view class="interval">至</view>
+        <view class="start" bindtap="showEnd">{{etime}}</view>
+      </view>
+      <view slot="title">
+        <view class="van-cell-text">面试时间段</view>
+      </view>
+    </van-cell>
+  </van-cell-group>
+</view>
+
+
+<!-- footer按钮 -->
+<view class="footer">
+  <view class="back" bindtap="backPrev">返回</view>
+  <view class="save" bindtap="handlerCreate"><image class="btn" src="/assets/images/btn.png"></image>创建预约</view>
+</view>
+
+
+<!-- 职位选择 -->
+<van-popup show="{{ showJobList }}" position="bottom">
+  <view class="citypicker">
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;"  bindchange="slideJob" class="citybody">
+      <view class="cityheader">
+        <view bindtap="selectJob" class="city-cancel">取消</view>
+        <view bindtap="selectJob" class="city-true">确定</view>
+      </view> -->
+      <picker-view-column>
+        <view wx:for="{{columns}}" data-title="{{item.jobid}}" data-index="{{index}}"  class="item" wx:key="{{index}}" >{{item.jobename}}</view>
+      </picker-view-column>
+     </picker-view>
+  </view>
+</van-popup>
+
+
+
+<!-- 面试日期时间选择 -->
+<van-popup show="{{ showInterview }}" position="bottom" >
+  <van-datetime-picker
+    type="date"
+    value="{{ currentDate }}"
+    min-date="{{ minDate }}"
+    formatter="{{ formatter }}"
+    bind:confirm="confirmInterview"
+    bind:cancel="onClose"
+  />
+</van-popup>
+
+<!-- 面试开始时间 -->
+<van-popup show="{{ showStart }}"  position="bottom" >
+  <van-picker columns="{{ beginTime }}" bind:change="onChange" bind:confirm="confirmStart" show-toolbar />
+</van-popup>
+
+<!-- 面试结束时间 -->
+<van-popup show="{{ showEnd }}"  position="bottom" >
+  <van-picker columns="{{ endTime }}" bind:change="onChange" bind:confirm="confirmEnd" show-toolbar />
+</van-popup>
+
+
+

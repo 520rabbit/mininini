@@ -1,6 +1,5 @@
 // pages/mine-info/mine-info.js
-import { editorUserInfo } from "../../api/ajax.js"
-import { userInfoDetails } from "../../api/ajax.js"
+import { editorUserInfo, userCode, userInfoDetails } from "../../api/ajax.js"
 import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog'
 Page({
 
@@ -20,10 +19,17 @@ Page({
       email: '', // 电子邮箱
       cname: '' // 公司名称
     },
-    showImg: '/assets/images/avatar.png'  // 展示的图片
+    //微信二维码
+    wxForm: {
+      openIdKey: '',
+      sessionKey: '',
+      token: '',
+      wximagename: '', //图片64位编码
+      wximagepath: '',   // 图片后缀名
+    },
+    showImg: '/assets/images/avatar.png',  // 展示的头像图片
+    codeImg: '/assets/images/avatar.png'  // 微信二维码
   },
-
-
 
   // 昵称
   updateName (e) {
@@ -70,22 +76,48 @@ Page({
         let base64 = wx.arrayBufferToBase64(res.data);
         //打印出base64字符串，可复制到网页校验一下是否是你选择的原图片呢
         let imagename = 'updateForm.imagename'
+        let wximagename = 'wxForm.wximagename'
         this.setData({
-          [imagename]: base64
+          [imagename]: base64,
+          [wximagename]: base64
         })
-      }
+        console.log(this.data.wxForm.wximagename)
+      }   
     })
   },
+
   beforeRead(e) {
     let imagename = e.detail.file.path
     let imagepath = e.detail.file.path.substring(e.detail.file.path.lastIndexOf("."), e.detail.file.path.length)
     this.getBase64(imagename)
     let helpImagePath = 'updateForm.imagepath'
     this.setData({
+      showImg: imagename,
       [helpImagePath]: imagepath
     })
-    console.log(this.data.updateForm.imagepath)
   },
+
+  beforeReadWx(e) {
+    let wximagename = e.detail.file.path
+    let myMagepath = e.detail.file.path.substring(e.detail.file.path.lastIndexOf("."), e.detail.file.path.length)
+    this.getBase64(wximagename)
+    let helpImagePath = 'wxForm.wximagepath'
+    this.setData({
+      [helpImagePath]: myMagepath
+    })
+    console.log(wximagename)
+    setTimeout( () => {
+
+      let wxForm = this.data.wxForm
+      userCode(wxForm).then( res => {
+        console.log(res)
+        this.setData({
+          codeImg: res.data.imagepath
+        })
+      })
+    },500)
+  },
+
 // 上传图片
 
   // 跳到个人中心页面
@@ -135,13 +167,17 @@ Page({
       })
     } else {
       editorUserInfo(updateForm).then(res => {
-        console.log(res)
+
+        if (res.data.Message = "success") {
+          this.setData({
+            showImg: res.data.imagepath
+          })
+          wx.switchTab({
+            url: '../mine/mine'
+          })
+        }
       })
     }
-
-    // wx.switchTab({
-    //   url: '../mine/mine'
-    // })
   },
 
   // 返回个人中心页面
@@ -158,11 +194,17 @@ Page({
     let openIdKey = 'updateForm.openIdKey'
     let sessionKey = 'updateForm.sessionKey'
     let token = 'updateForm.token'
+
+    let wxopenIdKey = 'wxForm.openIdKey'
+    let wxsessionKey = 'wxForm.sessionKey'
+    let wxtoken = 'wxForm.token'
+    
     wx.getStorage({
       key: 'openIdKey',
       success: function (res) {
         that.setData({
-          [openIdKey]: res.data
+          [openIdKey]: res.data,
+          [wxopenIdKey]: res.data
         })
       }
     })
@@ -170,7 +212,8 @@ Page({
       key: 'sessionKey',
       success: function (res) {
         that.setData({
-          [sessionKey]: res.data
+          [sessionKey]: res.data,
+          [wxsessionKey]: res.data
         })
       }
     })
@@ -178,7 +221,8 @@ Page({
       key: 'token',
       success: function (res) {
         that.setData({
-          [token]: res.data
+          [token]: res.data,
+          [wxtoken]: res.data
         })
       }
     })
@@ -204,7 +248,6 @@ Page({
         [email]: res.data.data.email,
         [cname]: res.data.data.cname,
       })
-      console.log(res.data.data)
     })
   },
 

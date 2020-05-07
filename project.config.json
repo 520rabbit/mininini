@@ -162,13 +162,6 @@
 				},
 				{
 					"id": -1,
-					"name": "职能分类",
-					"pathName": "pages/fun-type/fun-type",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "登录",
 					"pathName": "pages/login/login",
 					"query": "",
@@ -185,6 +178,20 @@
 					"id": -1,
 					"name": "资质认证",
 					"pathName": "pages/aptitude/aptitude",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "创建预约",
+					"pathName": "pages/create-invite/create-invite",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预约详情",
+					"pathName": "pages/invite-details/invite-details",
 					"query": "",
 					"scene": null
 				}

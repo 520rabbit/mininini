@@ -1,6 +1,13 @@
 {
   "usingComponents": {
-    "list": "./children/list/list"
+    "all-list": "./children/all-list/all-list",
+    "psss-list": "./children/psss-list/psss-list",
+    "finish-list": "./children/finish-list/finish-list",
+    "wait-list": "./children/wait-list/wait-list",
+    "interviewing-list": "./children/interviewing-list/interviewing-list",
+    "check-list": "./children/check-list/check-list",
+    "bless-list": "./children/bless-list/bless-list",
+    "no-data": "../../component/no-data/no-data"
   },
   "navigationBarTitleText": "人才快招"
 }

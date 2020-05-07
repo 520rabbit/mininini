@@ -9,79 +9,34 @@
   custom-class="custom-class"
 >
 </van-search>
-<view class="wrap">
-  <view class="compete-info">
-    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
-    <view class="person-info">
-      <view class="name">ui小姐姐</view>
-      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
-   </view>
-  </view>
 
-  <view class="result-info">
-    <view class="info-item">  
-      <view>类型</view>
-      <view class="state">到场面试</view>
+<block wx:for="{{resData}}" wx:key="{{index}}">
+  <view class="wrap">
+    <view class="compete-info">
+      <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
+      <view class="person-info">
+        <view class="name">{{item.jobname}}</view>
+        <view class="sex">{{item.usex}}<text>|</text>{{item.uage}}<text>|</text>{{item.record}}<text>|</text>{{item.working}}</view>
     </view>
-    <view class="info-item">  
-      <view>职位</view>
-      <view>高级营养师</view>
     </view>
-    <view class="info-item">  
-      <view>通过日期</view>
-      <view>2019-05-25</view>
-    </view>
-  </view>
-</view>
 
-<view class="wrap">
-  <view class="compete-info">
-    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
-    <view class="person-info">
-      <view class="name">ui小姐姐</view>
-      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
-   </view>
+    <view class="result-info">
+      <view class="info-item">  
+        <view>类型</view>
+        <view class="state">{{ item.jobnode }}</view>
+      </view>
+      <view class="info-item">  
+        <view>职位</view>
+        <view>高级营养师</view>
+      </view>
+      <view class="info-item">  
+        <view>通过日期</view>
+        <view>2019-05-25</view>
+      </view>
+    </view>
   </view>
+</block>
 
-  <view class="result-info">
-    <view class="info-item">  
-      <view>类型</view>
-      <view class="state">到场面试</view>
-    </view>
-    <view class="info-item">  
-      <view>职位</view>
-      <view>高级营养师</view>
-    </view>
-    <view class="info-item">  
-      <view>通过日期</view>
-      <view>2019-05-25</view>
-    </view>
-  </view>
-</view>
-<view class="wrap">
-  <view class="compete-info">
-    <view class="avatar"><image src="/assets/images/avatar.png" mode="widthFix"></image></view>
-    <view class="person-info">
-      <view class="name">ui小姐姐</view>
-      <view class="sex">女<text>|</text>23岁<text>|</text>大专<text>|</text>2年经验</view>
-   </view>
-  </view>
-
-  <view class="result-info">
-    <view class="info-item">  
-      <view>类型</view>
-      <view class="state">到场面试</view>
-    </view>
-    <view class="info-item">  
-      <view>职位</view>
-      <view>高级营养师</view>
-    </view>
-    <view class="info-item">  
-      <view>通过日期</view>
-      <view>2019-05-25</view>
-    </view>
-  </view>
-</view>
 
 <view class="footer" bindtap="backPrv">
   <view>返回</view>

@@ -1,0 +1,147 @@
+.time-dot {
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  top: 20rpx;
+  right: 60rpx;
+}
+
+.time-dot > .start {
+  width: 100rpx;
+  border: 1rpx solid #ccc;
+  text-align: center;
+}
+
+.time-dot > .interval {
+  margin: 0 15rpx;
+}
+
+.toolbar-class {
+  width: 100vw;
+}
+
+.van-picker__cancel {
+  color: #333!important;
+}
+
+.van-picker__confirm {
+  color: #ff5777!important;
+}
+
+/* 底部导航 */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  width: 100vw;
+  border-top: 2rpx solid #F6F6F6; 
+  display: flex;
+  justify-content: left;
+  padding: 15rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.footer > .back {
+  width: 250rpx;
+  background: #fff;
+  border: 2rpx solid #DEDEDE;
+  line-height: 68rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #959595;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+  box-sizing: border-box;
+}
+
+.save {
+  flex: 1;
+  background: linear-gradient(to right, #FFC36F, #FF8853);
+  line-height: 68rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.save > .btn {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 30rpx;
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  line-height: 80rpx;
+  padding: 0 30rpx;
+}
+
+.select > .cancle-picker {
+  color: #707070;
+  font-size: 32rpx;
+  
+}
+
+.select > .confirm-picker {
+  color: #51A736;
+  font-size: 32rpx;
+}
+
+
+.update {
+  display: flex;
+  padding: 0 30rpx;
+  font-size: 26rpx;
+  font-family:'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+}
+
+.citybody {
+  width: 100vw;
+  position: relative;
+}
+
+.item {
+  line-height: 50px;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.cityheader {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  opacity: 1;
+  color: #333;
+  z-index: 999999;
+  line-height: 100rpx;
+}
+
+.city-true {
+  color: #ff5777;
+}
+
+/* .citypicker {
+  background: #fff;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  bottom: 100rpx;
+  z-index: 100;
+} */
+
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200rpx;
+}

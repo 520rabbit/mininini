@@ -1,13 +1,21 @@
 // pages/deal-record/deal-record.js
 import { useRecord } from "../../api/ajax.js"
-
+import { buyRecord } from "../../api/ajax.js"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    active: '2',
+    active: '1',
+    useForm: {
+      openIdKey: '',
+      sessionKey: '',
+      token: '',
+      limit: 1, // 页数
+      curr: 10, // 行数
+      month: ''
+    },
     selectMonth: [
       { text: '1个月', value: 1 },
       { text: '2个月', value: 2 },
@@ -16,12 +24,18 @@ Page({
       { text: '5个月', value: 5 },
       { text: '6个月', value: 6 }
     ],
-    option2: [
-      { text: '默认排序', value: 'a' },
-      { text: '好评排序', value: 'b' },
-      { text: '销量排序', value: 'c' }
-    ],
-    monthValue: 1
+    oldLimit: 1,// 使用记录的页数
+    useData: [], // 使用记录
+  },
+
+  toggleTab (e) {
+    let limit = 'useForm.limit'
+    let oldLimit = this.data.oldLimit
+    console.log(this.data.useForm.limit)
+    let old = this.data.useForm.limit
+    this.setData({
+      [limit]: 1
+    })
   },
 
   // 返回个人中心页面
@@ -30,13 +44,52 @@ Page({
       delta: 1,
     })
   },
-  
+
+  // 使用记录
+  useRecord () {
+    let useForm = this.data.useForm
+    let useData = this.data.useData
+    useRecord(useForm).then( res => {
+      console.log(res)
+      this.setData({
+        useData: useData.concat(res.data.data)
+      })
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let openIdKey = 'useForm.openIdKey'
+    let sessionKey = 'useForm.sessionKey'
+    let token = 'useForm.token'
+    wx.getStorage({
+      key: 'openIdKey',
+      success: (res) => {
+        this.setData({
+          [openIdKey]: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'sessionKey',
+      success: (res) => {
+        this.setData({
+          [sessionKey]: res.data
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'token',
+      success: (res) => {
+        this.setData({
+          [token]: res.data
+        })
+      }
+    })
+    this.useRecord()
   },
 
   /**
@@ -78,7 +131,14 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    let newLimit = this.data.useForm.limit + 1
+    const limit = 'useForm.limit'
+    this.setData({
+      [limit]: newLimit
+    })
 
+    this.useRecord()
+    console.log(this.data.useForm.limit)
   },
 
   /**
